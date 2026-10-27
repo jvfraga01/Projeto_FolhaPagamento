@@ -57,7 +57,7 @@ gantt
 | Entrega A3 | 01/12/2026 |
 
 ## Distribuição de responsabilidades
-Preencher com os nomes da equipe (ajustar o número de papéis ao tamanho do grupo).
+
 
 | Papel | Responsável | Atividades |
 |---|---|---|
