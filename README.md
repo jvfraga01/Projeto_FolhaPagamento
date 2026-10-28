@@ -30,7 +30,7 @@ Comandos de terminal, requisitos e solução de problemas: [`05_Codigo_Fonte/INS
 Os diagramas estão em **Mermaid** (aparecem prontos no GitHub e no VS Code com a extensão Markdown Preview Mermaid).
 
 ## Repositório e histórico
-- URL do repositório: **<<PREENCHER: https://github.com/USUARIO/Projeto_FolhaPagamento>>**
+- URL do repositório: https://github.com/jvfraga01/Projeto_FolhaPagamento.git
 - Tags de entrega: `v1.2-A1` (A1) e `v-A3` (A3)
 - Evidência do histórico (log, autores, datas, tags): [`10_Qualidade/Evidencia_Controle_de_Versao.md`](10_Qualidade/Evidencia_Controle_de_Versao.md)
 
