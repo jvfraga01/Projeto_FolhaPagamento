@@ -8,6 +8,9 @@ from datetime import date
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 
 # ---------------------------------------------------------------- parâmetros
+# MODO PADRÃO (conforme o cliente): comissão = vendas x percentual; produção = quantidade x valor
+# da unidade; sempre somados ao salário base, sem meta, progressão, bônus ou teto.
+# MODO COM METAS (opcional, RN009-RN011): ativado só com REGIME_METAS=1 no ambiente.
 # >>> Ajuste aqui se a regra de metas mudar. <<<
 META_MINIMA_VENDAS = 500_000       # R$ 5.000,00
 PASSO_VENDAS = 200_000             # a cada R$ 2.000,00 acima da meta...
@@ -118,8 +121,12 @@ def _padrao(d):
 
 
 def _comissionado(d):
-    """Comissão = vendas × percentual (fórmula do PDF). Meta não batida -> adicional 0.
-    Batida: o percentual sobe 1 ponto a cada passo de vendas acima da meta, até 10%."""
+    """Modo padrão (cliente): comissão = vendas x percentual cadastrado, sem condição.
+    Modo com metas (opcional): meta não batida -> 0; batida -> o percentual sobe 1 ponto a cada
+    passo de vendas acima da meta, até 10%."""
+    if not d.get("regime_metas"):
+        return {"atingiu": True, "pct": d["percentual_base"],
+                "adicionais": _arredonda(d["vendas"] * d["percentual_base"], 10000)}
     if d["vendas"] < d["meta"]:
         return {"atingiu": False, "pct": 0, "adicionais": 0}
     passos = (d["vendas"] - d["meta"]) // PASSO_VENDAS
@@ -128,13 +135,16 @@ def _comissionado(d):
 
 
 def _producao(d):
-    """Produtividade = quantidade × valor da unidade (fórmula do PDF). Meta não batida -> 0.
-    Batida: bônus de 1% a cada passo de unidades acima da meta, até 10%."""
+    """Modo padrão (cliente): produtividade = quantidade x valor da unidade, sem condição.
+    Modo com metas (opcional): meta não batida -> 0; batida -> bônus de 1% a cada passo de
+    unidades acima da meta, até 10%."""
+    base = d["quantidade"] * d["valor_unidade"]
+    if not d.get("regime_metas"):
+        return {"atingiu": True, "pct": 0, "adicionais": base}
     if d["quantidade"] < d["meta"]:
         return {"atingiu": False, "pct": 0, "adicionais": 0}
     passos = (d["quantidade"] - d["meta"]) // PASSO_PRODUCAO
     bonus = min(PERCENTUAL_MAXIMO_BP, passos * PASSO_PERCENTUAL_BP)
-    base = d["quantidade"] * d["valor_unidade"]
     return {"atingiu": True, "pct": bonus, "adicionais": base + _arredonda(base * bonus, 10000)}
 
 
@@ -143,10 +153,11 @@ CALCULADORES = {"PADRAO": _padrao, "COMISSIONADO": _comissionado, "PRODUCAO": _p
 
 
 def calcular(tipo, salario_base, meta=0, vendas=0, quantidade=0,
-             percentual_base=0, valor_unidade=0) -> dict:
+             percentual_base=0, valor_unidade=0, regime_metas=False) -> dict:
     if min(salario_base, meta, vendas, quantidade, percentual_base, valor_unidade) < 0:
         raise ValueError("Valores negativos não são permitidos.")
     r = CALCULADORES[tipo]({"meta": meta, "vendas": vendas, "quantidade": quantidade,
-                            "percentual_base": percentual_base, "valor_unidade": valor_unidade})
+                            "percentual_base": percentual_base, "valor_unidade": valor_unidade,
+                            "regime_metas": regime_metas})
     r["total"] = salario_base + r["adicionais"]
     return r

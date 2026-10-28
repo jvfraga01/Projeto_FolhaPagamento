@@ -6,12 +6,14 @@
 - Regras de negócio **somente** em `regras.py`; rotas só validam, autorizam e chamam as regras; nenhuma regra nos templates.
 - Todo SQL com parâmetros (`?`); nunca concatenar texto do usuário em comandos SQL.
 - Dinheiro sempre em centavos inteiros; percentuais em pontos-base.
+- Mudança de regra de negócio em relação ao documento do cliente só entra como padrão com aceite registrado; sem aceite, fica opcional e desligada.
 - Comentários e *docstrings* explicam o **porquê** das regras, não o óbvio.
 - Toda rota protegida usa `@nivel_exigido` ou `@login_obrigatorio`.
 
 ## Controle de Versão
 - Git, repositório único com a estrutura de entrega (`Projeto_FolhaPagamento/`).
-- Ramo `main` sempre funcional; trabalho em ramos 
+- Ramo `main` sempre funcional; trabalho em ramos curtos (`feature/...`), integrados em `main` após a revisão técnica.
+- Evidência do histórico (URL do repositório, log de commits e tags): `10_Qualidade/Evidencia_Controle_de_Versao.md`.
 - Marcos com *tags*: `v1.2-A1` (entrega A1) e `v-A3` (entrega final).
 - Não versionar: `__pycache__/`, `instance/` (banco e chave secreta), `.venv/`, `.coverage`.
 

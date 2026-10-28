@@ -5,8 +5,8 @@
 |---|---|
 | Projeto               | Sistema de Folha de Pagamento                                     |
 | Equipe                | João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini   |
-| Data                  | 17/10/2026                                                        |
-| Versão                | 1.2 (entrega A1)                                                  |
+| Data                  | 27/10/2026                                                        |
+| Versão                | 1.3 (entrega A1, revisada)                                                |
 | Unidade Curricular    | Garantia da Qualidade de Software                                 |
 
 ## Objetivo
@@ -17,14 +17,14 @@ e histórico preservado.
 
 ## Escopo
 - Cadastro, consulta, alteração e desabilitação (exclusão lógica) de colaboradores.
-- Três formas de remuneração: Padrão, Comissionado e Por Produção, com metas mensais progressivas.
+- Três formas de remuneração: Padrão, Comissionado e Por Produção, pelas fórmulas definidas pelo cliente (um regime opcional de metas mensais pode ser ativado somente após aceite).
 - Lançamento mensal de vendas e produção, cálculo automático e geração da folha por mês.
 - Fechamento do mês (folha congelada), recibo individual imprimível e relatório consolidado/resumido.
 - Autenticação e três níveis de acesso: 1 Administrador/RH, 2 Financeiro, 3 Colaborador.
 
 ## Premissas
 - A empresa fecha a folha uma vez por mês.
-- O responsável pelo projeto (cliente) define as regras de negócio; a equipe cuida da análise, projeto, implementação e qualidade.
+- O cliente define as regras de negócio (fórmulas de remuneração); decisões que ampliam ou alteram o escopo só valem com aceite registrado em `Registro_de_Aceite_de_Desvios.md`; a equipe cuida da análise, projeto, implementação e qualidade.
 - O sistema roda em um computador com Python 3.10+ e navegador; o uso inicial é de uma única empresa.
 - Vendas e produção são informadas pelo RH apenas pelo **total do mês** (sem registro de cancelamento/devolução individual).
 

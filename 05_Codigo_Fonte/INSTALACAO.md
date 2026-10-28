@@ -58,6 +58,14 @@ python -m coverage run -m unittest discover
 python -m coverage report -m
 ```
 
+## Modo opcional de metas
+Por padrão o sistema usa as fórmulas do cliente. Para ativar o regime opcional de metas (RN009–RN011):
+```bat
+set REGIME_METAS=1
+py run.py
+```
+(Linux/macOS: `export REGIME_METAS=1`). Não ative sem o aceite do cliente.
+
 ## Problemas comuns
 | Sintoma | Solução |
 |---|---|

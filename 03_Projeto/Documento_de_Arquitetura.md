@@ -32,6 +32,7 @@ flowchart LR
 |---|---|
 | Regras de negócio em módulo puro (`regras.py`) | Podem ser testadas sem banco nem web (RNF008). |
 | Cálculo por estratégias registradas (`CALCULADORES`) | Novo tipo de remuneração = nova função, sem mexer nas existentes (RNF004). |
+| Fórmulas do cliente como comportamento padrão; metas como modo opcional (`REGIME_METAS`) | Garante aderência ao contrato original (RN008) e deixa a evolução (RN009–RN011) desligada até o aceite do cliente. |
 | Dinheiro em **centavos inteiros** | Evita erro de ponto flutuante em folha (RNF007). |
 | 3 tabelas apenas | Simplicidade exigida pelo projeto; histórico mensal fica na própria `folha`. |
 | Folha como "fotografia" mensal | Valores e metas do mês ficam guardados; mudanças futuras não alteram meses fechados (RN012). |
@@ -53,6 +54,12 @@ flowchart LR
 │   ├── templates/, static/
 └── tests/test_sistema.py
 ```
+
+## Configuração
+| Variável | Efeito |
+|---|---|
+| `SECRET_KEY` | Chave de sessão (gerada em `instance/` se ausente) |
+| `REGIME_METAS` | `0` (padrão): fórmulas do cliente. `1`: ativa o regime opcional de metas, progressão e teto |
 
 ## Estratégia de persistência
 - SQLite em arquivo (`instance/folha.db`), criado automaticamente, junto com o administrador inicial.

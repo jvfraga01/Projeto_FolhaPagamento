@@ -1,7 +1,7 @@
 from calendar import monthrange
 from datetime import date
 
-from flask import Blueprint, abort, flash, g, redirect, render_template, request, url_for
+from flask import Blueprint, abort, current_app, flash, g, redirect, render_template, request, url_for
 
 from . import regras
 from .auth import login_obrigatorio, nivel_exigido
@@ -19,7 +19,10 @@ def _periodo_ou_404(periodo_id):
 
 
 def _meta_do_mes(db, c, ano, mes):
-    """Meta nova do colaborador no mês, a partir do resultado do mês anterior dele."""
+    """Meta nova do colaborador no mês, a partir do resultado do mês anterior dele.
+    No modo padrão (conforme o cliente) não há meta: retorna 0."""
+    if not current_app.config["REGIME_METAS"]:
+        return 0
     anterior = db.execute(
         """SELECT f.tipo, f.meta, f.vendas_centavos, f.quantidade_produzida
            FROM folha f JOIN periodo p ON p.id = f.periodo_id
@@ -35,6 +38,7 @@ def _meta_do_mes(db, c, ano, mes):
 def _calcular_linha(c, meta, vendas, quantidade):
     return regras.calcular(c["tipo"], c["salario_base_centavos"], meta=meta, vendas=vendas,
                            quantidade=quantidade,
+                           regime_metas=current_app.config["REGIME_METAS"],
                            percentual_base=c["percentual_comissao_bp"],
                            valor_unidade=c["valor_unidade_centavos"])
 

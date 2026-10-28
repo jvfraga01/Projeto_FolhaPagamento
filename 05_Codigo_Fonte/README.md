@@ -19,7 +19,7 @@ Testes (opcional): `python -m unittest discover -v`
 | `app/__init__.py` | cria o app, sessão, proteção CSRF, filtros e tratamento de erros |
 | `app/schema.sql` | as 3 tabelas |
 | `app/db.py` | conexão com o banco, criação das tabelas e do admin inicial |
-| `app/regras.py` | **regras de negócio**: dinheiro, metas e cálculo (parâmetros no topo do arquivo) |
+| `app/regras.py` | **regras de negócio**: dinheiro, cálculo e (opcional) metas (parâmetros no topo do arquivo) |
 | `app/auth.py` | login, logout, troca de senha, decorators de permissão |
 | `app/colaboradores.py` | cadastro, alteração, desabilitar/reativar, redefinir senha, meus dados |
 | `app/folha.py` | gerar folha do mês, lançamentos, fechar, recibo, relatório |
@@ -43,13 +43,18 @@ Dinheiro em **centavos** (inteiro); percentual em pontos-base (5,50% = 550).
 Nível 3 só enxerga as próprias folhas **de meses fechados**. A matrícula vem sempre da sessão, nunca da URL.
 
 ## Regras de remuneração
+**Modo padrão (conforme o cliente)** — sem metas, progressão, bônus ou teto:
 - **Padrão**: salário base.
-- **Comissionado**: meta mensal começa em R$ 5.000,00. Meta não batida → adicional R$ 0,00.
-  Batida → comissão = vendas × percentual, e o percentual sobe 1 ponto a cada R$ 2.000,00 vendidos acima da meta, até **10%**.
-- **Produção**: meta mensal em unidades. Meta não batida → adicional 0. Batida → unidades × valor da unidade,
-  com bônus de 1% a cada passo de unidades acima da meta, até **10%**.
-- **Meta do mês seguinte**: se bateu a meta, sobe um passo (R$ 2.000,00 ou 50 un); se não bateu, repete. Nunca abaixo do mínimo.
-  A meta de uma folha já gerada não muda.
+- **Comissionado**: salário base + vendas × percentual de comissão cadastrado (ex.: base 3.000,00, vendas 5.000,00, 3% → 3.150,00).
+- **Por Produção**: salário base + quantidade produzida × valor por unidade (ex.: base 1.000,00, 99 un × 2,50 → 1.247,50).
+
+**Modo opcional com metas** (RN009–RN011), desligado por padrão. Para ligar: variável de ambiente `REGIME_METAS=1`
+(Windows: `set REGIME_METAS=1`; Linux/macOS: `export REGIME_METAS=1`) antes de iniciar. Só use depois do aceite do cliente.
+- Comissionado: meta mensal começa em R$ 5.000,00. Meta não batida → adicional 0,00; batida → comissão = vendas × percentual,
+  que sobe 1 ponto a cada R$ 2.000,00 acima da meta, até **10%**.
+- Produção: meta de 100 un. Meta não batida → adicional 0; batida → unidades × valor da unidade, com bônus de 1% a cada 50 un acima da meta, até **10%**.
+- Meta do mês seguinte: sobe um passo se bateu, repete se não bateu. A meta de uma folha já gerada não muda.
+
 Para criar um novo tipo: escrever uma função em `regras.py`, registrá-la em `CALCULADORES` e incluir o tipo em `schema.sql` e `TIPOS`.
 
 ## Fluxo da folha

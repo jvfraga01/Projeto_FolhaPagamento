@@ -2,7 +2,7 @@
 {% block conteudo %}
 <h2>Lançamentos de {{ periodo.mes|mes_nome }}/{{ periodo.ano }}</h2>
 {% if periodo.status == 'FECHADO' %}<div class="alerta erro">Mês fechado: somente leitura.</div>{% endif %}
-<p class="dica">Ao salvar, a folha aberta também passa a usar o salário e os percentuais atuais do cadastro. A meta do mês não muda.</p>
+<p class="dica">Ao salvar, a folha aberta também passa a usar o salário e os percentuais atuais do cadastro.{% if regime_metas() %} A meta do mês não muda.{% endif %}</p>
 <form method="post">
   <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
   <table>

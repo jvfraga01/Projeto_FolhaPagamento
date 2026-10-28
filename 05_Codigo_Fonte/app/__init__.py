@@ -28,6 +28,8 @@ def create_app(test_config=None):
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE="Lax",
         PERMANENT_SESSION_LIFETIME=timedelta(hours=8),
+        # False = fórmulas do cliente (padrão). True = regime opcional de metas (RN009-RN011).
+        REGIME_METAS=os.environ.get("REGIME_METAS", "0") == "1",
     )
     if test_config:
         app.config.update(test_config)
@@ -80,7 +82,8 @@ def create_app(test_config=None):
             session["csrf"] = secrets.token_urlsafe(32)
         return session["csrf"]
 
-    app.jinja_env.globals.update(csrf_token=csrf_token, MESES=MESES, TIPOS=regras.TIPOS)
+    app.jinja_env.globals.update(csrf_token=csrf_token, MESES=MESES, TIPOS=regras.TIPOS,
+                                 regime_metas=lambda: app.config["REGIME_METAS"])
 
     @app.context_processor
     def contexto():
@@ -100,6 +103,8 @@ def create_app(test_config=None):
 
     @app.template_filter("meta_fmt")
     def meta_fmt(folha):
+        if not folha["meta"]:
+            return "—"  # modo padrão (cliente): sem meta
         if folha["tipo"] == "COMISSIONADO":
             return regras.reais(folha["meta"])
         if folha["tipo"] == "PRODUCAO":

@@ -13,37 +13,62 @@ from app.db import get_db
 
 
 class CalculoTest(unittest.TestCase):
+    """Modo padrão = fórmulas do cliente (sem metas, progressão, bônus ou teto)."""
+
     def test_padrao_recebe_so_o_salario(self):
         r = regras.calcular("PADRAO", 300000)
         self.assertEqual((r["adicionais"], r["total"]), (0, 300000))
 
-    def test_comissionado_meta_nao_batida_zera_adicional(self):
-        r = regras.calcular("COMISSIONADO", 300000, meta=500000, vendas=499999, percentual_base=300)
-        self.assertEqual(r["adicionais"], 0)
-        self.assertFalse(r["atingiu"])
+    def test_salario_zero_valido(self):
+        self.assertEqual(regras.calcular("PADRAO", 0)["total"], 0)
+        r = regras.calcular("COMISSIONADO", 0, vendas=100000, percentual_base=300)
+        self.assertEqual((r["adicionais"], r["total"]), (3000, 3000))
 
-    def test_comissionado_meta_batida_usa_formula_do_pdf(self):
+    def test_comissionado_vendas_vezes_percentual(self):
         # vendas 5.000,00 x 3% = 150,00
-        r = regras.calcular("COMISSIONADO", 300000, meta=500000, vendas=500000, percentual_base=300)
-        self.assertEqual(r["adicionais"], 15000)
-        self.assertEqual(r["total"], 315000)
+        r = regras.calcular("COMISSIONADO", 300000, vendas=500000, percentual_base=300)
+        self.assertEqual((r["adicionais"], r["total"]), (15000, 315000))
 
-    def test_comissionado_sobe_1_ponto_a_cada_2_mil_e_para_em_10(self):
-        # 9.000,00 = meta + 2 passos -> 3% + 2 = 5%
-        r = regras.calcular("COMISSIONADO", 0, meta=500000, vendas=900000, percentual_base=300)
-        self.assertEqual(r["pct"], 500)
-        # vendas enormes -> teto de 10%
-        r = regras.calcular("COMISSIONADO", 0, meta=500000, vendas=9_000_000, percentual_base=300)
-        self.assertEqual(r["pct"], 1000)
+    def test_comissionado_sem_meta_vendas_abaixo_de_5000(self):
+        # cliente: 4.999,99 x 3% = 149,9997 -> 150,00 (arredondado); não zera o adicional
+        r = regras.calcular("COMISSIONADO", 300000, vendas=499999, percentual_base=300)
+        self.assertEqual((r["adicionais"], r["total"]), (15000, 315000))
 
-    def test_producao(self):
-        r = regras.calcular("PRODUCAO", 100000, meta=100, quantidade=99, valor_unidade=250)
-        self.assertEqual(r["adicionais"], 0)
-        r = regras.calcular("PRODUCAO", 100000, meta=100, quantidade=100, valor_unidade=250)
+    def test_comissionado_percentual_cadastrado_sem_teto(self):
+        # 15% cadastrado é aplicado integralmente (sem teto de 10%)
+        r = regras.calcular("COMISSIONADO", 0, vendas=100000, percentual_base=1500)
+        self.assertEqual((r["pct"], r["adicionais"]), (1500, 15000))
+
+    def test_producao_quantidade_vezes_valor(self):
+        r = regras.calcular("PRODUCAO", 100000, quantidade=99, valor_unidade=250)
+        self.assertEqual((r["adicionais"], r["total"]), (24750, 124750))
+        r = regras.calcular("PRODUCAO", 100000, quantidade=100, valor_unidade=250)
         self.assertEqual(r["adicionais"], 25000)
-        r = regras.calcular("PRODUCAO", 100000, meta=100, quantidade=200, valor_unidade=250)
-        self.assertEqual(r["pct"], 200)  # 2 passos de 50 un = +2%
-        self.assertEqual(r["adicionais"], 50000 + 1000)
+        r = regras.calcular("PRODUCAO", 100000, quantidade=200, valor_unidade=250)
+        self.assertEqual((r["adicionais"], r["total"]), (50000, 150000))  # sem bônus de 2%
+
+    def test_arredondamento_meio_para_cima_em_centavos(self):
+        # 1.000,50 x 3% = 30,015 -> 30,02 (meio para cima, RNF007)
+        r = regras.calcular("COMISSIONADO", 0, vendas=100050, percentual_base=300)
+        self.assertEqual(r["adicionais"], 3002)
+        # 4.999,99 x 3% = 149,9997 -> 150,00
+        r = regras.calcular("COMISSIONADO", 0, vendas=499999, percentual_base=300)
+        self.assertEqual(r["adicionais"], 15000)
+
+    def test_novo_calculador_sem_alterar_os_existentes(self):
+        # RNF004: adicional fixo de R$ 100,00 registrado só em CALCULADORES.
+        antes = {t: regras.calcular(t, 100000, vendas=500000, quantidade=100,
+                                    percentual_base=300, valor_unidade=250)
+                 for t in ("PADRAO", "COMISSIONADO", "PRODUCAO")}
+        regras.CALCULADORES["EXPERIMENTAL"] = lambda d: {"atingiu": True, "pct": 0, "adicionais": 10000}
+        try:
+            self.assertEqual(regras.calcular("EXPERIMENTAL", 100000)["total"], 110000)
+            for t, esperado in antes.items():
+                r = regras.calcular(t, 100000, vendas=500000, quantidade=100,
+                                    percentual_base=300, valor_unidade=250)
+                self.assertEqual(r, esperado, t)
+        finally:
+            del regras.CALCULADORES["EXPERIMENTAL"]
 
     def test_valores_negativos_sao_recusados(self):
         with self.assertRaises(ValueError):
@@ -53,21 +78,54 @@ class CalculoTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             regras.parse_inteiro("-3")
 
-    def test_meta_cresce_quando_bate_e_nunca_cai_abaixo_do_minimo(self):
-        self.assertEqual(regras.proxima_meta("COMISSIONADO"), 500000)
-        self.assertEqual(regras.proxima_meta("COMISSIONADO", 500000, 500000), 700000)
-        self.assertEqual(regras.proxima_meta("COMISSIONADO", 700000, 100), 700000)
-
     def test_dinheiro(self):
         self.assertEqual(regras.parse_reais("1.234,56"), 123456)
         self.assertEqual(regras.reais(123456), "R$ 1.234,56")
         self.assertEqual(regras.senha_inicial("1990-03-15"), "15031990")
 
 
+class RegimeMetasTest(unittest.TestCase):
+    """Modalidade OPCIONAL (RN009-RN011), só ativa com regime_metas=True / REGIME_METAS=1."""
+
+    def test_meta_nao_batida_zera_adicional(self):
+        r = regras.calcular("COMISSIONADO", 300000, meta=500000, vendas=499999,
+                            percentual_base=300, regime_metas=True)
+        self.assertEqual(r["adicionais"], 0)
+        self.assertFalse(r["atingiu"])
+
+    def test_meta_batida_usa_percentual_cadastrado(self):
+        r = regras.calcular("COMISSIONADO", 300000, meta=500000, vendas=500000,
+                            percentual_base=300, regime_metas=True)
+        self.assertEqual((r["adicionais"], r["total"]), (15000, 315000))
+
+    def test_progressao_1_ponto_a_cada_2_mil_e_teto_de_10(self):
+        r = regras.calcular("COMISSIONADO", 0, meta=500000, vendas=900000,
+                            percentual_base=300, regime_metas=True)
+        self.assertEqual(r["pct"], 500)
+        r = regras.calcular("COMISSIONADO", 0, meta=500000, vendas=9_000_000,
+                            percentual_base=300, regime_metas=True)
+        self.assertEqual(r["pct"], 1000)
+
+    def test_producao_com_meta_e_bonus(self):
+        kw = dict(meta=100, valor_unidade=250, regime_metas=True)
+        self.assertEqual(regras.calcular("PRODUCAO", 100000, quantidade=99, **kw)["adicionais"], 0)
+        self.assertEqual(regras.calcular("PRODUCAO", 100000, quantidade=100, **kw)["adicionais"], 25000)
+        r = regras.calcular("PRODUCAO", 100000, quantidade=200, **kw)
+        self.assertEqual((r["pct"], r["adicionais"]), (200, 50000 + 1000))
+
+    def test_meta_cresce_quando_bate_e_nunca_cai_abaixo_do_minimo(self):
+        self.assertEqual(regras.proxima_meta("COMISSIONADO"), 500000)
+        self.assertEqual(regras.proxima_meta("COMISSIONADO", 500000, 500000), 700000)
+        self.assertEqual(regras.proxima_meta("COMISSIONADO", 700000, 100), 700000)
+
+
 class BaseTest(unittest.TestCase):
+    REGIME_METAS = False  # padrão: fórmulas do cliente
+
     def setUp(self):
         self.pasta = tempfile.TemporaryDirectory()
         self.app = create_app({"TESTING": True, "SECRET_KEY": "teste",
+                               "REGIME_METAS": self.REGIME_METAS,
                                "DATABASE": os.path.join(self.pasta.name, "t.db")})
         self.ctx = self.app.app_context()
         self.ctx.push()
@@ -241,14 +299,10 @@ class FolhaTest(BaseTest):
         n = get_db().execute("SELECT COUNT(*) FROM folha WHERE periodo_id=? AND matricula=?", (p, self.joao)).fetchone()[0]
         self.assertEqual(n, 1)
 
-    def test_meta_cresce_no_mes_seguinte_se_bateu(self):
-        adm, p, f = self.gerar_e_lancar(mes=3, vendas="5000,00", qtd="100")
-        self.post(adm, f"/folha/{p}/fechar")
-        self.post(adm, "/folha/gerar", {"ano": 2026, "mes": 4})
-        p2 = get_db().execute("SELECT id FROM periodo WHERE mes=4").fetchone()["id"]
-        meta = lambda m: get_db().execute("SELECT meta FROM folha WHERE periodo_id=? AND matricula=?", (p2, m)).fetchone()["meta"]
-        self.assertEqual(meta(self.joao), 700000)  # 5.000 + 2.000
-        self.assertEqual(meta(self.maria), 150)    # 100 + 50
+    def test_modo_padrao_nao_gera_meta(self):
+        adm, p, f = self.gerar_e_lancar(mes=3)
+        metas = {r["meta"] for r in get_db().execute("SELECT meta FROM folha WHERE periodo_id=?", (p,))}
+        self.assertEqual(metas, {0})
 
     def test_desabilitado_aparece_nos_meses_em_que_trabalhou(self):
         adm, p, f = self.gerar_e_lancar(mes=3)
@@ -267,6 +321,46 @@ class FolhaTest(BaseTest):
         self.post(adm, f"/folha/{p}/lancamentos", {f"vendas_{f[self.joao]}": "-5"})
         v = get_db().execute("SELECT vendas_centavos FROM folha WHERE id=?", (f[self.joao],)).fetchone()[0]
         self.assertEqual(v, 100000)
+
+
+class FolhaRegimeMetasTest(BaseTest):
+    REGIME_METAS = True
+
+    def test_meta_cresce_no_mes_seguinte_se_bateu(self):
+        adm, p, f = self.gerar_e_lancar(mes=3, vendas="5000,00", qtd="100")
+        self.post(adm, f"/folha/{p}/fechar")
+        self.post(adm, "/folha/gerar", {"ano": 2026, "mes": 4})
+        p2 = get_db().execute("SELECT id FROM periodo WHERE mes=4").fetchone()["id"]
+        meta = lambda m: get_db().execute("SELECT meta FROM folha WHERE periodo_id=? AND matricula=?", (p2, m)).fetchone()["meta"]
+        self.assertEqual(meta(self.joao), 700000)  # 5.000 + 2.000
+        self.assertEqual(meta(self.maria), 150)    # 100 + 50
+
+    def test_meta_nao_batida_zera_adicional_na_folha(self):
+        adm, p, f = self.gerar_e_lancar(vendas="4999,99", qtd="99")
+        linhas = {r["matricula"]: r for r in get_db().execute("SELECT * FROM folha WHERE periodo_id=?", (p,))}
+        self.assertEqual(linhas[self.joao]["total_centavos"], 300000)
+        self.assertEqual(linhas[self.maria]["total_centavos"], 200000)
+
+
+class PersistenciaTest(unittest.TestCase):
+    def test_dados_sobrevivem_ao_reabrir_a_aplicacao(self):
+        with tempfile.TemporaryDirectory() as pasta:
+            cfg = {"TESTING": True, "SECRET_KEY": "teste", "DATABASE": os.path.join(pasta, "p.db")}
+            app1 = create_app(cfg)
+            with app1.app_context():
+                db = get_db()
+                db.execute(
+                    """INSERT INTO colaborador (nome, data_nascimento, data_inicio_contrato, nivel_acesso,
+                           senha_hash, tipo, salario_base_centavos) VALUES (?,?,?,?,?,?,?)""",
+                    ("Persistente", "1990-03-15", "2026-01-01", 3,
+                     generate_password_hash("15031990"), "PADRAO", 123456))
+                db.commit()
+            del app1  # "encerra" a aplicação
+            app2 = create_app(cfg)  # "reabre" com o mesmo arquivo
+            with app2.app_context():
+                c = get_db().execute("SELECT salario_base_centavos FROM colaborador WHERE nome='Persistente'").fetchone()
+                self.assertIsNotNone(c)
+                self.assertEqual(c["salario_base_centavos"], 123456)
 
 
 class FiltrosTest(BaseTest):
@@ -301,6 +395,59 @@ class FiltrosTest(BaseTest):
         self.assertEqual(r.status_code, 302)
         m = get_db().execute("SELECT matricula FROM colaborador WHERE nome='Novo Fulano'").fetchone()[0]
         self.cliente(m, senha="01122000")  # senha inicial = DDMMAAAA
+
+    def _cadastro(self, adm, nome, tipo, **extra):
+        return self.post(adm, "/colaboradores/novo", {
+            "nome": nome, "data_nascimento": "1995-06-20", "data_inicio_contrato": "2026-01-01",
+            "nivel_acesso": "3", "tipo": tipo, "salario_base": "3000,00", **extra})
+
+    def test_cadastro_comissionado_e_producao(self):
+        adm = self.cliente(self.admin)
+        self.assertEqual(self._cadastro(adm, "Carla Comissao", "COMISSIONADO",
+                                        percentual_comissao="3,00").status_code, 302)
+        self.assertEqual(self._cadastro(adm, "Pedro Producao", "PRODUCAO",
+                                        valor_unidade="2,50").status_code, 302)
+        db = get_db()
+        c = db.execute("SELECT * FROM colaborador WHERE nome='Carla Comissao'").fetchone()
+        self.assertEqual((c["tipo"], c["salario_base_centavos"], c["percentual_comissao_bp"]),
+                         ("COMISSIONADO", 300000, 300))
+        p = db.execute("SELECT * FROM colaborador WHERE nome='Pedro Producao'").fetchone()
+        self.assertEqual((p["tipo"], p["valor_unidade_centavos"]), ("PRODUCAO", 250))
+
+    def test_cadastro_com_salario_zero_e_aceito(self):
+        adm = self.cliente(self.admin)
+        self.assertEqual(self._cadastro(adm, "Salario Zero", "PADRAO", salario_base="0,00").status_code, 302)
+        c = get_db().execute("SELECT salario_base_centavos FROM colaborador WHERE nome='Salario Zero'").fetchone()
+        self.assertEqual(c["salario_base_centavos"], 0)
+
+    def test_recusa_percentual_e_valor_unidade_negativos(self):
+        adm = self.cliente(self.admin)
+        r = self._cadastro(adm, "Neg Comissao", "COMISSIONADO", percentual_comissao="-1")
+        self.assertEqual(r.status_code, 400)
+        r = self._cadastro(adm, "Neg Producao", "PRODUCAO", valor_unidade="-1")
+        self.assertEqual(r.status_code, 400)
+        n = get_db().execute("SELECT COUNT(*) FROM colaborador WHERE nome LIKE 'Neg %'").fetchone()[0]
+        self.assertEqual(n, 0)
+
+    def test_matricula_unica_e_sequencial(self):
+        adm = self.cliente(self.admin)
+        self._cadastro(adm, "Seq Um", "PADRAO")
+        self._cadastro(adm, "Seq Dois", "PADRAO")
+        m = [r[0] for r in get_db().execute(
+            "SELECT matricula FROM colaborador WHERE nome LIKE 'Seq %' ORDER BY matricula")]
+        self.assertEqual(len(set(m)), 2)
+        self.assertEqual(m[1], m[0] + 1)
+        with self.assertRaises(Exception):  # UNIQUE/PK impede duplicidade no banco
+            get_db().execute("INSERT INTO colaborador (matricula, nome, data_nascimento, data_inicio_contrato,"
+                             " nivel_acesso, senha_hash, tipo, salario_base_centavos) VALUES (?,?,?,?,?,?,?,?)",
+                             (m[0], "Dup", "1990-01-01", "2026-01-01", 3, "x", "PADRAO", 0))
+
+    def test_resumo_do_relatorio_com_totais(self):
+        adm, p, f = self.gerar_e_lancar(vendas="5000,00", qtd="100")
+        html = adm.get(f"/relatorio?periodo={p}").get_data(as_text=True)
+        # total geral = 5.000 + 4.000 + 3.150 + 2.250 + 2.500 = 16.900,00
+        for esperado in ("R$ 16.900,00", "R$ 3.150,00", "R$ 2.250,00"):
+            self.assertIn(esperado, html)
 
 
 if __name__ == "__main__":
