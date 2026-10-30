@@ -89,7 +89,7 @@ def lista():
     tipo = request.args.get("tipo", "")
     status = request.args.get("status", "Ativo")
     salario_max = request.args.get("salario_max", "").strip()
-    sql = ("SELECT matricula, nome, tipo, salario_base_centavos, status, nivel_acesso "
+    sql = ("SELECT matricula, nome, tipo, salario_base_centavos, percentual_comissao_bp, valor_unidade_centavos, status, nivel_acesso "
            "FROM colaborador WHERE 1=1")
     params = []
     if nome:
