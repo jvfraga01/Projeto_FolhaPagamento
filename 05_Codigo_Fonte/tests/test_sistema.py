@@ -387,8 +387,14 @@ class FiltrosTest(BaseTest):
 
     def test_cadastro_valida_e_cria_com_senha_de_nascimento(self):
         adm = self.cliente(self.admin)
-        r = self.post(adm, "/colaboradores/novo", {"nome": "", "salario_base": "-5"})
-        self.assertEqual(r.status_code, 400)
+        base = {"data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
+          "nivel_acesso": "3", "tipo": "PADRAO"}
+  r = self.post(adm, "/colaboradores/novo", {**base, "nome": "", "salario_base": "2000,00"})  # CT004
+  self.assertEqual(r.status_code, 400)
+  r = self.post(adm, "/colaboradores/novo", {**base, "nome": "Fulano Negativo", "salario_base": "-5"})  # CT005
+  self.assertEqual(r.status_code, 400)
+  n = get_db().execute("SELECT COUNT(*) FROM colaborador WHERE nome IN ('', 'Fulano Negativo')").fetchone()[0]
+  self.assertEqual(n, 0)
         r = self.post(adm, "/colaboradores/novo", {
             "nome": "Novo Fulano", "data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
             "nivel_acesso": "3", "tipo": "PADRAO", "salario_base": "2000,00"})
