@@ -388,13 +388,13 @@ class FiltrosTest(BaseTest):
     def test_cadastro_valida_e_cria_com_senha_de_nascimento(self):
         adm = self.cliente(self.admin)
         base = {"data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
-          "nivel_acesso": "3", "tipo": "PADRAO"}
-  r = self.post(adm, "/colaboradores/novo", {**base, "nome": "", "salario_base": "2000,00"})  # CT004
-  self.assertEqual(r.status_code, 400)
-  r = self.post(adm, "/colaboradores/novo", {**base, "nome": "Fulano Negativo", "salario_base": "-5"})  # CT005
-  self.assertEqual(r.status_code, 400)
-  n = get_db().execute("SELECT COUNT(*) FROM colaborador WHERE nome IN ('', 'Fulano Negativo')").fetchone()[0]
-  self.assertEqual(n, 0)
+                "nivel_acesso": "3", "tipo": "PADRAO"}
+        r = self.post(adm, "/colaboradores/novo", {**base, "nome": "", "salario_base": "2000,00"})  # CT004
+        self.assertEqual(r.status_code, 400)
+        r = self.post(adm, "/colaboradores/novo", {**base, "nome": "Fulano Negativo", "salario_base": "-5"})  # CT005
+        self.assertEqual(r.status_code, 400)
+        n = get_db().execute("SELECT COUNT(*) FROM colaborador WHERE nome IN ('', 'Fulano Negativo')").fetchone()[0]
+        self.assertEqual(n, 0)
         r = self.post(adm, "/colaboradores/novo", {
             "nome": "Novo Fulano", "data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
             "nivel_acesso": "3", "tipo": "PADRAO", "salario_base": "2000,00"})
@@ -453,7 +453,9 @@ class FiltrosTest(BaseTest):
         html = adm.get(f"/relatorio?periodo={p}").get_data(as_text=True)
         # total geral = 5.000 + 4.000 + 3.150 + 2.250 + 2.500 = 16.900,00
         for esperado in ("R$ 16.900,00", "R$ 3.150,00", "R$ 2.250,00"):
-            self.assertIn('<span class="destaque">5</span>', html)  # quantidade de colaboradores
-            
+            self.assertIn(esperado, html)
+        self.assertIn('<span class="destaque">5</span>', html)  # quantidade de colaboradores
+
+
 if __name__ == "__main__":
     unittest.main()
