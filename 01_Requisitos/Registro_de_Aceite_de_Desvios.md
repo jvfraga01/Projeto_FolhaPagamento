@@ -9,7 +9,7 @@ Decisão atribuída ao "responsável" sem evidência continua **Pendente**.
 
 | ID | Desvio | Decisão da equipe | Situação | Data do aceite | Quem aceitou | Evidência (arquivo/link) |
 |---|---|---|---|---|---|---|
-| D1 | Regime de metas, progressão, bônus e teto (RN009–RN011) | Cálculo padrão = fórmulas do cliente; regime de metas opcional, desligado por padrão | Padrão resolvido; opcional Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](../Evidencias/evidenciasresposta_professor_2026-10-30.png)|
+| D1 | Regime de metas, progressão, bônus e teto (RN009–RN011) | Cálculo padrão = fórmulas do cliente; regime de metas opcional, desligado por padrão | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](../Evidencias/evidenciasresposta_professor_2026-10-30.png)|
 | D2 | Vendas/produção lançadas por mês (RF015) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](../Evidencias/evidenciasresposta_professor_2026-10-29.png) |
 | D3 | Exclusão lógica no lugar de exclusão física (RF009/RF013) | Manter | Aceito | 29/10/2026 |Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](../Evidencias/evidenciasresposta_professor_2026-10-29.png) |
 | D4 | Folha só de quem tem contrato no mês (RF007/RN014) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](../Evidencias/evidenciasresposta_professor_2026-10-29.png) |
