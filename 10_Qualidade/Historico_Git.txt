@@ -1,0 +1,99 @@
+Exportado em: 29/10/2026 20:38:08,30
+
+== Repositorio remoto ==
+origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
+origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
+
+== Ramos ==
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+== Tags ==
+
+== Commits - hash, autor, data e mensagem ==
+0381f24 | Pedro da Silva Kolling | 2026-10-27 21:47:22 -0300 | Update repository URL in README.md
+29e4f04 | Pedro da Silva Kolling | 2026-10-27 21:44:49 -0300 | Revise README for version and repository updates
+7ffba8f | PedroKolling7 | 2026-10-27 21:33:44 -0300 | Alteraçoes para correçao da A1
+5399fb6 | Pedro da Silva Kolling | 2026-10-27 19:19:03 -0300 | Update responsibilities in Planejamento_do_Projeto.md
+53b2167 | Yuri Soares Dutra | 2026-10-19 19:58:09 -0300 | docs: atualizar plano de garantia da qualidade
+d1217f8 | Luiggi Bortolini | 2026-10-19 19:55:03 -0300 | Planejamento do Projeto
+68789e4 | Yuri Soares Dutra | 2026-10-19 19:50:17 -0300 | docs: atualizar documento de visao
+feb30e9 | João Vitor Fraga da Rocha | 2026-10-19 19:50:40 -0300 | Update README.md
+1efe55c | João Vitor Fraga da Rocha | 2026-10-19 19:50:15 -0300 | Add files via upload
+a2d6225 | João Vitor Fraga da Rocha | 2026-10-19 19:40:28 -0300 | Delete 05_Codigo_Fonte/instance directory
+06bbc34 | Pedro da Silva Kolling | 2026-10-19 19:39:32 -0300 | Update case for 'Casos de uso e UML' reference
+78285c8 | Pedro da Silva Kolling | 2026-10-19 19:34:28 -0300 | Rename colaborador_lista.html to colaboradores_lista.html
+022c703 | Luiggi Bortolini | 2026-10-19 14:47:32 -0300 | git commit -m "Adicionando casos de teste e plano de testes"
+f1064bb | Yuri Soares Dutra | 2026-10-18 22:41:38 -0300 | docs: atualizar plano de garantia da qualidade
+f6bfc28 | Yuri Soares Dutra | 2026-10-18 20:55:37 -0300 | docs: atualizar planejamento do projeto
+4c77c95 | Yuri Soares Dutra | 2026-10-18 20:54:48 -0300 | docs: atualizar planejamento do projeto
+c2ffc9d | Yuri Soares Dutra | 2026-10-18 19:03:25 -0300 | docs: atualizar documento de arquitetura
+3d16218 | João Vitor Fraga da Rocha | 2026-10-18 17:37:34 -0300 | Add files via upload
+63402ad | João Vitor Fraga da Rocha | 2026-10-18 17:35:12 -0300 | Add files via upload
+f114850 | João Vitor Fraga da Rocha | 2026-10-18 17:32:26 -0300 | Add files via upload
+8582e57 | João Vitor Fraga da Rocha | 2026-10-18 17:29:25 -0300 | Delete banco.py
+c75d467 | João Vitor Fraga da Rocha | 2026-10-18 17:29:15 -0300 | Delete erro.html
+de51ba7 | João Vitor Fraga da Rocha | 2026-10-18 17:28:51 -0300 | Delete app.py
+f334245 | João Vitor Fraga da Rocha | 2026-10-18 17:28:39 -0300 | Delete folha_pagamento.db
+e19a7c9 | João Vitor Fraga da Rocha | 2026-10-18 17:28:07 -0300 | Delete QA.pdf
+dbb03c8 | João Vitor Fraga da Rocha | 2026-10-18 17:27:13 -0300 | Create README for final presentation slides
+0811d07 | João Vitor Fraga da Rocha | 2026-10-18 17:26:09 -0300 | Add README.md for quality documentation
+f69dd2b | João Vitor Fraga da Rocha | 2026-10-18 17:25:36 -0300 | Create Plano_de_Garantia_da_Qualidade.md
+428a9f5 | João Vitor Fraga da Rocha | 2026-10-18 17:24:45 -0300 | Create README.md
+f60d37e | João Vitor Fraga da Rocha | 2026-10-18 17:23:10 -0300 | Create README.md for manuals section
+37edd1c | João Vitor Fraga da Rocha | 2026-10-18 17:22:18 -0300 | Create Readme.md
+51f2b6b | Pedro da Silva Kolling | 2026-10-18 14:02:58 -0300 | Adicionando arquivos
+58a185d | Pedro da Silva Kolling | 2026-10-18 14:01:17 -0300 | Adicionando arquivos
+516b6d6 | Pedro da Silva Kolling | 2026-10-18 13:58:08 -0300 | Add password change template in senha.html
+a3d26df | Pedro da Silva Kolling | 2026-10-18 13:57:35 -0300 | Create relatorio.html template
+8d80efd | Pedro da Silva Kolling | 2026-10-18 13:57:03 -0300 | Add recibo.html template
+f4483b4 | Pedro da Silva Kolling | 2026-10-18 13:56:08 -0300 | Add minha_folha.html template
+debd8d4 | Pedro da Silva Kolling | 2026-10-18 13:55:24 -0300 | Add meus_dados.html template for user details
+4d2ba8c | Pedro da Silva Kolling | 2026-10-18 13:54:20 -0300 | Create login.html
+7d522e3 | PedroKolling7 | 2026-10-18 13:50:16 -0300 | mudando o local do arquivo
+165e762 | Pedro da Silva Kolling | 2026-10-18 13:03:49 -0300 | Add files via upload
+ae54b9f | Pedro da Silva Kolling | 2026-10-18 13:02:05 -0300 | Update and rename relatorios.html to folha_lista.html
+afe0dea | Pedro da Silva Kolling | 2026-10-18 13:01:11 -0300 | Update and rename lista.html to erro.html
+04221c1 | Pedro da Silva Kolling | 2026-10-18 12:59:19 -0300 | Update and rename templates/index.html to erro.html
+a507a68 | Pedro da Silva Kolling | 2026-10-18 12:58:32 -0300 | Update and rename folha_individual.html to colaborador_lista.html
+a3faad3 | Pedro da Silva Kolling | 2026-10-18 12:57:37 -0300 | Update and rename cadastro.html to colaborador_form.html
+44c7bef | Pedro da Silva Kolling | 2026-10-18 12:56:33 -0300 | atualizaçao base.html
+96f341e | Pedro da Silva Kolling | 2026-10-18 12:55:48 -0300 | Rename _setor_periodo.html to _seletor_periodo.html
+ad8de42 | Pedro da Silva Kolling | 2026-10-18 12:55:03 -0300 | Create _setor_periodo.html
+fae9a16 | Pedro da Silva Kolling | 2026-10-18 12:53:11 -0300 | Delete templates/alterar.html
+c836d87 | João Vitor Fraga da Rocha | 2026-10-17 22:24:47 -0300 | Delete static directory
+75b4bf8 | João Vitor Fraga da Rocha | 2026-10-17 21:53:25 -0300 | Update Diagramas_UML.md
+9e3a521 | João Vitor Fraga da Rocha | 2026-10-17 21:52:50 -0300 | Document use cases for HR and Finance system
+19dc9f4 | João Vitor Fraga da Rocha | 2026-10-17 20:28:52 -0300 | Add README for Banco de Dados with setup details
+dd54fba | João Vitor Fraga da Rocha | 2026-10-17 20:28:17 -0300 | Create database schema for collaborator and payroll
+a11fedd | João Vitor Fraga da Rocha | 2026-10-17 20:26:53 -0300 | Create test_sistema.py
+3697052 | João Vitor Fraga da Rocha | 2026-10-17 20:24:04 -0300 | Create style.css
+81de650 | João Vitor Fraga da Rocha | 2026-10-17 20:23:39 -0300 | Create app.js
+e6dbd72 | João Vitor Fraga da Rocha | 2026-10-17 20:20:38 -0300 | Create README.md for Payroll System documentation
+6cd5b60 | João Vitor Fraga da Rocha | 2026-10-17 20:14:44 -0300 | Create Plano_de_Testes.md
+d14d5d8 | João Vitor Fraga da Rocha | 2026-10-17 20:14:34 -0300 | Create Casos_de_Teste.md
+216bcc2 | João Vitor Fraga da Rocha | 2026-10-17 20:14:09 -0300 | Create Planejamento_do_Projeto.md
+7d10894 | João Vitor Fraga da Rocha | 2026-10-17 20:13:56 -0300 | Create Documento_de_Arquitetura.md
+fe4f3a4 | João Vitor Fraga da Rocha | 2026-10-17 20:13:15 -0300 | Create Diagramas_UML.md
+10561f1 | João Vitor Fraga da Rocha | 2026-10-17 20:13:03 -0300 | Create Casos_de_Uso.md
+4cbe368 | João Vitor Fraga da Rocha | 2026-10-17 19:50:54 -0300 | Add software requirements specification document
+46cd16c | João Vitor Fraga da Rocha | 2026-10-17 19:48:49 -0300 | Update Documento_de_Visao.md
+811538c | João Vitor Fraga da Rocha | 2026-10-17 19:48:17 -0300 | Fix formatting in Documento de Visão
+8baba00 | João Vitor Fraga da Rocha | 2026-10-17 19:47:16 -0300 | Fix table formatting in Documento de Visao
+c8306ab | João Vitor Fraga da Rocha | 2026-10-17 19:46:13 -0300 | Create vision document for payroll system project
+bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
+22e2050 | João Vitor Fraga da Rocha | 2026-10-17 19:45:10 -0300 | Create Documento_de_Visao.md
+8e80700 | João Vitor Fraga da Rocha | 2026-10-17 19:44:05 -0300 | Delete 01_Requisitos
+3144b36 | João Vitor Fraga da Rocha | 2026-10-17 19:43:43 -0300 | Create 01_Requisitos
+31d843a | João Vitor Fraga da Rocha | 2026-10-17 16:35:22 -0300 | Add files via upload
+0e24af7 | Pedro da Silva Kolling | 2026-10-16 20:51:53 -0300 | Refactor base.html
+fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
+
+== Commits por autor ==
+    42	João Vitor Fraga da Rocha
+    24	Pedro da Silva Kolling
+     6	Yuri Soares Dutra
+     2	Luiggi Bortolini
+     2	PedroKolling7
+     1	jvfraga01
