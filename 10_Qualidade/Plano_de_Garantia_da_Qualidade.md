@@ -1,7 +1,7 @@
 # 6. Plano de Garantia da Qualidade (PGQ)
 
 ## Padrões de Desenvolvimento (codificação)
-- Linguagem Python 3.10+, estilo **PEP 8** (linhas até ~100 colunas, 4 espaços).
+- Linguagem Python 3.10+, estilo **PEP 8** (linhas até ~100 colunas, 4 espaços), verificado pelo revisor no checklist de revisão; ferramenta (flake8) prevista para a A3.
 - Nomes de funções, variáveis e tabelas em português, claros e sem abreviações obscuras.
 - Regras de negócio **somente** em `regras.py`; rotas só validam, autorizam e chamam as regras; nenhuma regra nos templates.
 - Todo SQL com parâmetros (`?`); nunca concatenar texto do usuário em comandos SQL.
@@ -12,7 +12,7 @@
 
 ## Controle de Versão
 - Git, repositório único com a estrutura de entrega (`Projeto_FolhaPagamento/`).
-- Ramo `main` sempre funcional; trabalho em ramos curtos (`feature/...`), integrados em `main` após a revisão técnica.
+- Ramo main sempre funcional; commits diretos em main, sem pull requests; revisão técnica registrada em ata antes de cada entrega.
 - Evidência do histórico (URL do repositório, log de commits e tags): `10_Qualidade/Evidencia_Controle_de_Versao.md`.
 - Marcos com *tags*: `v1.2-A1` (entrega A1) e a tag da A3 será criada na data final.
 - Não versionar: `__pycache__/`, `instance/` (banco e chave secreta), `.venv/`, `.coverage`.
@@ -20,7 +20,7 @@
 ## Revisões Técnicas
 | Item | Descrição |
 |---|---|
-| Quando | Antes de cada *commit* em `main` e uma revisão formal por entrega (A1 e A3) |
+| Quando | Uma revisão formal por entrega (A1 e A3), registrada em ata. |
 | Quem | Autor + 1 revisor (outro integrante) |
 | Registro | Ata de Revisão Técnica (data, participantes, itens, ações) |
 | Checklist | Atende ao requisito? Segue o padrão de código? Valida entradas? Checa permissão no backend? Tem teste? Documentação atualizada? Sem dados sensíveis no código? |
