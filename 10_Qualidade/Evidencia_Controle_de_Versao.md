@@ -4,12 +4,13 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 
 | Item | Valor |
 |---|---|
-| URL do repositório | **<<https://github.com/jvfraga01/Projeto_FolhaPagamento>>** |
-| Ramo principal | `main` |
-| Tag da entrega A1 | `v1.2-A1` (criar/atualizar para a revisão entregue; ver abaixo) |
-| Tag da entrega A3 | `a criar na A3` (A3) |
-| Commit da revisão entregue | **<<53b2167>>** |
-| Data da exportação | **<<19/10/2026>>** |
+ URL do repositório | https://github.com/jvfraga01/Projeto_FolhaPagamento |
+| Ramo principal | main |
+| Tag da entrega A1 | v1.2-A1 |
+| Tag da entrega A3 | a criar na A3 |
+| Último commit de conteúdo (antes desta evidência) | HASH |
+| Data da exportação do histórico | DD/MM/AAAA |
+| Arquivo com o log completo | 10_Qualidade/Historico_Git.txt |
 
 ## Como gerar a evidência
 Na raiz do repositório clonado, execute `10_Qualidade/exportar_historico_git.bat` (Windows) ou
