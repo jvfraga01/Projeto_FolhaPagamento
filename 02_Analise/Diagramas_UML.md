@@ -16,6 +16,9 @@ classDiagram
         +String status
         +String tipo
         +int salarioBaseCentavos
+        +int percentualComissaoBp
+        +int valorUnidadeCentavos
+        +String senhaHash
         +desabilitar()
         +reativar()
     }
@@ -26,9 +29,16 @@ classDiagram
         +fechar()
     }
     class Folha {
+        +String nome
+        +String tipo
+        +int salarioBaseCentavos
+        +int percentualComissaoBp
+        +int valorUnidadeCentavos
         +int meta
         +int vendasCentavos
         +int quantidadeProduzida
+        +boolean metaAtingida
+        +int percentualAplicadoBp
         +int adicionaisCentavos
         +int totalCentavos
         +calcular()
