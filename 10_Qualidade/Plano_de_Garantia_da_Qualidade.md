@@ -14,7 +14,7 @@
 - Git, repositório único com a estrutura de entrega (`Projeto_FolhaPagamento/`).
 - Ramo `main` sempre funcional; trabalho em ramos curtos (`feature/...`), integrados em `main` após a revisão técnica.
 - Evidência do histórico (URL do repositório, log de commits e tags): `10_Qualidade/Evidencia_Controle_de_Versao.md`.
-- Marcos com *tags*: `v1.2-A1` (entrega A1) e `v-A3` (entrega final).
+- Marcos com *tags*: `v1.2-A1` (entrega A1) e a tag da A3 será criada na data final.
 - Não versionar: `__pycache__/`, `instance/` (banco e chave secreta), `.venv/`, `.coverage`.
 
 ## Revisões Técnicas
