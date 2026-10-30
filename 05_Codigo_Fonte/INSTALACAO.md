@@ -4,7 +4,7 @@
 | Item | Versão | Observação |
 |---|---|---|
 | Python | 3.10 ou superior | https://www.python.org/downloads/ |
-| Flask | 3.0 ou superior | instalado pelo `pip` (arquivo `requirements.txt`) |
+| Flask | 3.1.3 ou superior | instalado pelo `pip` (arquivo `requirements.txt`) |
 | Navegador | qualquer atual | Chrome, Edge, Firefox |
 | Internet | só na instalação | para baixar Python e Flask |
 
