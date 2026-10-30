@@ -1,0 +1,28 @@
+# Ata de Revisão Técnica — Entrega A1
+
+Registro exigido pelo PGQ (seção "Revisões Técnicas"). **Preencher com dados reais da revisão; não registrar revisão que não aconteceu.**
+
+| Campo | Valor |
+|---|---|
+| Entrega | A1 (revisada) |
+| Data da revisão | <<PREENCHER dd/mm/aaaa>> |
+| Participantes | <<PREENCHER: nomes>> |
+| Itens revisados | ERS e matriz; casos de uso e sequências; plano e casos de teste; `regras.py`, `folha.py`; testes automatizados |
+| Versão/commit revisado | <<PREENCHER: hash curto>> |
+
+## Checklist do PGQ
+| Pergunta | Resposta (Sim/Não/Parcial) | Observação |
+|---|---|---|
+| Atende ao requisito? | <<PREENCHER>> | |
+| Segue o padrão de código? | <<PREENCHER>> | |
+| Valida entradas? | <<PREENCHER>> | |
+| Checa permissão no backend? | <<PREENCHER>> | |
+| Tem teste? | <<PREENCHER>> | |
+| Documentação atualizada? | <<PREENCHER>> | |
+| Sem dados sensíveis no código? | <<PREENCHER>> | |
+
+## Itens encontrados e ações
+| # | Item | Autor | Revisor | Ação | Responsável | Prazo | Situação |
+|---|---|---|---|---|---|---|---|
+| 1 | <<PREENCHER>> | | | | | | |
+| 2 | <<PREENCHER>> | | | | | | |
