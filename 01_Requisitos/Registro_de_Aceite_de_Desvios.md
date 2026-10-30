@@ -9,12 +9,12 @@ Decisão atribuída ao "responsável" sem evidência continua **Pendente**.
 
 | ID | Desvio | Decisão da equipe | Situação | Data do aceite | Quem aceitou | Evidência (arquivo/link) |
 |---|---|---|---|---|---|---|
-| D1 | Regime de metas, progressão, bônus e teto (RN009–RN011) | Cálculo padrão = fórmulas do cliente; regime de metas opcional, desligado por padrão | Padrão resolvido; opcional Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
-| D2 | Vendas/produção lançadas por mês (RF015) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
-| D3 | Exclusão lógica no lugar de exclusão física (RF009/RF013) | Manter | Aceito | 29/10/2026 |Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
-| D4 | Folha só de quem tem contrato no mês (RF007/RN014) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
-| D5 | Matrícula gerada automaticamente (RF001/RN001) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
-| D6 | Funções extras: login, perfis, fechamento, recibo, histórico | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/Aceite_Desvios_Cliente.png) |
+| D1 | Regime de metas, progressão, bônus e teto (RN009–RN011) | Cálculo padrão = fórmulas do cliente; regime de metas opcional, desligado por padrão | Padrão resolvido; opcional Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/Aceite_Desvios_Cliente.png) |
+| D2 | Vendas/produção lançadas por mês (RF015) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/evidenciasresposta_professor_2026-10-29.png) |
+| D3 | Exclusão lógica no lugar de exclusão física (RF009/RF013) | Manter | Aceito | 29/10/2026 |Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/Aceite_Desvios_Cliente.png) |
+| D4 | Folha só de quem tem contrato no mês (RF007/RN014) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/Aceite_Desvios_Cliente.png) |
+| D5 | Matrícula gerada automaticamente (RF001/RN001) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/Aceite_Desvios_Cliente.png) |
+| D6 | Funções extras: login, perfis, fechamento, recibo, histórico | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](Projeto_FolhaPagamento/Evidencias/Aceite_Desvios_Cliente.png) |
 
 ## Como preencher
 1. Envie ao professor/cliente a mensagem abaixo (ou equivalente) e guarde a resposta em `01_Requisitos/evidencias/`.
