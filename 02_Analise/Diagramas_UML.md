@@ -176,9 +176,16 @@ erDiagram
         int id PK
         int periodo_id FK
         int matricula FK
+        string nome
+        string tipo
+        int salario_base_centavos
+        int percentual_comissao_bp
+        int valor_unidade_centavos
         int meta
         int vendas_centavos
         int quantidade_produzida
+        int meta_atingida
+        int percentual_aplicado_bp
         int adicionais_centavos
         int total_centavos
     }
