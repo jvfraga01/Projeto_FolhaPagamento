@@ -6,7 +6,7 @@
 | Projeto               | Sistema de Folha de Pagamento                                     |
 | Equipe                | João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini   |
 | Data                  | 27/10/2026                                                        |
-| Versão                | 1.3 (entrega A1, revisada)                                                |
+| Versão                | 1.2 (entrega A1, revisada)                                                |
 | Unidade Curricular    | Garantia da Qualidade de Software                                 |
 
 ## Objetivo
