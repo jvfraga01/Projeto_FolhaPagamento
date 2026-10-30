@@ -53,7 +53,7 @@ Os critérios são avaliados **por ciclo**, para não misturar o que é da A1 co
 Testes verdes comprovam o sistema apenas contra os critérios escritos. Para comprovar aderência ao cliente:
 - o cálculo padrão é verificado contra os **exemplos do documento do cliente** (CT016, CT017, CT019: comissão = vendas × percentual; produção = quantidade × valor unitário);
 - o modo com metas (CT035, CT045) é **opcional** e seu resultado só vale como conforme após o aceite do desvio D1 em `01_Requisitos/Registro_de_Aceite_de_Desvios.md`;
-- os demais desvios (D2 a D6) dependem do mesmo registro. Teste aprovado + desvio pendente = "implementado", não "validado pelo cliente".
+- (D1 a D6) têm aceito registrado (29 e 30/10/2026); Teste aprovado + desvio aceito = "validado pelo cliente".
 
 ## Roteiro de Usabilidade (RNF001, CT039)
 **Participantes:** 3 pessoas que não participaram do desenvolvimento (uma por perfil: RH, Financeiro, Colaborador). **Ambiente:** Chrome ou Edge, sistema recém-instalado, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar.
@@ -75,11 +75,11 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 ## Critérios de Aprovação
 Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos atendidos.
 
-## Situação atual (27/10/2026)
-- Suíte automatizada com **44 testes**, todos aprovados na execução de 27/10/2026 (reexecutar e registrar data a cada entrega).
+## Situação atual (30/10/2026)
+- Suíte automatizada com **44 testes**, todos aprovados na execução de 30/10/2026 (reexecutar e registrar data a cada entrega).
 - Dos 45 casos, **os marcados "Auto" estão automatizados**; os marcados "Manual (planejado)" (CT009, CT012, CT023, CT029-M, CT030, CT037, CT039, CT043, CT044) **ainda não foram executados**.
 - Cobertura ainda não medida (meta de 80% para a A3).
-- Aceite do cliente para os desvios D1 a D6: pendente (ver Registro de Aceite).
+- Aceite do cliente para os desvios D1 a D6: registrado em 29 e 30/10/2026 (ver Registro de Aceite).
 
 ## Responsabilidades e riscos
 Responsável pela execução: Analista de testes (QA). Riscos: desvios D1–D6 ainda sem aceite formal do cliente; ver `03_Projeto/Planejamento_do_Projeto.md`.
