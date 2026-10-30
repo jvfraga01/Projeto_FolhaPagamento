@@ -76,5 +76,5 @@ Autenticação por sessão (cookie HttpOnly, SameSite=Lax, 8 h); revalidação d
 |---|---|
 | SQLite aceita poucos acessos de escrita simultâneos | Adequado para uma empresa pequena |
 | Sem cálculo proporcional (pró-rata) | Quem entra/sai no mês recebe o mês inteiro |
-| Senha inicial previsível (data de nascimento) | Mitigada pelo aviso e pela troca no menu (troca não é obrigatória, por decisão do cliente) |
-| Sem bloqueio por tentativas de login | Decisão do cliente; recomendado para produção |
+| Senha inicial previsível (data de nascimento) | Mitigada pelo aviso e pela troca no menu (troca não é obrigatória, por decisão da equipe) |
+| Sem bloqueio por tentativas de login | Decisão da equipe; recomendado para produção |
