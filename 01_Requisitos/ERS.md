@@ -79,12 +79,12 @@ Situação possível: **Resolvido** (comportamento do cliente preservado), **Pen
 
 | ID | Desvio | Tratamento adotado | Situação |
 |---|---|---|---|
-| D1 | Metas, progressão, bônus e teto de comissão (RN009–RN011) alteram as fórmulas do cliente. | O cálculo **padrão** segue exatamente as fórmulas do cliente (RN008). O regime de metas virou modalidade **opcional**, desligada por padrão (`REGIME_METAS=1` para ligar) e só deve ser usada após aceite. | **Resolvido** (padrão = cliente); regime opcional pendente de aceite |
-| D2 | Vendas e produção lançadas por mês (RF015) em vez de informadas só no cadastro (RF003/RF004). | Cadastro guarda percentual e valor por unidade; o total do mês é lançado na folha. | Pendente de aceite |
-| D3 | Remoção lógica no lugar de exclusão física (RF009 → RF013, RN016). | Colaborador fica Inativo; histórico preservado; some da lista padrão e da folha de meses sem contrato. | Pendente de aceite |
-| D4 | Folha mensal apenas de quem tem contrato no mês (RF007 → RN014). | Filtro por datas de contrato. | Pendente de aceite |
-| D5 | Matrícula gerada automaticamente (RF001, RN001). O cliente exige matrícula no cadastro, sem definir o mecanismo. | Sequencial gerada pelo banco (`AUTOINCREMENT`). | Pendente de aceite |
-| D6 | Funções extras: login, perfis, competência mensal, fechamento, recibo (RF010–RF012, RF014, RF016–RF018). | Ampliação de escopo; não altera as fórmulas do cliente. | Pendente de aceite |
+| D1 | Metas, progressão, bônus e teto de comissão (RN009–RN011) alteram as fórmulas do cliente. | O cálculo **padrão** segue exatamente as fórmulas do cliente (RN008). O regime de metas virou modalidade **opcional**, desligada por padrão (`REGIME_METAS=1` para ligar) e só deve ser usada após aceite. | **Resolvido** (padrão = cliente); regime opcional Aceito em 30/10/2026 |
+| D2 | Vendas e produção lançadas por mês (RF015) em vez de informadas só no cadastro (RF003/RF004). | Cadastro guarda percentual e valor por unidade; o total do mês é lançado na folha. | Aceito em 29/10/2026 |
+| D3 | Remoção lógica no lugar de exclusão física (RF009 → RF013, RN016). | Colaborador fica Inativo; histórico preservado; some da lista padrão e da folha de meses sem contrato. | Aceito em 29/10/2026 |
+| D4 | Folha mensal apenas de quem tem contrato no mês (RF007 → RN014). | Filtro por datas de contrato. | Aceito em 29/10/2026 |
+| D5 | Matrícula gerada automaticamente (RF001, RN001). O cliente exige matrícula no cadastro, sem definir o mecanismo. | Sequencial gerada pelo banco (`AUTOINCREMENT`). | Aceito em 29/10/2026 |
+| D6 | Funções extras: login, perfis, competência mensal, fechamento, recibo (RF010–RF012, RF014, RF016–RF018). | Ampliação de escopo; não altera as fórmulas do cliente. | Aceito em 30/10/2026 |
 
 > Enquanto um desvio estiver "Pendente de aceite", o requisito conta como **implementado**, mas não como **validado pelo cliente**.
 
