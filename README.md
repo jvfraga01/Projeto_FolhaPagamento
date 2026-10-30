@@ -35,7 +35,7 @@ Os diagramas estão em **Mermaid** (aparecem prontos no GitHub e no VS Code com 
 - Evidência do histórico (log, autores, datas, tags): [`10_Qualidade/Evidencia_Controle_de_Versao.md`](10_Qualidade/Evidencia_Controle_de_Versao.md)
 
 ## Regra de cálculo
-O sistema calcula pelas fórmulas do cliente: comissionado = salário base + vendas × percentual; por produção = salário base + quantidade × valor unitário. Metas, progressão e teto são um regime **opcional** (`REGIME_METAS=1`), desligado por padrão e pendente de aceite. Ver `01_Requisitos/Registro_de_Aceite_de_Desvios.md`.
+O sistema calcula pelas fórmulas do cliente: comissionado = salário base + vendas × percentual; por produção = salário base + quantidade × valor unitário. Metas, progressão e teto são um regime **opcional** (`REGIME_METAS=1`), desligado por padrão e aceito pelo cliente em 30/10/2026. Ver `01_Requisitos/Registro_de_Aceite_de_Desvios.md`.
 
 ## Testes
 ```bash
