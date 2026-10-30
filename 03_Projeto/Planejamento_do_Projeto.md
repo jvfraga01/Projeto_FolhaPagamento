@@ -40,7 +40,7 @@ gantt
     Documentação A1 (visão, ERS, UML, PGQ, testes) :tarefa1, 2026-10-17, 2026-10-20
 
     section Desenvolvimento e Entrega A3
-    Aceite dos desvios do cliente :tarefa8, 2026-10-27, 2026-11-03
+    Aceite dos desvios do cliente :tarefa8, 2026-10-27, 2026-10-30
     Ajustes e evolução do sistema :tarefa2, 2026-10-20, 2026-11-11
     Testes unitários e cobertura 80% :tarefa3, 2026-10-27, 2026-11-17
     Testes de integração :tarefa4, 2026-11-03, 2026-11-18
@@ -55,22 +55,22 @@ gantt
 | Entrega A1 | 20/10/2026 |
 | Ajustes e evolução do sistema concluídos | 11/11/2026 |
 | Cobertura ≥ 80% atingida (fim da atividade de testes unitários e cobertura) | 17/11/2026 |
-| Aceite do cliente sobre os desvios D1–D6 registrado | 03/11/2026 |
+| Aceite do cliente sobre os desvios D1–D6 registrado | 30/10/2026 |
 | Fim da execução dos testes de aceitação | 24/11/2026 |
 | Entrega A3 | 01/12/2026 |
 
 ## Distribuição de responsabilidades
 | Papel | Responsável | Atividades |
 |---|---|---|
-| Gerente do projeto / Analista de requisitos | [Yuri Soares] | Cronograma, ERS, rastreabilidade, ata de revisão |
-| Arquiteto / Desenvolvedor | [João Vitor Fraga] | Arquitetura, implementação, manual técnico |
-| Analista de testes (QA) | [Luiggi Bortolini] | Plano de testes, casos de teste, execução, registro de defeitos, métricas |
-| Documentação / Homologação | [Pedro Kolling] | Manual do usuário, termo de homologação, apresentação |
+| Gerente do projeto / Analista de requisitos | Yuri Soares | Cronograma, ERS, rastreabilidade, ata de revisão |
+| Arquiteto / Desenvolvedor | João Vitor Fraga | Arquitetura, implementação, manual técnico |
+| Analista de testes (QA) | Luiggi Bortolini | Plano de testes, casos de teste, execução, registro de defeitos, métricas |
+| Documentação / Homologação | Pedro Kolling | Manual do usuário, termo de homologação, apresentação |
 
 ## Riscos
 | Risco | Probabilidade | Ação |
 |---|---|---|
-| Desvios em relação ao cliente (D1–D6) sem aceite formal | Média | Cálculo padrão já segue as fórmulas do cliente; solicitar aceite dos demais desvios até 03/11/2026 e registrar em `01_Requisitos/Registro_de_Aceite_de_Desvios.md` |
+| Desvios em relação ao cliente (D1–D6) sem aceite formal | Média | Cálculo padrão já segue as fórmulas do cliente; solicitar aceite dos demais desvios até 30/10/2026 e registrar em `01_Requisitos/Registro_de_Aceite_de_Desvios.md` |
 | Cobertura de testes abaixo de 80% | Média | Medir cedo com `coverage` e priorizar rotas sem teste |
 | Prazo curto no A1 | Alta | Reaproveitar os artefatos e priorizar os obrigatórios |
 
