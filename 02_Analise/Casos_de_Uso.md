@@ -59,7 +59,7 @@ flowchart LR
     COL --- U12 & U8 & U9
     U1 -. "«include»" .-> U8
     U10 -. "«include»" .-> U8
-UC008 (Autenticar-se) é pré-condição de todos os casos de uso (RF012); o «include» aparece apenas em UC001 e UC010 por legibilidade do diagrama.
+"UC008 (Autenticar-se) é pré-condição de todos os casos de uso (RF012); o «include» aparece apenas em UC001 e UC010 por legibilidade do diagrama."
 ```
 
 ## Descrição dos casos de uso principais
