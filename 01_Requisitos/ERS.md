@@ -86,7 +86,6 @@ Situação possível: **Resolvido** (comportamento do cliente preservado), **Pen
 | D5 | Matrícula gerada automaticamente (RF001, RN001). O cliente exige matrícula no cadastro, sem definir o mecanismo. | Sequencial gerada pelo banco (`AUTOINCREMENT`). | Aceito em 29/10/2026 |
 | D6 | Funções extras: login, perfis, competência mensal, fechamento, recibo (RF010–RF012, RF014, RF016–RF018). | Ampliação de escopo; não altera as fórmulas do cliente. | Aceito em 30/10/2026 |
 
-> Enquanto um desvio estiver "Pendente de aceite", o requisito conta como **implementado**, mas não como **validado pelo cliente**.
 
 ## Critérios de Aceitação
 | Requisito | Critério |
@@ -110,29 +109,29 @@ Situação possível: **Resolvido** (comportamento do cliente preservado), **Pen
 
 ## Matriz de Rastreabilidade
 Casos de uso (UC) em `02_Analise/Casos_de_Uso.md`; casos de teste (CT) em `04_Testes/Casos_de_Teste.md`.
-**Status técnico:** Implementado = existe no sistema. **Aceite do cliente:** Validado / Pendente (ver `Registro_de_Aceite_de_Desvios.md`). Requisitos "Cliente" sem desvio dependem apenas da homologação final (A3).
+**Status técnico:** Implementado = existe no sistema. **Aceite do cliente:** Validado / Aceito (ver `Registro_de_Aceite_de_Desvios.md`). Requisitos "Cliente" sem desvio dependem apenas da homologação final (A3).
 
 | Requisito             | Caso de Uso   | Classe / Módulo                   | Caso de Teste                 | Status        | Aceite do cliente |
 |---|---|---|---|---|---|
-| RF001, RF002          | UC001         | Colaborador (`colaboradores.py`)  | CT001, CT004, CT005, CT008, CT038 | Implementado | Matrícula automática: pendente (D5) |
-| RF003                 | UC001         | Colaborador, CalculoComissionado  | CT002                         | Implementado  | Lançamento mensal: pendente (D2) |
-| RF004                 | UC001         | Colaborador, CalculoProducao      | CT003                         | Implementado  | Lançamento mensal: pendente (D2) |
+| RF001, RF002          | UC001         | Colaborador (`colaboradores.py`)  | CT001, CT004, CT005, CT008, CT038 | Implementado | Matrícula automática: Aceito (D5) em 29/10/2026 |
+| RF003                 | UC001         | Colaborador, CalculoComissionado  | CT002                         | Implementado  | Lançamento mensal: Aceito (D2) em 29/10/2026 |
+| RF004                 | UC001         | Colaborador, CalculoProducao      | CT003                         | Implementado  | Lançamento mensal: Aceito (D2) em 29/10/2026 |
 | RF005, RF018          | UC002         | Colaborador (lista/filtros)       | CT009, CT010, CT011           | Implementado  | Homologação A3 |
 | RF006, RN008          | UC003         | `regras.py` (calculadores)        | CT015–CT019                   | Implementado  | Fórmulas = cliente; homologação A3 |
-| RF019, RN009–RN011    | UC003         | `regras.py` (modo com metas)      | CT035, CT045                  | Implementado (opcional) | Pendente (D1) |
-| RF007, RF014, RN014   | UC003         | Folha, Periodo (`folha.py`)       | CT020, CT034                  | Implementado  | Pendente (D4) |
+| RF019, RN009–RN011    | UC003         | `regras.py` (modo com metas)      | CT035, CT045                  | Implementado (opcional) | Aceito (D1) em 30/10/2026 |
+| RF007, RF014, RN014   | UC003         | Folha, Periodo (`folha.py`)       | CT020, CT034                  | Implementado  | Aceito (D4) em 29/10/2026 |
 | RF008, RF020          | UC004         | Folha (relatório)                 | CT021, CT030                  | Implementado  | Homologação A3 |
-| RF009, RN016          | UC005         | Colaborador                       | CT012                         | Implementado  | Exclusão lógica: pendente (D3) |
-| RF013                 | UC006         | Colaborador                       | CT013, CT014, CT036           | Implementado  | Pendente (D3) |
-| RF010                 | UC008         | Autenticação (`auth.py`)          | CT022, CT037                  | Implementado  | Pendente (D6) |
-| RF011                 | UC007, UC009  | Autenticação                      | CT023                         | Implementado  | Pendente (D6) |
-| RF012, RN015          | UC008         | Autorização (`@nivel_exigido`)    | CT024, CT025, CT026           | Implementado  | Pendente (D6) |
-| RF015                 | UC010         | Folha (lançamentos)               | CT006, CT007, CT020           | Implementado  | Pendente (D2) |
-| RF016, RN012, RN013   | UC011         | Periodo, Folha                    | CT027, CT028                  | Implementado  | Pendente (D6) |
-| RF017                 | UC012         | Folha (recibo)                    | CT029-A, CT029-M              | Implementado  | Pendente (D6) |
-| RN001                 | UC001         | Banco (`AUTOINCREMENT`)           | CT008                         | Implementado  | Pendente (D5) |
+| RF009, RN016          | UC005         | Colaborador                       | CT012                         | Implementado  | Exclusão lógica: Aceito (D3) em 29/10/2026 |
+| RF013                 | UC006         | Colaborador                       | CT013, CT014, CT036           | Implementado  | Aceito (D3) em 29/10/2026 |
+| RF010                 | UC008         | Autenticação (`auth.py`)          | CT022, CT037                  | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF011                 | UC007, UC009  | Autenticação                      | CT023                         | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF012, RN015          | UC008         | Autorização (`@nivel_exigido`)    | CT024, CT025, CT026           | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF015                 | UC010         | Folha (lançamentos)               | CT006, CT007, CT020           | Implementado  | Aceito (D2) em 29/10/2026 |
+| RF016, RN012, RN013   | UC011         | Periodo, Folha                    | CT027, CT028                  | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF017                 | UC012         | Folha (recibo)                    | CT029-A, CT029-M              | Implementado  | Aceito (D6) em 30/10/2026 |
+| RN001                 | UC001         | Banco (`AUTOINCREMENT`)           | CT008                         | Implementado  | Aceito (D5) em 29/10/2026 |
 | RN002–RN007           | UC001, UC010  | Validação (`regras.py`)           | CT004–CT007, CT038            | Implementado  | Homologação A3 |
-| RN017, RN018          | UC008, UC003  | `auth.py`, `regras.py`            | CT001, CT015, CT022           | Implementado  | Pendente (D6) |
+| RN017, RN018          | UC008, UC003  | `auth.py`, `regras.py`            | CT001, CT015, CT022           | Implementado  | Aceito (D6) em 30/10/2026 |
 | RNF001                | UC001–UC012   | Interface (`templates/`)          | CT039                         | Implementado; execução planejada A3 | Homologação A3 |
 | RNF002                | UC001, UC010  | Validação (`regras.py`, rotas)    | CT042, CT004–CT007            | Implementado  | Homologação A3 |
 | RNF003                | todos         | `db.py`, `schema.sql` (SQLite)    | CT040                         | Implementado  | Homologação A3 |
