@@ -38,7 +38,7 @@ flowchart LR
 | Folha como "fotografia" mensal | Valores e metas do mês ficam guardados; mudanças futuras não alteram meses fechados (RN012). |
 | Exclusão lógica | Preserva histórico (RN016). |
 | Autorização no backend (`@nivel_exigido`, matrícula da sessão) | Esconder botões não basta (RF012). |
-| Triggers no banco | Defesa em profundidade: folha fechada não muda nem por acesso direto ao banco. |
+| Triggers no banco |  Defesa em profundidade: impedem UPDATE e DELETE em folha de período fechado, mesmo por acesso direto ao banco; reabertura de período e INSERT são barrados só pela aplicação. |
 
 ## Organização dos componentes
 ```
