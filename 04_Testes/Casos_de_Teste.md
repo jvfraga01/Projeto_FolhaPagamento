@@ -3,7 +3,7 @@
 Total: **45 casos** (mínimo exigido: 20).
 
 **Legenda de tipo**
-- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` (44 testes, aprovados na execução de 27/10/2026; reexecutar a cada entrega com `python -m unittest discover -v`).
+- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` (44 testes, aprovados na execução de 30/10/2026; reexecutar a cada entrega com `python -m unittest discover -v`).
 - **Manual (planejado)**: roteiro de execução manual **ainda não executado**; o resultado obtido será registrado na A3 com data e responsável.
 - Casos que têm uma parte automática e outra manual aparecem em **duas linhas** (sufixos `-A` e `-M`).
 
