@@ -82,5 +82,5 @@ Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos
 - Aceite do cliente para os desvios D1 a D6: registrado em 29 e 30/10/2026 (ver Registro de Aceite).
 
 ## Responsabilidades e riscos
-Responsável pela execução: Analista de testes (QA). Riscos: desvios D1–D6 ainda sem aceite formal do cliente; ver `03_Projeto/Planejamento_do_Projeto.md`.
+Responsável pela execução: Analista de testes (QA). Riscos: desvios D1–D6 com aceite registrado em 29 e 30/10/2026; ver `03_Projeto/Planejamento_do_Projeto.md`.
 
