@@ -1,4 +1,4 @@
-Exportado em: 29/10/2026 20:38:08,30
+Exportado em: 30/10/2026 20:34:00,28
 
 == Repositorio remoto ==
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
@@ -10,8 +10,55 @@ origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
   remotes/origin/main
 
 == Tags ==
+v1.2-A1         Entrega A1 revisada
 
 == Commits - hash, autor, data e mensagem ==
+1162855 | YuriSoaresD | 2026-10-30 20:33:42 -0300 | Adição arquivo Git
+9a50707 | YuriSoaresD | 2026-10-30 20:32:24 -0300 | Add technical review record for delivery A1
+d0a14c3 | Pedro da Silva Kolling | 2026-10-30 20:28:48 -0300 | Revise version control evidence documentation
+84a9b26 | João Vitor Fraga da Rocha | 2026-10-30 20:28:29 -0300 | Rename requirements.md to requirements.txt
+20a90d3 | Pedro da Silva Kolling | 2026-10-30 20:28:19 -0300 | Update README with additional quality documents
+9bca3d5 | João Vitor Fraga da Rocha | 2026-10-30 20:27:59 -0300 | Update Flask version requirement to 3.1.3
+63f0402 | João Vitor Fraga da Rocha | 2026-10-30 20:27:16 -0300 | Refactor test cases for collaborator creation
+bff88aa | Pedro da Silva Kolling | 2026-10-30 20:27:14 -0300 | Update responsibility and risk acceptance details
+8bc4647 | Pedro da Silva Kolling | 2026-10-30 20:26:51 -0300 | Update automated test execution date in documentation
+f014bf6 | João Vitor Fraga da Rocha | 2026-10-30 20:26:14 -0300 | Update colaboradores_lista.html to include commission fields
+44781cc | Pedro da Silva Kolling | 2026-10-30 20:26:13 -0300 | Revise risk entry for client deviations
+635032e | Pedro da Silva Kolling | 2026-10-30 20:25:34 -0300 | Add new fields to FOLHA entity in UML diagram
+ab62190 | João Vitor Fraga da Rocha | 2026-10-30 20:24:56 -0300 | Add percentual_comissao_bp and valor_unidade_centavos to SQL query
+ed73d7b | Pedro da Silva Kolling | 2026-10-30 20:24:51 -0300 | Revise acceptance criteria and client status in ERS.md
+0177f28 | Pedro da Silva Kolling | 2026-10-30 20:13:16 -0300 | Refine test case descriptions in Casos_de_Teste.md
+5e7f8db | Pedro da Silva Kolling | 2026-10-30 20:11:11 -0300 | Refactor test for report HTML output
+1323b7f | Pedro da Silva Kolling | 2026-10-30 20:09:13 -0300 | Revise test cases for empty name and negative salary
+c6972dc | YuriSoaresD | 2026-10-30 20:08:42 -0300 | Alinhamento da arquitetura
+42395d7 | Pedro da Silva Kolling | 2026-10-30 20:06:03 -0300 | Enhance tests for collaborator creation scenarios
+7d9400a | YuriSoaresD | 2026-10-30 20:04:29 -0300 | Atualização documento de arquitetura
+e71a7e2 | YuriSoaresD | 2026-10-30 20:01:50 -0300 | Atualização UML
+39cbf7a | YuriSoaresD | 2026-10-30 19:58:45 -0300 | Atualização diagrama caso de uso
+2579567 | João Vitor Fraga da Rocha | 2026-10-30 19:56:50 -0300 | Fix evidence links in Registro de Aceite de Desvios
+f4c1711 | YuriSoaresD | 2026-10-30 19:56:12 -0300 | Atualização diagrama caso de uso
+421a4f5 | YuriSoaresD | 2026-10-30 19:55:14 -0300 | Atualização diagrama caso de uso
+0d94bba | Pedro da Silva Kolling | 2026-10-30 19:39:21 -0300 | Update and rename requirements.txt to requirements.md
+17ca31d | Pedro da Silva Kolling | 2026-10-30 19:37:49 -0300 | Update quality assurance plan with review process changes
+e3aa06a | YuriSoaresD | 2026-10-30 19:33:54 -0300 | Atualização de desvios aceitos
+269cca6 | Pedro da Silva Kolling | 2026-10-30 19:33:53 -0300 | Update versioning tags description in quality plan
+5e07c53 | Pedro da Silva Kolling | 2026-10-30 19:31:36 -0300 | Revise Evidência de Controle de Versão format
+4447ebf | Pedro da Silva Kolling | 2026-10-30 19:29:22 -0300 | Revise README with updated project details
+3f4fd19 | Pedro da Silva Kolling | 2026-10-30 19:27:02 -0300 | Alteração de datas e correção nos nomes
+a090562 | Pedro da Silva Kolling | 2026-10-30 19:21:51 -0300 | Alteração de informações
+e9bca7e | Pedro da Silva Kolling | 2026-10-30 19:19:26 -0300 | Atualiza status dos desvios para 'Aceito'
+2e08cf9 | Pedro da Silva Kolling | 2026-10-30 19:10:38 -0300 | Corrreçao de datas
+bcff647 | João Vitor Fraga da Rocha | 2026-10-30 18:16:14 -0300 | Delete Evidencias directory
+1c21cfa | João Vitor Fraga da Rocha | 2026-10-30 18:15:39 -0300 | Evidencias de aceite dos desvios D1-D6
+cb71561 | João Vitor Fraga da Rocha | 2026-10-30 18:09:44 -0300 | Update Documento_de_Visao.md
+f3d70fc | Luiggi Bortolini | 2026-10-30 18:00:01 -0300 | docs: atualizar evidencia de controle de versão e readme
+e3432c0 | Yuri Soares Dutra | 2026-10-30 15:48:50 -0300 | docs: atualizar aceite D1 e adicionar evidencia
+d8b4818 | Yuri Soares Dutra | 2026-10-30 15:43:57 -0300 | docs: adicionar evidencia do professor 30-10
+579d174 | Yuri Soares Dutra | 2026-10-30 15:42:09 -0300 | fix: corrigir caminho da evidencia de aceite
+48f9a02 | Yuri Soares Dutra | 2026-10-29 23:33:39 -0300 | fix: corrigir caminho da evidencia de aceite
+4bada06 | Yuri Soares Dutra | 2026-10-29 23:28:20 -0300 | fix: corrigir caminho da evidencia de aceite
+d7a354d | Yuri Soares Dutra | 2026-10-29 23:19:38 -0300 | docs: adicionar evidencia de aceite do professor
+9ddd78b | jvfraga01 | 2026-10-29 21:17:04 -0300 | docs: exporta historico do git
 0381f24 | Pedro da Silva Kolling | 2026-10-27 21:47:22 -0300 | Update repository URL in README.md
 29e4f04 | Pedro da Silva Kolling | 2026-10-27 21:44:49 -0300 | Revise README for version and repository updates
 7ffba8f | PedroKolling7 | 2026-10-27 21:33:44 -0300 | Alteraçoes para correçao da A1
@@ -91,9 +138,10 @@ bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
 fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
 
 == Commits por autor ==
-    42	João Vitor Fraga da Rocha
-    24	Pedro da Silva Kolling
-     6	Yuri Soares Dutra
-     2	Luiggi Bortolini
+    51	João Vitor Fraga da Rocha
+    44	Pedro da Silva Kolling
+    12	Yuri Soares Dutra
+     9	YuriSoaresD
+     3	Luiggi Bortolini
      2	PedroKolling7
-     1	jvfraga01
+     2	jvfraga01
