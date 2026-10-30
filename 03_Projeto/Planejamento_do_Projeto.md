@@ -70,7 +70,7 @@ gantt
 ## Riscos
 | Risco | Probabilidade | Ação |
 |---|---|---|
-| Desvios em relação ao cliente (D1–D6) sem aceite formal | Média | Cálculo padrão já segue as fórmulas do cliente; solicitar aceite dos demais desvios até 30/10/2026 e registrar em `01_Requisitos/Registro_de_Aceite_de_Desvios.md` |
+| Desvios em relação ao cliente (D1–D6) | Baixa | Aceite registrado em 29/10/2026 (D2 a D5) e 30/10/2026 (D1 e D6) em `01_Requisitos/Registro_de_Aceite_de_Desvios.md`; cálculo padrão segue as fórmulas do cliente |
 | Cobertura de testes abaixo de 80% | Média | Medir cedo com `coverage` e priorizar rotas sem teste |
 | Prazo curto no A1 | Alta | Reaproveitar os artefatos e priorizar os obrigatórios |
 
