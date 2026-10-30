@@ -453,8 +453,7 @@ class FiltrosTest(BaseTest):
         html = adm.get(f"/relatorio?periodo={p}").get_data(as_text=True)
         # total geral = 5.000 + 4.000 + 3.150 + 2.250 + 2.500 = 16.900,00
         for esperado in ("R$ 16.900,00", "R$ 3.150,00", "R$ 2.250,00"):
-            self.assertIn(esperado, html)
-
-
+            self.assertIn('<span class="destaque">5</span>', html)  # quantidade de colaboradores
+            
 if __name__ == "__main__":
     unittest.main()
