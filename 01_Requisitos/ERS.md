@@ -51,7 +51,7 @@
 | RN007 | O valor por unidade produzida não pode ser negativo. | Cliente |
 | RN008 | O salário final é calculado automaticamente pelo sistema, **sem meta, progressão, bônus ou teto**: Padrão = salário base; Comissionado = salário base + (vendas × percentual de comissão); Por Produção = salário base + (quantidade produzida × valor por unidade). | Cliente |
 | RN009 | **[Opcional – modo com metas]** Se a meta do mês não for atingida, o adicional é R$ 0,00 (o salário base é mantido). | Responsável |
-| RN010 | **[Opcional – modo com metas]** Meta atingida: comissão = vendas × percentual; o percentual sobe 1 ponto a cada R$ 2.000,00 vendidos acima da meta, até o teto de 10%. Produção: unidades × valor da unidade, com bônus de 1% a cada 50 un acima da meta, até 10%. | Responsável / equipe* |
+| RN010 | **[Opcional – modo com metas]** Meta atingida: comissão = vendas × percentual; o percentual sobe 1 ponto a cada R$ 2.000,00 vendidos acima da meta, até o teto de 10%. Produção: unidades × valor da unidade, com bônus de 1% a cada 50 un acima da meta, até 10%. | Responsável / equipe |
 | RN011 | **[Opcional – modo com metas]** Meta mínima de vendas R$ 5.000,00 (produção: 100 un). A meta do mês seguinte sobe um passo (R$ 2.000,00 / 50 un) se a anterior foi batida; senão repete. Meta de folha já gerada não muda. | Responsável / equipe |
 | RN012 | Folha de mês fechado é imutável (inclusive no banco) e não pode ser reaberta. | Responsável |
 | RN013 | Existe uma única folha por colaborador por mês. | Responsável |
@@ -75,7 +75,7 @@
 | RNF009 | Portabilidade: Windows, Linux e macOS com Python 3.10+. | Equipe |
 
 ## Desvios em relação ao documento do cliente (para validação)
-Situação possível: **Resolvido** (comportamento do cliente preservado), **Pendente de aceite** (implementado, mas sem registro de aprovação). O registro de aprovação de cada item fica em `01_Requisitos/Registro_de_Aceite_de_Desvios.md`.
+Situação possível: **Resolvido** (comportamento do cliente preservado), **Pendente de aceite** (implementado, mas sem registro de aprovação), **Aceito**(aprovação registrada). O registro de aprovação de cada item fica em `01_Requisitos/Registro_de_Aceite_de_Desvios.md`.
 
 | ID | Desvio | Tratamento adotado | Situação |
 |---|---|---|---|
