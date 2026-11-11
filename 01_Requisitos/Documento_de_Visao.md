@@ -5,8 +5,8 @@
 |---|---|
 | Projeto               | Sistema de Folha de Pagamento                                     |
 | Equipe                | João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini   |
-| Data                  | 27/10/2026                                                        |
-| Versão                | 1.2 (entrega A1, revisada)                                                |
+| Data                  | 11/11/2026                                                        |
+| Versão                | 1.3 (entrega A3; documento revisado desde a A1)                           |
 | Unidade Curricular    | Garantia da Qualidade de Software                                 |
 
 ## Objetivo
@@ -49,3 +49,4 @@ e histórico preservado.
 | Colaborador (nível 3) | Usuário | Consultar o próprio recibo e metas |
 | Equipe de desenvolvimento e qualidade | Equipe  | Entregar com qualidade e evidências |
 | Professor da unidade curricular | Avaliador | Verificar a aplicação das práticas de GQS |
+
