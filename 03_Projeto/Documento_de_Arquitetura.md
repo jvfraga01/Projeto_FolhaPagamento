@@ -38,7 +38,7 @@ flowchart LR
 | Folha como "fotografia" mensal | Valores e metas do mês ficam guardados; mudanças futuras não alteram meses fechados (RN012). |
 | Exclusão lógica | Preserva histórico (RN016). |
 | Autorização no backend (`@nivel_exigido`, matrícula da sessão) | Esconder botões não basta (RF012). |
-| Triggers no banco |  Defesa em profundidade: impedem UPDATE e DELETE em folha de período fechado, mesmo por acesso direto ao banco; reabertura de período e INSERT são barrados só pela aplicação. |
+| Triggers no banco |  Defesa em profundidade: impedem UPDATE e DELETE em folha de período fechado, mesmo por acesso direto ao banco; também impedem INSERT em folha de período fechado e UPDATE ou DELETE em período fechado (sem reabertura, nem pelo banco). |
 
 ## Organização dos componentes
 ```
@@ -69,12 +69,12 @@ flowchart LR
 - Backup: copiar o arquivo `instance/folha.db`.
 
 ## Segurança (resumo)
-Autenticação por sessão (cookie HttpOnly, SameSite=Lax, 8 h); revalidação do usuário a cada requisição (desabilitado perde o acesso na hora); CSRF em todo POST; CSP; senhas com hash; mensagens de erro genéricas no login.
+Autenticação por sessão (cookie HttpOnly, SameSite=Lax, 8 h); revalidação do usuário a cada requisição (desabilitado perde o acesso na hora); CSRF em todo POST; CSP; senhas com hash; mensagens de erro genéricas no login; troca obrigatória da senha inicial (sessão marcada no login e verificada em `before_request`); a tela de login não exibe credenciais.
 
 ## Limitações e riscos conhecidos
 | Limitação | Impacto |
 |---|---|
 | SQLite aceita poucos acessos de escrita simultâneos | Adequado para uma empresa pequena |
 | Sem cálculo proporcional (pró-rata) | Quem entra/sai no mês recebe o mês inteiro |
-| Senha inicial previsível (data de nascimento) | Mitigada pelo aviso e pela troca no menu (troca não é obrigatória, por decisão da equipe) |
+| Senha inicial previsível (data de nascimento) | Mitigada pela troca obrigatória no primeiro login (RF021): sem trocar, só a tela de senha e o logout funcionam |
 | Sem bloqueio por tentativas de login | Decisão da equipe; recomendado para produção |
