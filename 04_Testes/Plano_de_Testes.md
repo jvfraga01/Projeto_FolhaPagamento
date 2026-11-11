@@ -14,12 +14,12 @@ Testes automatizados para regras e rotas, mais roteiro manual para itens visuais
 | Sistema | Validar o sistema completo | Instalação, login e uso pelas telas | Execução manual guiada |
 | Aceitação | Confirmar que atende o cliente | Critérios de aceitação da ERS | Roteiro com o responsável pelo projeto |
 
-Técnicas: caixa-preta (partição de equivalência e valores-limite, por exemplo vendas = meta, meta − 1 centavo, percentual no teto de 10%) e caixa-branca (cobertura de desvios das rotas).
+Técnicas: caixa-preta (partição de equivalência e valores-limite, por exemplo vendas = meta, meta − 1 centavo, percentual no teto de 10% (somente no modo opcional de metas)) e caixa-branca (cobertura de desvios das rotas).
 
 ## Ambiente
 | Item | Descrição |
 |---|---|
-| SO | Windows 10/11 e Ubuntu 22.04 |
+| SO | Windows 10/11 (Linux e macOS fora do escopo de verificação) |
 | Banco | SQLite 3 (arquivo temporário nos testes automatizados) |
 | Framework | Python 3.12, Flask 3.1, Werkzeug |
 | Navegador (manual) | Chrome ou Edge atual |
@@ -32,7 +32,7 @@ Técnicas: caixa-preta (partição de equivalência e valores-limite, por exempl
 Comandos:
 ```bash
 python -m unittest discover -v
-python -m coverage run -m unittest discover
+python -m coverage run --source=app -m unittest discover
 python -m coverage report -m
 ```
 
@@ -46,7 +46,7 @@ Os critérios são avaliados **por ciclo**, para não misturar o que é da A1 co
 
 | Ciclo | Critério de saída |
 |---|---|
-| **A1 (planejamento + automação inicial)** | Plano e 45 casos escritos com massa de dados e resultado esperado; casos marcados "Auto" implementados e aprovados na suíte; casos manuais com roteiro definido e marcados "execução planejada"; nenhum defeito crítico ou alto conhecido. |
+| **A1 (planejamento + automação inicial)** | Plano e casos escritos (45 na A1; 57 na A3) com massa de dados e resultado esperado; casos marcados "Auto" implementados e aprovados na suíte; casos manuais com roteiro definido e marcados "execução planejada"; nenhum defeito crítico ou alto conhecido. |
 | **A3 (execução final)** | Todos os casos executados (automáticos e manuais), com resultado obtido, data e responsável registrados; cobertura ≥ 80% medida com `coverage.py`; Registro de Defeitos e Relatório de Testes atualizados; nenhum defeito crítico ou alto aberto; ≥ 95% dos casos aprovados. |
 
 ## Conformidade com o cliente
@@ -56,7 +56,7 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 - (D1 a D6) têm aceito registrado (29 e 30/10/2026); Teste aprovado + desvio aceito = "validado pelo cliente".
 
 ## Roteiro de Usabilidade (RNF001, CT039)
-**Participantes:** 3 pessoas que não participaram do desenvolvimento (uma por perfil: RH, Financeiro, Colaborador). **Ambiente:** Chrome ou Edge, sistema recém-instalado, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar.
+**Participantes:** 2 pessoas que não programaram as telas (colegas, familiares ou outros alunos): uma no papel de RH/Financeiro (T1 a T4) e outra no de Colaborador (T1 e T5). **Ambiente:** Chrome ou Edge, sistema recém-instalado, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar.
 
 | Tarefa | Perfil | Resultado esperado | Medida |
 |---|---|---|---|
@@ -66,19 +66,19 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 | T4. Filtrar a folha por tipo e salário máximo | Financeiro | Lista só com os registros esperados | Tempo ≤ 2 min; ≤ 1 erro |
 | T5. Abrir e imprimir o próprio recibo de mês fechado | Colaborador | Pré-visualização limpa, sem menu | Tempo ≤ 2 min; ≤ 1 erro |
 
-**Critério de aprovação:** pelo menos 4 das 5 tarefas concluídas sem ajuda por todos os participantes aplicáveis, e nota média ≥ 4 em "foi fácil de usar" (escala 1 a 5). **Registro:** tabela com participante, tarefa, tempo, erros, comentários e data. Execução planejada para a A3.
+**Critério de aprovação:** pelo menos 4 das 5 tarefas concluídas sem ajuda por todos os participantes aplicáveis, e nota média ≥ 4 em "foi fácil de usar" (escala 1 a 5). **Registro:** tabela com participante, tarefa, tempo, erros, comentários e data. Resultado registrado em `09_Homologacao/Testes_de_Aceitacao.md`, linha MM02.
 
 ## Verificação de Persistência (RNF003, CT040)
 1. Automático: `PersistenciaTest` grava um colaborador, descarta a aplicação, recria a aplicação sobre o mesmo arquivo e confirma que o registro (salário 1.234,56) permanece.
-2. Manual (A3): iniciar com `iniciar.bat`, cadastrar um colaborador, fechar a janela, iniciar de novo e consultar a lista; o colaborador deve continuar lá, assim como a folha fechada.
+2. Manual: faz parte do CT037-M (iniciar com `iniciar.bat`, cadastrar, fechar, reabrir e consultar); resultado em `09_Homologacao/Testes_de_Aceitacao.md`, linha MM01.
 
 ## Critérios de Aprovação
 Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos atendidos.
 
 ## Situação atual (30/10/2026)
-- Suíte automatizada com **44 testes**, todos aprovados na execução de 30/10/2026 (reexecutar e registrar data a cada entrega).
-- Dos 45 casos, **os marcados "Auto" estão automatizados**; os marcados "Manual (planejado)" (CT009, CT012, CT023, CT029-M, CT030, CT037, CT039, CT043, CT044) **ainda não foram executados**.
-- Cobertura ainda não medida (meta de 80% para a A3).
+- Suíte automatizada: <!--A:testes-->74<!--/A--> testes na última execução (<!--A:resultado-->OK, nenhum teste falhou<!--/A-->, <!--A:data-->11/11/2026 19:49<!--/A-->, <!--A:ambiente-->3.12.10 / Windows-11-10.0.26200-SP0<!--/A-->) e cobertura de <!--A:cobertura-->92,4%<!--/A--> sobre `app/`. Detalhes: `04_Testes/Relatorio_de_Testes.md`.
+- Dos 57 casos, **os marcados "Auto" estão automatizados**; os marcados "Manual (planejado)" (CT037-M e CT039) **ainda não foram executados**. O CT043 (cobertura) e o CT044 (Windows) são executados por `gerar_cobertura.py`.
+- Casos por tipo, aprovados e requisitos atendidos: `10_Qualidade/Metricas_e_Indicadores.md` (calculado das evidências).
 - Aceite do cliente para os desvios D1 a D6: registrado em 29 e 30/10/2026 (ver Registro de Aceite).
 
 ## Responsabilidades e riscos
