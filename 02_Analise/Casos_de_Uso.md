@@ -102,7 +102,7 @@ UC008 (Autenticar-se) é pré-condição de todos os casos de uso (RF012); o «i
 | Código | UC008 |
 | Ator | Todos (RH, Financeiro e Colaborador) |
 | Objetivo | Entrar no sistema com a matrícula e a senha |
-| Fluxo principal | 1. Informar matrícula e senha. 2. O sistema valida e abre a sessão. 3. Direciona o nível 1/2 para Colaboradores e o nível 3 para Minhas folhas. |
+| Fluxo principal | 1. Informar matrícula e senha. 2. O sistema valida e abre a sessão. 3. Se a senha usada for a inicial (data de nascimento), direciona para a troca obrigatória de senha (RF021). 4. Depois, direciona o nível 1/2 para Colaboradores e o nível 3 para Minhas folhas. |
 | Fluxo alternativo | 2a. Credenciais inválidas ou usuário inativo: mensagem única, sem indicar qual dado errou. |
 
 ### UC010 – Lançar Vendas e Produção do Mês
