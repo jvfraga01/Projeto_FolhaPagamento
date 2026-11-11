@@ -38,6 +38,7 @@
 | RF018 | Filtrar colaboradores (nome, salário máximo, tipo, status) e folha (nome, salário máximo, tipo), de forma combinada. | Responsável |
 | RF019 | **(Opcional, desativado por padrão)** Calcular metas mensais progressivas (RN009 a RN011), somente quando o modo com metas for ativado (`REGIME_METAS=1`) e aceito pelo cliente. | Responsável |
 | RF020 | Imprimir o relatório consolidado e o recibo. | Cliente (relatórios) |
+| RF021 | Exigir a troca da senha inicial (data de nascimento, DDMMAAAA) no primeiro login: enquanto não trocar, só a troca de senha e o logout funcionam; a nova senha não pode ser a inicial; a tela de login não exibe credenciais. | Responsável |
 
 ## Regras de Negócio
 | ID | Descrição | Origem |
@@ -58,7 +59,7 @@
 | RN014 | Entram na folha do mês os colaboradores com contrato vigente naquele mês. | Responsável |
 | RN015 | O nível 3 só acessa as próprias folhas e somente de meses fechados. | Responsável |
 | RN016 | Colaboradores nunca são excluídos fisicamente. | Responsável |
-| RN017 | Senhas são guardadas com hash; a senha inicial é a data de nascimento em DDMMAAAA. | Responsável |
+| RN017 | Senhas são guardadas com hash; a senha inicial é a data de nascimento em DDMMAAAA e deve ser trocada no primeiro login (RF021). | Responsável |
 | RN018 | Não há descontos: salário final = salário base + adicionais. | Responsável |
 
 ## Requisitos Não Funcionais
@@ -72,7 +73,7 @@
 | RNF006 | Instalação e uso simples: iniciar com dois cliques; banco e administrador criados automaticamente. | Responsável |
 | RNF007 | Precisão monetária: valores em centavos inteiros, arredondamento meio-para-cima. | Equipe |
 | RNF008 | Testabilidade: regras de negócio isoladas em módulo puro; cobertura de testes ≥ 80%. | PGQ |
-| RNF009 | Portabilidade: Windows, Linux e macOS com Python 3.10+. | Equipe |
+| RNF009 | Portabilidade: executa em Windows com Python 3.10+ (Linux e macOS não são verificados nesta entrega). | Equipe |
 
 ## Desvios em relação ao documento do cliente (para validação)
 Situação possível: **Resolvido** (comportamento do cliente preservado), **Pendente de aceite** (implementado, mas sem registro de aprovação), **Aceito**(aprovação registrada). O registro de aprovação de cada item fica em `01_Requisitos/Registro_de_Aceite_de_Desvios.md`.
@@ -98,10 +99,11 @@ Situação possível: **Resolvido** (comportamento do cliente preservado), **Pen
 | RF008, RF020 | Resumo mostra total, quantidade e total por categoria; relatório pode ser impresso. |
 | RF009, RF013 | Alterar atualiza o cadastro sem afetar meses fechados; desabilitar impede login e mantém o histórico; reativar devolve o acesso. |
 | RF010, RF011 | Login com credenciais válidas entra; inválidas são recusadas; troca de senha exige a senha atual. |
+| RF021 | Login com a senha inicial leva à troca de senha e bloqueia as demais páginas; a nova senha não pode ser a inicial; a tela de login não mostra credenciais (CT052, CT053). |
 | RF012, RN015 | Nível 3 recebe 403 (sem dados) ao acessar a folha de outro ou áreas de gestão; Financeiro não altera nada. |
 | RF015, RF016, RN012 | Lançamentos recalculam a folha aberta; após fechar, qualquer alteração é recusada (aplicação e banco). |
 | RN001–RN007 | Valores inválidos ou negativos são recusados com mensagem. |
-| RNF001 | Roteiro de usabilidade (CT039): as 5 tarefas são concluídas sem ajuda, com 0 erros de navegação em pelo menos 4 das 5. |
+| RNF001 | Roteiro de usabilidade (CT039): pelo menos 4 das 5 tarefas concluídas sem ajuda por todos os participantes aplicáveis, dentro dos limites de tempo e de erros de cada tarefa do Plano de Testes, e nota média ≥ 4 (escala 1 a 5) em "foi fácil de usar". |
 | RNF002 | Dado inválido (nome vazio, valor negativo, texto no lugar de número) é recusado antes de qualquer cálculo ou gravação (CT042). |
 | RNF003 | Dados cadastrados continuam disponíveis após encerrar e reabrir o sistema (CT040). |
 | RNF004 | Um novo calculador pode ser incluído sem modificar os existentes: adicional fixo de R$ 100,00 sobre base de R$ 1.000,00 resulta em R$ 1.100,00 e os 3 tipos existentes mantêm os resultados (CT031). |
@@ -121,23 +123,24 @@ Casos de uso (UC) em `02_Analise/Casos_de_Uso.md`; casos de teste (CT) em `04_Te
 | RF019, RN009–RN011    | UC003         | `regras.py` (modo com metas)      | CT035, CT045                  | Implementado (opcional) | Aceito (D1) em 30/10/2026 |
 | RF007, RF014, RN014   | UC003         | Folha, Periodo (`folha.py`)       | CT020, CT034                  | Implementado  | Aceito (D4) em 29/10/2026 |
 | RF008, RF020          | UC004         | Folha (relatório)                 | CT021, CT030                  | Implementado  | Homologação A3 |
-| RF009, RN016          | UC005         | Colaborador                       | CT012                         | Implementado  | Exclusão lógica: Aceito (D3) em 29/10/2026 |
+| RF009, RN016          | UC005         | Colaborador                       | CT012, CT050                         | Implementado  | Exclusão lógica: Aceito (D3) em 29/10/2026 |
 | RF013                 | UC006         | Colaborador                       | CT013, CT014, CT036           | Implementado  | Aceito (D3) em 29/10/2026 |
-| RF010                 | UC008         | Autenticação (`auth.py`)          | CT022, CT037                  | Implementado  | Aceito (D6) em 30/10/2026 |
-| RF011                 | UC007, UC009  | Autenticação                      | CT023                         | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF010                 | UC008         | Autenticação (`auth.py`)          | CT022, CT037-A                  | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF011                 | UC007, UC009  | Autenticação                      | CT023, CT049                         | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF021                 | UC008, UC009  | Autenticação (`auth.py`, `__init__.py`) | CT052, CT053, CT037-A | Implementado  | — (decisão da equipe, BUG002) |
 | RF012, RN015          | UC008         | Autorização (`@nivel_exigido`)    | CT024, CT025, CT026           | Implementado  | Aceito (D6) em 30/10/2026 |
-| RF015                 | UC010         | Folha (lançamentos)               | CT006, CT007, CT020           | Implementado  | Aceito (D2) em 29/10/2026 |
-| RF016, RN012, RN013   | UC011         | Periodo, Folha                    | CT027, CT028                  | Implementado  | Aceito (D6) em 30/10/2026 |
+| RF015                 | UC010         | Folha (lançamentos)               | CT006, CT007, CT020, CT051           | Implementado  | Aceito (D2) em 29/10/2026 |
+| RF016, RN012, RN013   | UC011         | Periodo, Folha                    | CT027, CT028, CT048                  | Implementado  | Aceito (D6) em 30/10/2026 |
 | RF017                 | UC012         | Folha (recibo)                    | CT029-A, CT029-M              | Implementado  | Aceito (D6) em 30/10/2026 |
 | RN001                 | UC001         | Banco (`AUTOINCREMENT`)           | CT008                         | Implementado  | Aceito (D5) em 29/10/2026 |
 | RN002–RN007           | UC001, UC010  | Validação (`regras.py`)           | CT004–CT007, CT038            | Implementado  | Homologação A3 |
 | RN017, RN018          | UC008, UC003  | `auth.py`, `regras.py`            | CT001, CT015, CT022           | Implementado  | Aceito (D6) em 30/10/2026 |
 | RNF001                | UC001–UC012   | Interface (`templates/`)          | CT039                         | Implementado; execução planejada A3 | Homologação A3 |
-| RNF002                | UC001, UC010  | Validação (`regras.py`, rotas)    | CT042, CT004–CT007            | Implementado  | Homologação A3 |
+| RNF002                | UC001, UC010  | Validação (`regras.py`, rotas)    | CT042, CT004–CT007, CT046, CT047            | Implementado  | Homologação A3 |
 | RNF003                | todos         | `db.py`, `schema.sql` (SQLite)    | CT040                         | Implementado  | Homologação A3 |
 | RNF004                | —             | `CALCULADORES`                    | CT031                         | Implementado  | Homologação A3 |
 | RNF005                | UC008         | Segurança (`__init__.py`)         | CT024, CT025, CT032, CT033    | Implementado  | — (requisito da equipe) |
-| RNF006                | UC008         | `iniciar.bat`, `iniciar.sh`, `db.py` | CT037                      | Implementado; execução planejada A3 | — (requisito da equipe) |
+| RNF006                | UC008         | `iniciar.bat`, `iniciar.sh`, `db.py` | CT037-A, CT037-M | Implementado; execução planejada A3 | — (requisito da equipe) |
 | RNF007                | UC003         | `regras.py` (centavos)            | CT041, CT016, CT019           | Implementado  | — (requisito da equipe) |
-| RNF008                | —             | `regras.py` isolado; `coverage.py`| CT043                         | Estrutura pronta; medição planejada A3 | — (requisito do PGQ) |
-| RNF009                | —             | Python 3.10+ / Flask              | CT044                         | Planejado A3  | — (requisito da equipe) |
+| RNF008                | —             | `regras.py` isolado; `coverage.py`| CT043                         | Implementado; cobertura <!--A:cobertura-->92,4%<!--/A--> (`04_Testes/evidencias/`) | — (requisito do PGQ) |
+| RNF009                | —             | Python 3.10+ / Flask              | CT044                         | Verificado no Windows (`04_Testes/evidencias/`)  | — (requisito da equipe) |
