@@ -1,0 +1,10 @@
+# Cobertura medida só sobre o código do sistema (app/); os testes e o run.py ficam de fora.
+# Módulos de app/ que nenhum teste importa aparecem com 0%, em vez de sumirem do relatório.
+[run]
+source = app
+omit =
+    */tests/*
+
+[report]
+show_missing = True
+precision = 1
