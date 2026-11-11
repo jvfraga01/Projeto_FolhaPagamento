@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS periodo (
     UNIQUE (ano, mes)
 );
 
--- 3) Folha de cada colaborador em cada mês: guarda os valores daquele momento.
+-- 3) Folha de cada colaborador em cada mês: guarda os valores daquele momento (fotografia).
 CREATE TABLE IF NOT EXISTS folha (
     id                      INTEGER PRIMARY KEY AUTOINCREMENT,
     periodo_id              INTEGER NOT NULL REFERENCES periodo(id),
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS folha (
     CHECK (total_centavos = salario_base_centavos + adicionais_centavos)
 );
 
--- Folha de período fechado não muda nem some, nem pelo banco.
+-- Folha de período fechado não muda, não some e não recebe novas linhas, nem pelo banco.
 CREATE TRIGGER IF NOT EXISTS folha_fechada_no_update BEFORE UPDATE ON folha
 WHEN (SELECT status FROM periodo WHERE id = OLD.periodo_id) = 'FECHADO'
 BEGIN SELECT RAISE(ABORT, 'Folha fechada não pode ser alterada'); END;
@@ -57,3 +57,16 @@ BEGIN SELECT RAISE(ABORT, 'Folha fechada não pode ser alterada'); END;
 CREATE TRIGGER IF NOT EXISTS folha_fechada_no_delete BEFORE DELETE ON folha
 WHEN (SELECT status FROM periodo WHERE id = OLD.periodo_id) = 'FECHADO'
 BEGIN SELECT RAISE(ABORT, 'Folha fechada não pode ser apagada'); END;
+
+CREATE TRIGGER IF NOT EXISTS folha_fechada_no_insert BEFORE INSERT ON folha
+WHEN (SELECT status FROM periodo WHERE id = NEW.periodo_id) = 'FECHADO'
+BEGIN SELECT RAISE(ABORT, 'Período fechado não aceita novas folhas'); END;
+
+-- Período fechado não reabre nem some (RN012). O fechamento ABERTO -> FECHADO continua permitido.
+CREATE TRIGGER IF NOT EXISTS periodo_fechado_no_update BEFORE UPDATE ON periodo
+WHEN OLD.status = 'FECHADO'
+BEGIN SELECT RAISE(ABORT, 'Período fechado não pode ser alterado nem reaberto'); END;
+
+CREATE TRIGGER IF NOT EXISTS periodo_fechado_no_delete BEFORE DELETE ON periodo
+WHEN OLD.status = 'FECHADO'
+BEGIN SELECT RAISE(ABORT, 'Período fechado não pode ser apagado'); END;
