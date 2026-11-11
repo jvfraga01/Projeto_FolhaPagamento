@@ -16,6 +16,17 @@ Decisão atribuída ao "responsável" sem evidência continua **Pendente**.
 | D5 | Matrícula gerada automaticamente (RF001/RN001) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/resposta_professor_2026-10-29.png)  |
 | D6 | Funções extras: login, perfis, fechamento, recibo, histórico | Manter | Aceito | 30/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/resposta_professor_2026-10-30.png) |
 
+## Decisões que NÃO exigem aceite
+Desvio = o que contraria ou amplia o **T1 (requisitos do cliente)**. O enunciado (`Trabalho_Integrador_A1_A3_GQS`) e o Anexo I definem os artefatos e não impõem plataforma, método de teste nem requisitos de portabilidade. Por isso as decisões abaixo são internas da equipe e não precisam de aceite escrito:
+
+| Decisão | Por que não é desvio |
+|---|---|
+| Verificar o sistema só no Windows (RNF009); Linux e macOS opcionais | Portabilidade é requisito da própria equipe (origem "Equipe" no ERS); não está no T1 nem no enunciado |
+| RF021, troca obrigatória da senha inicial | Detalhe do login (RF010), já aceito em D6 (30/10/2026); não altera as fórmulas do T1 |
+| Roteiro de usabilidade com 2 participantes e CT030 como verificação do CSS | O método de verificação é da equipe; o T1 só pede interface amigável (RNF001) |
+| Remover casos de teste ou requisitos "Equipe/Responsável" que não possam ser entregues | Só os itens do T1, do enunciado e do Anexo I são obrigatórios; esses continuam todos presentes |
+
+
 ## Como preencher
 1. Envie ao professor/cliente a mensagem abaixo (ou equivalente) e guarde a resposta em `01_Requisitos/evidencias/`.
 2. Preencha data, quem aceitou e o nome do arquivo de evidência na linha correspondente.
