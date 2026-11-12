@@ -134,6 +134,10 @@ class BaseTest(unittest.TestCase):
         self.joao = self.novo("Joao Comum", 3, "COMISSIONADO", 300000, pct=300)
         self.maria = self.novo("Maria Comum", 3, "PRODUCAO", 200000, un=250)
         self.padrao = self.novo("Paulo Padrao", 3, "PADRAO", 250000)
+        # BUG006: o admin inicial nasce com início de contrato = hoje; fixamos uma data futura para
+        # que as folhas de 2026 da massa de teste não dependam do dia em que a suíte roda.
+        get_db().execute("UPDATE colaborador SET data_inicio_contrato='2099-01-01' WHERE matricula=1")
+        get_db().commit()
 
     def tearDown(self):
         self.ctx.pop()
@@ -157,6 +161,10 @@ class BaseTest(unittest.TestCase):
             token = re.search(r'name="csrf_token" value="([^"]+)"', r.get_data(as_text=True)).group(1)
             r = c.post("/login", data={"matricula": matricula, "senha": senha, "csrf_token": token})
             self.assertEqual(r.status_code, 302, "login deveria funcionar")
+            with c.session_transaction() as s:
+                # A massa de teste usa a senha inicial; a troca obrigatória (BUG002) é testada
+                # em tests/test_correcoes_a3.py (ForcaTrocaSenhaTest), sem este atalho.
+                s.pop("trocar_senha", None)
         return c
 
     def post(self, c, url, dados=None):
