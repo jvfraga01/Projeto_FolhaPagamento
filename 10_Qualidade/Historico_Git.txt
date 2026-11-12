@@ -1,4 +1,4 @@
-Exportado em: 30/10/2026 20:34:00,28
+Exportado em: 12/11/2026  0:07:02,31
 
 == Repositorio remoto ==
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
@@ -11,8 +11,49 @@ origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 
 == Tags ==
 v1.2-A1         Entrega A1 revisada
+v1.3-A3         Entrega A3
 
 == Commits - hash, autor, data e mensagem ==
+ffb2753 | Luiggi Bortolini | 2026-11-12 00:01:48 -0300 |    docs: adiciona seção C com resultado do roteiro de usabilidade (MM02)
+f9e8233 | Luiggi Bortolini | 2026-11-12 00:01:26 -0300 |    docs: atualiza situação atual do plano e registra facilitador do roteiro
+283a83b | Luiggi Bortolini | 2026-11-12 00:00:11 -0300 |    docs: marca CT039 como executado em 11/11/2026
+a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.txt
+d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.txt
+79bfc42 | João Vitor Fraga da Rocha | 2026-11-11 22:05:43 -0300 | Add files via upload
+9838ffe | YuriSoaresD | 2026-11-11 22:05:31 -0300 | Update regras.py with new parsing and calculation methods
+e837679 | YuriSoaresD | 2026-11-11 22:05:09 -0300 | Enhance folha.py with Flask integration and refactoring
+142a2cc | YuriSoaresD | 2026-11-11 22:04:41 -0300 | Refactor folha.py for SQLite integration
+11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.txt
+9906773 | YuriSoaresD | 2026-11-11 21:44:09 -0300 | Implement triggers for closed period and payroll restrictions
+ddfa717 | João Vitor Fraga da Rocha | 2026-11-11 21:43:50 -0300 | Add files via upload
+dc31e9c | YuriSoaresD | 2026-11-11 21:43:49 -0300 | Add regex for Brazilian number formatting
+2005f0e | YuriSoaresD | 2026-11-11 21:43:31 -0300 | Enhance flash message for folha updates
+ce98edc | YuriSoaresD | 2026-11-11 21:41:12 -0300 | Enhance auth.py with password change logic and queries
+47c3633 | João Vitor Fraga da Rocha | 2026-11-11 21:40:34 -0300 | Add files via upload
+88d50ad | YuriSoaresD | 2026-11-11 21:39:51 -0300 | Implement password change enforcement before access
+cd07fd7 | João Vitor Fraga da Rocha | 2026-11-11 21:39:26 -0300 | Delete 05_Codigo_Fonte/tests/__init__.py
+16caf40 | João Vitor Fraga da Rocha | 2026-11-11 21:38:49 -0300 | Add files via upload
+e69c26d | Pedro da Silva Kolling | 2026-11-11 21:20:59 -0300 | Add files via upload
+1dbf59f | Pedro da Silva Kolling | 2026-11-11 21:20:39 -0300 | Update README with acceptance tests and homologation info
+6294a72 | YuriSoaresD | 2026-11-11 20:31:26 -0300 | Relatorio de Teste
+bdf16c9 | YuriSoaresD | 2026-11-11 20:29:20 -0300 | Revise Plano de Testes com atualizações e detalhes
+5b35a9e | YuriSoaresD | 2026-11-11 20:28:26 -0300 | Revise test case specification and update totals
+4e25730 | YuriSoaresD | 2026-11-11 20:27:43 -0300 | Update Planejamento_do_Projeto.md
+1eddc7c | YuriSoaresD | 2026-11-11 20:26:58 -0300 | Clarify database triggers and password change policy
+33bb98f | YuriSoaresD | 2026-11-11 20:26:05 -0300 | Add newline at end of Diagramas_UML.md
+f55e3f3 | João Vitor Fraga da Rocha | 2026-11-11 20:25:47 -0300 | Update README.md
+9a40ae9 | João Vitor Fraga da Rocha | 2026-11-11 20:25:17 -0300 | Add files via upload
+7bd8332 | João Vitor Fraga da Rocha | 2026-11-11 20:23:52 -0300 | Add files via upload
+36ea12b | João Vitor Fraga da Rocha | 2026-11-11 20:23:04 -0300 | Delete 07_Executavel directory
+235c57f | YuriSoaresD | 2026-11-11 20:21:55 -0300 | Enhance UC008 flow with password change requirement
+e4e09ed | YuriSoaresD | 2026-11-11 20:20:38 -0300 | Add non-acceptance decisions section to document
+0f597b8 | João Vitor Fraga da Rocha | 2026-11-11 20:19:06 -0300 | Add files via upload
+6615c2e | YuriSoaresD | 2026-11-11 20:18:44 -0300 | Add password change requirement and update requirements
+e8e000a | João Vitor Fraga da Rocha | 2026-11-11 20:15:53 -0300 | Update Readme.md
+8b97ed1 | YuriSoaresD | 2026-11-11 20:14:18 -0300 | Simplify version information in vision document
+c0f1078 | João Vitor Fraga da Rocha | 2026-11-11 20:08:31 -0300 | Enhance schema with triggers and improved comments
+3ed7e12 | YuriSoaresD | 2026-11-11 20:06:57 -0300 | Revise date and version in Documento de Visao
+d2b7591 | jvfraga01 | 2026-10-30 20:34:03 -0300 | docs: atualiza historico do git
 1162855 | YuriSoaresD | 2026-10-30 20:33:42 -0300 | Adição arquivo Git
 9a50707 | YuriSoaresD | 2026-10-30 20:32:24 -0300 | Add technical review record for delivery A1
 d0a14c3 | Pedro da Silva Kolling | 2026-10-30 20:28:48 -0300 | Revise version control evidence documentation
@@ -138,10 +179,10 @@ bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
 fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
 
 == Commits por autor ==
-    51	João Vitor Fraga da Rocha
-    44	Pedro da Silva Kolling
+    66	João Vitor Fraga da Rocha
+    46	Pedro da Silva Kolling
+    28	YuriSoaresD
     12	Yuri Soares Dutra
-     9	YuriSoaresD
-     3	Luiggi Bortolini
+     6	Luiggi Bortolini
+     3	jvfraga01
      2	PedroKolling7
-     2	jvfraga01
