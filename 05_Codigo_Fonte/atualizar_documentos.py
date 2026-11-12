@@ -31,10 +31,10 @@ def linhas_tabela(texto, prefixo):
 
 
 def evidencias():
-    saida = ler(EVID / "saida_unittest.txt")
+    saida = ler(EVID / "saida_unittest.md")
     m = re.search(r"Ran (\d+) tests?", saida)
     fim = [l for l in saida.strip().splitlines() if l.strip()][-1]
-    cob = ler(EVID / "cobertura.txt").splitlines()
+    cob = ler(EVID / "cobertura.md").splitlines()
     arquivos = []
     total = None
     for l in cob:
@@ -44,7 +44,7 @@ def evidencias():
         elif l.startswith("TOTAL"):
             m3 = re.match(r"^TOTAL\s+(\d+)\s+(\d+)\s+([\d.]+)%", l)
             total = m3.groups()
-    resumo = ler(EVID / "resumo_execucao.txt")
+    resumo = ler(EVID / "resumo_execucao.md")
     campo = lambda r: (re.search(r, resumo) or [None, "não identificado"])[1].strip()
     return {
         "testes": m.group(1) if m else "?", "ok": fim.strip() == "OK",
@@ -92,7 +92,7 @@ def metricas(ev):
     out = [
         "| Métrica (PGQ) | Meta | Resultado | Como foi calculado |", "|---|---|---|---|",
         f"| Cobertura de testes | ≥ 80% | **{ev['cobertura']}** ({'meta atingida' if ev['meta'] else 'ABAIXO DA META'}) | `coverage report`, {ev['stmts']} linhas, {ev['miss']} sem cobertura ({ev['data']}) |",
-        f"| Testes automatizados | — | **{ev['testes']}** executados: {ev['resultado']} | `evidencias/saida_unittest.txt` |",
+        f"| Testes automatizados | — | **{ev['testes']}** executados: {ev['resultado']} | `evidencias/saida_unittest.md` |",
         f"| Casos de teste planejados | — | **{len(codigos)}** códigos em {len(casos)} linhas | `Casos_de_Teste.md` ({len(auto)} Auto, {len(manual)} Manual) |",
         f"| Casos executados | — | **{executados}** de {len(casos)} linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |",
         f"| Casos aprovados ÷ executados | ≥ 95% | **{pct(aprovados, executados)}** ({aprovados}/{executados}) | Auto aprovados (suíte OK) + manuais aprovados |",
