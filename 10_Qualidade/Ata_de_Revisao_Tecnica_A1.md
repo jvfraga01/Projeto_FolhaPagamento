@@ -18,7 +18,7 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | Segue o padrão de código? | Não verificado com ferramenta | PEP 8 conferido por leitura; o flake8 previsto no PGQ ainda não foi executado. |
 | Valida entradas? | Sim | CT004–CT007, CT042, CT046, CT047; BUG001 (ponto de milhar) corrigido. |
 | Checa permissão no backend? | Sim | CT024–CT026, CT025 e demais testes de `PermissaoTest`. |
-| Tem teste? | Sim | <!--A:testes-->70<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,3%<!--/A--> (<!--A:data-->11/11/2026 07:32<!--/A-->). |
+| Tem teste? | Sim | <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> (<!--A:data-->12/11/2026 19:24<!--/A-->). |
 | Documentação atualizada? | Sim | Manuais, relatórios, métricas e registros criados; números atualizados automaticamente das evidências. |
 | Sem dados sensíveis no código? | Sim, com conferência pendente | Banco e `secret.key` fora do Git pelo `.gitignore` e do pacote (`empacotar_entrega.py`). No histórico, `instance/` foi commitado e apagado (commit a2d6225): conferir com `git show --stat a2d6225` se havia `secret.key` (BUG008). |
 

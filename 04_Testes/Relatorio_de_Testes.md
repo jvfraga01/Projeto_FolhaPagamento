@@ -6,26 +6,26 @@ Os números deste relatório são **copiados automaticamente** de `04_Testes/evi
 ## 1. Execução automatizada
 | Item | Valor |
 |---|---|
-| Data e hora | <!--A:data-->11/11/2026 19:49<!--/A--> |
-| Executor | <!--A:executor-->Yuri Soares Dutra<!--/A--> |
-| Python / sistema | <!--A:ambiente-->3.12.10 / Windows-11-10.0.26200-SP0<!--/A--> |
+| Data e hora | <!--A:data-->12/11/2026 19:24<!--/A--> |
+| Executor | <!--A:executor-->Pedro da Silva Kolling<!--/A--> |
+| Python / sistema | <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A--> |
 | Comando | `python gerar_cobertura.py` (`coverage run --source=app -m unittest discover -v`) |
-| Testes executados | <!--A:testes-->74<!--/A--> |
-| Resultado | <!--A:resultado-->OK, nenhum teste falhou<!--/A--> |
-| Cobertura total (`app/`) | <!--A:cobertura-->92,4%<!--/A--> (<!--A:stmts-->634<!--/A--> linhas, <!--A:miss-->48<!--/A--> sem cobertura); meta de 80% |
+| Testes executados | <!--A:testes-->?<!--/A--> |
+| Resultado | <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A--> |
+| Cobertura total (`app/`) | <!--A:cobertura-->92%<!--/A--> (<!--A:stmts-->634<!--/A--> linhas, <!--A:miss-->48<!--/A--> sem cobertura); meta de 80% |
 | Evidências brutas | `evidencias/saida_unittest.txt`, `evidencias/cobertura.txt`, `evidencias/resumo_execucao.txt` |
 
 ## 2. Cobertura por arquivo
 <!--AUTO:tabela_cobertura-->
 | Arquivo | Linhas | Sem cobertura | Cobertura | Linhas não cobertas |
 |---|---|---|---|---|
-| `app/__init__.py` | 92 | 12 | 87,0% | 17-20, 116-120, 128-130 |
-| `app/auth.py` | 77 | 1 | 98,7% | 48 |
-| `app/colaboradores.py` | 159 | 12 | 92,5% | 28-29, 32, 34, 38-40, 43, 81, 110-111, 182 |
-| `app/db.py` | 26 | 0 | 100,0% | — |
-| `app/folha.py` | 172 | 19 | 89,0% | 17, 72-74, 76-77, 79-84, 116, 145-148, 249, 251 |
-| `app/regras.py` | 108 | 4 | 96,3% | 37, 55, 82-83 |
-| **Total** | **634** | **48** | **92,4%** | |
+| `app/__init__.py` | 92 | 12 | 87% | 17-20, 116-120, 128-130 |
+| `app/auth.py` | 77 | 1 | 99% | 48 |
+| `app/colaboradores.py` | 159 | 12 | 92% | 28-29, 32, 34, 38-40, 43, 81, 110-111, 182 |
+| `app/db.py` | 26 | 0 | 100% | — |
+| `app/folha.py` | 172 | 19 | 89% | 17, 72-74, 76-77, 79-84, 116, 145-148, 249, 251 |
+| `app/regras.py` | 108 | 4 | 96% | 37, 55, 82-83 |
+| **Total** | **634** | **48** | **92%** | |
 <!--/AUTO-->
 
 ## 3. Níveis de teste: unitário, integração e sistema (6.3 e 6.4)

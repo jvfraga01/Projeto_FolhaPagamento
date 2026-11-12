@@ -142,5 +142,5 @@ Casos de uso (UC) em `02_Analise/Casos_de_Uso.md`; casos de teste (CT) em `04_Te
 | RNF005                | UC008         | Segurança (`__init__.py`)         | CT024, CT025, CT032, CT033    | Implementado  | — (requisito da equipe) |
 | RNF006                | UC008         | `iniciar.bat`, `iniciar.sh`, `db.py` | CT037-A, CT037-M | Implementado; execução planejada A3 | — (requisito da equipe) |
 | RNF007                | UC003         | `regras.py` (centavos)            | CT041, CT016, CT019           | Implementado  | — (requisito da equipe) |
-| RNF008                | —             | `regras.py` isolado; `coverage.py`| CT043                         | Implementado; cobertura <!--A:cobertura-->92,4%<!--/A--> (`04_Testes/evidencias/`) | — (requisito do PGQ) |
+| RNF008                | —             | `regras.py` isolado; `coverage.py`| CT043                         | Implementado; cobertura <!--A:cobertura-->92%<!--/A--> (`04_Testes/evidencias/`) | — (requisito do PGQ) |
 | RNF009                | —             | Python 3.10+ / Flask              | CT044                         | Verificado no Windows (`04_Testes/evidencias/`)  | — (requisito da equipe) |

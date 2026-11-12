@@ -3,9 +3,9 @@
 Uso (dentro de 05_Codigo_Fonte):   python gerar_cobertura.py [--executor "Nome"]   (ou dois cliques em gerar_cobertura.bat)
 
 Gera:
-  04_Testes/evidencias/saida_unittest.txt     saída completa do `unittest discover -v`
-  04_Testes/evidencias/cobertura.txt          `coverage report -m` (por arquivo, com linhas não cobertas)
-  04_Testes/evidencias/resumo_execucao.txt    data/hora, versões, nº de testes, resultado e % total
+  04_Testes/evidencias/saida_unittest.md     saída completa do `unittest discover -v`
+  04_Testes/evidencias/cobertura.md          `coverage report -m` (por arquivo, com linhas não cobertas)
+  04_Testes/evidencias/resumo_execucao.md    data/hora, versões, nº de testes, resultado e % total
   05_Codigo_Fonte/htmlcov/index.html          relatório navegável (não versionado)
 Depois de gravar as evidências, chama atualizar_documentos.py, que copia os números reais para os documentos.
 Tudo vem da execução real na máquina de quem rodou: nada é escrito à mão.
@@ -62,10 +62,10 @@ def main():
     print("Rodando os testes com cobertura (pode levar alguns segundos)...")
     testes = executar(["coverage", "run", "--source=app", "-m", "pytest", "-v", "tests"])
     saida = (testes.stdout or "") + (testes.stderr or "")
-    (EVID / "saida_unittest.txt").write_text(saida, encoding="utf-8")
+    (EVID / "saida_unittest.md").write_text(saida, encoding="utf-8")
 
     rel = executar(["coverage", "report", "-m"])
-    (EVID / "cobertura.txt").write_text(rel.stdout or rel.stderr, encoding="utf-8")
+    (EVID / "cobertura.md").write_text(rel.stdout or rel.stderr, encoding="utf-8")
     executar(["coverage", "html", "-d", "htmlcov"])
 
     m_ran = re.search(r"(\d+) passed", saida)
@@ -84,7 +84,7 @@ def main():
         f"Meta de cobertura atingida: {'SIM' if total is not None and total >= META else 'NÃO'}",
         f"Executor: {executor}",
     ]
-    (EVID / "resumo_execucao.txt").write_text("\n".join(linhas) + "\n", encoding="utf-8")
+    (EVID / "resumo_execucao.md").write_text("\n".join(linhas) + "\n", encoding="utf-8")
 
     print("\n" + (rel.stdout or rel.stderr))
     print("\n".join(linhas))
@@ -95,10 +95,10 @@ def main():
         print(f"\nAviso: não foi possível atualizar os documentos ({erro}). Rode atualizar_documentos.py.")
     print(f"\nEvidências em: {EVID}\nRelatório navegável: {AQUI / 'htmlcov' / 'index.html'}")
     if not testes_ok:
-        print("\nATENÇÃO: há testes falhando. Veja saida_unittest.txt e corrija o CÓDIGO, não o teste.")
+        print("\nATENÇÃO: há testes falhando. Veja saida_unittest.md e corrija o CÓDIGO, não o teste.")
         return 1
     if total is None or total < META:
-        print("\nATENÇÃO: cobertura abaixo da meta. A coluna 'Missing' de cobertura.txt mostra as linhas sem teste.")
+        print("\nATENÇÃO: cobertura abaixo da meta. A coluna 'Missing' de cobertumd mostra as linhas sem teste.")
         return 2
     return 0
 

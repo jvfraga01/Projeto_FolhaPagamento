@@ -19,10 +19,27 @@ Entregável 6.12 (Anexo I, item 14). Números copiados automaticamente das evid�
 `01_Requisitos/ERS.md`, seção "Matriz de Rastreabilidade" (requisito → caso de uso → módulo → caso de teste → status → aceite do cliente), mais a coluna de resultado dos casos em `04_Testes/Casos_de_Teste.md` e `09_Homologacao/Testes_de_Aceitacao.md`.
 
 ## 3. Resultados dos testes e métricas
-Última execução: <!--A:testes-->70<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,3%<!--/A--> (<!--A:data-->11/11/2026 07:32<!--/A-->, <!--A:ambiente-->3.13.3 / Windows 11<!--/A-->, executor <!--A:executor-->João Vitor Fraga<!--/A-->). Níveis de teste: `04_Testes/Relatorio_de_Testes.md`.
+Última execução: <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> (<!--A:data-->12/11/2026 19:24<!--/A-->, <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A-->, executor <!--A:executor-->Pedro da Silva Kolling<!--/A-->). Níveis de teste: `04_Testes/Relatorio_de_Testes.md`.
 
 <!--AUTO:metricas-->
-_Preenchido por `gerar_cobertura.py`._
+| Métrica (PGQ) | Meta | Resultado | Como foi calculado |
+|---|---|---|---|
+| Cobertura de testes | ≥ 80% | **92%** (meta atingida) | `coverage report`, 634 linhas, 48 sem cobertura (12/11/2026 19:24) |
+| Testes automatizados | — | **?** executados: ======================== 74 passed in 61.83s (0:01:01) ======================== | `evidencias/saida_unittest.txt` |
+| Casos de teste planejados | — | **57** códigos em 59 linhas | `Casos_de_Teste.md` (57 Auto, 2 Manual) |
+| Casos executados | — | **58** de 59 linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |
+| Casos aprovados ÷ executados | ≥ 95% | **1,7%** (1/58) | Auto aprovados (suíte OK) + manuais aprovados |
+| Requisitos atendidos | 100% | **0,0%** (0/39 RF e RN) | RF/RN com ao menos um caso aprovado; sem caso aprovado: RF001, RF002, RF003, RF004, RF005, RF006, RF007, RF008, RF009, RF010, RF011, RF012, RF013, RF014, RF015, RF016, RF017, RF018, RF019, RF020, RF021, RN001, RN002, RN003, RN004, RN005, RN006, RN007, RN008, RN009, RN010, RN011, RN012, RN013, RN014, RN015, RN016, RN017, RN018 |
+| Defeitos encontrados | acompanhar | **8** | `Registro_de_Defeitos.md` |
+| Defeitos corrigidos | 100% dos críticos e altos | **7** de 8 | críticos/altos abertos: nenhum |
+| Densidade de defeitos | acompanhar | **0,21** defeitos por requisito | defeitos ÷ 39 RF/RN |
+
+```mermaid
+pie title Situação dos casos de teste
+    "Aprovados" : 1
+    "Reprovados" : 57
+    "Não executados" : 1
+```
 <!--/AUTO-->
 
 Defeitos e demais métricas: `Metricas_e_Indicadores.md` e `Registro_de_Defeitos.md`.
