@@ -1,6 +1,9 @@
-Exportado em: 12/11/2026  0:07:02,31
+# Histórico do Git
 
-== Repositorio remoto ==
+Exportado em: 12/11/2026 20:40
+
+```text
+== Repositório remoto ==
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 
@@ -13,17 +16,32 @@ origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 v1.2-A1         Entrega A1 revisada
 v1.3-A3         Entrega A3
 
-== Commits - hash, autor, data e mensagem ==
+== Commits (hash | autor | data | mensagem) ==
+5234c9f | jvfraga01 | 2026-11-12 20:38:52 -0300 | Atualização do gerador de historico
+6e183a1 | jvfraga01 | 2026-11-12 20:11:34 -0300 | atualização dos documentos
+22a2498 | jvfraga01 | 2026-11-12 20:10:14 -0300 | Update atualizar_documentos.py
+b3794df | jvfraga01 | 2026-11-12 19:56:10 -0300 | Nomes dos arquivos
+c87095a | Pedro da Silva Kolling | 2026-11-12 19:49:22 -0300 | Add files via upload
+97b6e8f | Pedro da Silva Kolling | 2026-11-12 19:48:26 -0300 | Rename 04_Testes/evidencias/evidencia_MM01.1.png to 04_Testes/evidencias/Prints/evidencia_MM01.1.png
+da15f95 | Pedro da Silva Kolling | 2026-11-12 19:47:11 -0300 | Add files via upload
+ad0ac72 | jvfraga01 | 2026-11-12 19:32:48 -0300 | Atualização de informações referentes aos testes
+3b484c8 | jvfraga01 | 2026-11-12 19:21:23 -0300 | Merge branch 'main' of https://github.com/jvfraga01/Projeto_FolhaPagamento
+af836d1 | jvfraga01 | 2026-11-12 19:20:36 -0300 | Arquivos faltantes
+cf2ea68 | Pedro da Silva Kolling | 2026-11-12 19:05:25 -0300 | Update Termo de Homologacao with final details
+e54e888 | jvfraga01 | 2026-11-12 18:57:42 -0300 | Merge branch 'main' of https://github.com/jvfraga01/Projeto_FolhaPagamento
+ce93eb2 | YuriSoaresD | 2026-11-12 18:42:12 -0300 | Switch from unittest to pytest for test coverage
+e80e6e1 | jvfraga01 | 2026-11-12 00:16:58 -0300 | docs: evidencia de controle de versao, ata e termo
+1d5d406 | YuriSoaresD | 2026-11-12 00:14:33 -0300 | Refactor folha.py to improve structure and clarity
 ffb2753 | Luiggi Bortolini | 2026-11-12 00:01:48 -0300 |    docs: adiciona seção C com resultado do roteiro de usabilidade (MM02)
 f9e8233 | Luiggi Bortolini | 2026-11-12 00:01:26 -0300 |    docs: atualiza situação atual do plano e registra facilitador do roteiro
 283a83b | Luiggi Bortolini | 2026-11-12 00:00:11 -0300 |    docs: marca CT039 como executado em 11/11/2026
-a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.md
-d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.md
+a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.txt
+d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.txt
 79bfc42 | João Vitor Fraga da Rocha | 2026-11-11 22:05:43 -0300 | Add files via upload
 9838ffe | YuriSoaresD | 2026-11-11 22:05:31 -0300 | Update regras.py with new parsing and calculation methods
 e837679 | YuriSoaresD | 2026-11-11 22:05:09 -0300 | Enhance folha.py with Flask integration and refactoring
 142a2cc | YuriSoaresD | 2026-11-11 22:04:41 -0300 | Refactor folha.py for SQLite integration
-11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.md
+11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.txt
 9906773 | YuriSoaresD | 2026-11-11 21:44:09 -0300 | Implement triggers for closed period and payroll restrictions
 ddfa717 | João Vitor Fraga da Rocha | 2026-11-11 21:43:50 -0300 | Add files via upload
 dc31e9c | YuriSoaresD | 2026-11-11 21:43:49 -0300 | Add regex for Brazilian number formatting
@@ -57,7 +75,7 @@ d2b7591 | jvfraga01 | 2026-10-30 20:34:03 -0300 | docs: atualiza historico do gi
 1162855 | YuriSoaresD | 2026-10-30 20:33:42 -0300 | Adição arquivo Git
 9a50707 | YuriSoaresD | 2026-10-30 20:32:24 -0300 | Add technical review record for delivery A1
 d0a14c3 | Pedro da Silva Kolling | 2026-10-30 20:28:48 -0300 | Revise version control evidence documentation
-84a9b26 | João Vitor Fraga da Rocha | 2026-10-30 20:28:29 -0300 | Rename requirements.md to requirements.md
+84a9b26 | João Vitor Fraga da Rocha | 2026-10-30 20:28:29 -0300 | Rename requirements.md to requirements.txt
 20a90d3 | Pedro da Silva Kolling | 2026-10-30 20:28:19 -0300 | Update README with additional quality documents
 9bca3d5 | João Vitor Fraga da Rocha | 2026-10-30 20:27:59 -0300 | Update Flask version requirement to 3.1.3
 63f0402 | João Vitor Fraga da Rocha | 2026-10-30 20:27:16 -0300 | Refactor test cases for collaborator creation
@@ -79,7 +97,7 @@ e71a7e2 | YuriSoaresD | 2026-10-30 20:01:50 -0300 | Atualização UML
 2579567 | João Vitor Fraga da Rocha | 2026-10-30 19:56:50 -0300 | Fix evidence links in Registro de Aceite de Desvios
 f4c1711 | YuriSoaresD | 2026-10-30 19:56:12 -0300 | Atualização diagrama caso de uso
 421a4f5 | YuriSoaresD | 2026-10-30 19:55:14 -0300 | Atualização diagrama caso de uso
-0d94bba | Pedro da Silva Kolling | 2026-10-30 19:39:21 -0300 | Update and rename requirements.md to requirements.md
+0d94bba | Pedro da Silva Kolling | 2026-10-30 19:39:21 -0300 | Update and rename requirements.txt to requirements.md
 17ca31d | Pedro da Silva Kolling | 2026-10-30 19:37:49 -0300 | Update quality assurance plan with review process changes
 e3aa06a | YuriSoaresD | 2026-10-30 19:33:54 -0300 | Atualização de desvios aceitos
 269cca6 | Pedro da Silva Kolling | 2026-10-30 19:33:53 -0300 | Update versioning tags description in quality plan
@@ -180,9 +198,10 @@ fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha 
 
 == Commits por autor ==
     66	João Vitor Fraga da Rocha
-    46	Pedro da Silva Kolling
-    28	YuriSoaresD
+    50	Pedro da Silva Kolling
+    30	YuriSoaresD
     12	Yuri Soares Dutra
+    12	jvfraga01
      6	Luiggi Bortolini
-     3	jvfraga01
      2	PedroKolling7
+```
