@@ -7,9 +7,9 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 | URL do repositório | https://github.com/jvfraga01/Projeto_FolhaPagamento |
 | Ramo principal | `main` |
 | Tag da entrega A1 | `v1.2-A1` |
-| Tag da entrega A3 | a criar na A3 |
-| Último commit de conteúdo (antes desta evidência) | `<<HASH>>` |
-| Data da exportação do histórico | <<DATA>> |
+| Tag da entrega A3 | `v1.3-A3` (a criar na entrega final) |
+| Último commit de conteúdo (antes desta evidência) | ffb2753 |
+| Data da exportação do histórico | 12/11/2026 |
 | Arquivo com o log completo | `10_Qualidade/Historico_Git.txt` |
 
 > A tag aponta para o commit final, que inclui este arquivo e o `Historico_Git.txt`. Por isso o hash acima é o do
