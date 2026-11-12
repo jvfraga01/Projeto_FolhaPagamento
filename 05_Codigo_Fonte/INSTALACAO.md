@@ -1,5 +1,7 @@
 # Instalação e execução
 
+**Escopo verificado: Windows com Python 3.10+.** As instruções de Linux e macOS abaixo são opcionais e não fazem parte da verificação desta entrega.
+
 ## O que é necessário
 | Item | Versão | Observação |
 |---|---|---|
@@ -46,15 +48,17 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Abra http://127.0.0.1:5000 . **Primeiro acesso:** matrícula `1`, senha `01012000` (troque no menu "Senha").
+Abra http://127.0.0.1:5000 . **Primeiro acesso:** matrícula `1`, senha `01012000`. O sistema obriga a troca da senha no primeiro login.
 
 ## Testes
 ```bash
 python -m unittest discover -v
 
-# cobertura de testes (meta: 80%)
+# cobertura de testes (meta: 80%). Atalho que já salva as evidências em 04_Testes/evidencias:
+python gerar_cobertura.py
+# ou, manualmente:
 pip install coverage
-python -m coverage run -m unittest discover
+python -m coverage run --source=app -m unittest discover
 python -m coverage report -m
 ```
 
