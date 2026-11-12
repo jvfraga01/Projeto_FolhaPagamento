@@ -10,14 +10,14 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 | Tag da entrega A3 | `v1.3-A3` (a criar na entrega final) |
 | Último commit de conteúdo (antes desta evidência) | ffb2753 |
 | Data da exportação do histórico | 12/11/2026 |
-| Arquivo com o log completo | `10_Qualidade/Historico_Git.txt` |
+| Arquivo com o log completo | `10_Qualidade/Historico_Git.md` |
 
-> A tag aponta para o commit final, que inclui este arquivo e o `Historico_Git.txt`. Por isso o hash acima é o do
+> A tag aponta para o commit final, que inclui este arquivo e o `Historico_Git.md`. Por isso o hash acima é o do
 > último commit de conteúdo, feito antes da evidência.
 
 ## Como gerar a evidência
 Na raiz do repositório clonado, execute `10_Qualidade/exportar_historico_git.bat` (Windows) ou
-`10_Qualidade/exportar_historico_git.sh` (Linux/macOS). Será criado o arquivo `10_Qualidade/Historico_Git.txt`
+`10_Qualidade/exportar_historico_git.sh` (Linux/macOS). Será criado o arquivo `10_Qualidade/Historico_Git.md`
 com hash, autor, data e mensagem de cada commit, além da lista de tags e do endereço do repositório remoto.
 
 Para publicar a tag da revisão entregue:

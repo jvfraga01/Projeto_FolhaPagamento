@@ -37,7 +37,7 @@ def garantir_coverage():
     print("O pacote 'coverage' não está instalado.")
     if input("Instalar agora? É preciso internet. [S/n] ").strip().lower() in ("n", "nao", "não"):
         return False
-    r = subprocess.run(PY + ["pip", "install", "-r", str(AQUI / "requirements-dev.txt")], cwd=AQUI)
+    r = subprocess.run(PY + ["pip", "install", "-r", str(AQUI / "requirements-dev.md")], cwd=AQUI)
     return r.returncode == 0
 
 

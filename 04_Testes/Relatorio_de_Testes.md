@@ -13,7 +13,7 @@ Os números deste relatório são **copiados automaticamente** de `04_Testes/evi
 | Testes executados | <!--A:testes-->?<!--/A--> |
 | Resultado | <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A--> |
 | Cobertura total (`app/`) | <!--A:cobertura-->92%<!--/A--> (<!--A:stmts-->634<!--/A--> linhas, <!--A:miss-->48<!--/A--> sem cobertura); meta de 80% |
-| Evidências brutas | `evidencias/saida_unittest.txt`, `evidencias/cobertura.txt`, `evidencias/resumo_execucao.txt` |
+| Evidências brutas | `evidencias/saida_unittest.md`, `evidencias/cobertura.md`, `evidencias/resumo_execucao.md` |
 
 ## 2. Cobertura por arquivo
 <!--AUTO:tabela_cobertura-->

@@ -1,7 +1,7 @@
 # Testes de Aceitação
 
 Entregável 6.5: cenário testado, resultado esperado, resultado obtido e situação final.
-Os cenários são os critérios de aceitação do cliente (T1, seção 9). Os resultados referem-se à última execução da suíte automatizada: <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, em <!--A:data-->12/11/2026 19:24<!--/A--> (`04_Testes/evidencias/saida_unittest.txt`), executor <!--A:executor-->Pedro da Silva Kolling<!--/A-->. Se a suíte falhar, a situação das linhas abaixo deixa de valer.
+Os cenários são os critérios de aceitação do cliente (T1, seção 9). Os resultados referem-se à última execução da suíte automatizada: <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, em <!--A:data-->12/11/2026 19:24<!--/A--> (`04_Testes/evidencias/saida_unittest.md`), executor <!--A:executor-->Pedro da Silva Kolling<!--/A-->. Se a suíte falhar, a situação das linhas abaixo deixa de valer.
 
 | ID | Cenário | Esperado | Obtido (valores verificados pelas asserções) | Situação | Casos |
 |---|---|---|---|---|---|

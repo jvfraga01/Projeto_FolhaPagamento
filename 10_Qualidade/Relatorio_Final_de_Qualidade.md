@@ -25,7 +25,7 @@ Entregável 6.12 (Anexo I, item 14). Números copiados automaticamente das evid�
 | Métrica (PGQ) | Meta | Resultado | Como foi calculado |
 |---|---|---|---|
 | Cobertura de testes | ≥ 80% | **92%** (meta atingida) | `coverage report`, 634 linhas, 48 sem cobertura (12/11/2026 19:24) |
-| Testes automatizados | — | **?** executados: ======================== 74 passed in 61.83s (0:01:01) ======================== | `evidencias/saida_unittest.txt` |
+| Testes automatizados | — | **?** executados: ======================== 74 passed in 61.83s (0:01:01) ======================== | `evidencias/saida_unittest.md` |
 | Casos de teste planejados | — | **57** códigos em 59 linhas | `Casos_de_Teste.md` (57 Auto, 2 Manual) |
 | Casos executados | — | **58** de 59 linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |
 | Casos aprovados ÷ executados | ≥ 95% | **1,7%** (1/58) | Auto aprovados (suíte OK) + manuais aprovados |
@@ -45,7 +45,7 @@ pie title Situação dos casos de teste
 Defeitos e demais métricas: `Metricas_e_Indicadores.md` e `Registro_de_Defeitos.md`.
 
 ## 4. Evidências
-`04_Testes/evidencias/` (saída dos testes, cobertura, resumo), `Registro_de_Defeitos.md`, `Relatorio_de_Revisao_Tecnica.md`, `Ata_de_Revisao_Tecnica_A1.md`, `Evidencia_Controle_de_Versao.md` e `Historico_Git.txt`, aceite dos desvios em `01_Requisitos/evidencias/`, `09_Homologacao/Testes_de_Aceitacao.md`.
+`04_Testes/evidencias/` (saída dos testes, cobertura, resumo), `Registro_de_Defeitos.md`, `Relatorio_de_Revisao_Tecnica.md`, `Ata_de_Revisao_Tecnica_A1.md`, `Evidencia_Controle_de_Versao.md` e `Historico_Git.md`, aceite dos desvios em `01_Requisitos/evidencias/`, `09_Homologacao/Testes_de_Aceitacao.md`.
 
 ## 5. Conclusões
 - O sistema segue as fórmulas do cliente, tem autorização verificada no backend e folha fechada imutável também no banco.

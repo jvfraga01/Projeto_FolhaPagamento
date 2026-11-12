@@ -6,7 +6,7 @@
 | Item | Versão | Observação |
 |---|---|---|
 | Python | 3.10 ou superior | https://www.python.org/downloads/ |
-| Flask | 3.1.3 ou superior | instalado pelo `pip` (arquivo `requirements.txt`) |
+| Flask | 3.1.3 ou superior | instalado pelo `pip` (arquivo `requirements.md`) |
 | Navegador | qualquer atual | Chrome, Edge, Firefox |
 | Internet | só na instalação | para baixar Python e Flask |
 
@@ -25,7 +25,7 @@ Dê dois cliques em **`iniciar.bat`**.
 winget install -e --id Python.Python.3.12
 py --version
 cd caminho\para\05_Codigo_Fonte
-py -m pip install -r requirements.txt
+py -m pip install -r requirements.md
 py run.py
 ```
 
@@ -35,7 +35,7 @@ sudo apt update && sudo apt install -y python3 python3-pip python3-venv
 cd caminho/para/05_Codigo_Fonte
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.md
 python run.py
 ```
 
@@ -44,7 +44,7 @@ python run.py
 brew install python
 cd caminho/para/05_Codigo_Fonte
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.md
 python run.py
 ```
 

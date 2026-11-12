@@ -17,13 +17,13 @@ v1.3-A3         Entrega A3
 ffb2753 | Luiggi Bortolini | 2026-11-12 00:01:48 -0300 |    docs: adiciona seção C com resultado do roteiro de usabilidade (MM02)
 f9e8233 | Luiggi Bortolini | 2026-11-12 00:01:26 -0300 |    docs: atualiza situação atual do plano e registra facilitador do roteiro
 283a83b | Luiggi Bortolini | 2026-11-12 00:00:11 -0300 |    docs: marca CT039 como executado em 11/11/2026
-a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.txt
-d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.txt
+a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.md
+d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.md
 79bfc42 | João Vitor Fraga da Rocha | 2026-11-11 22:05:43 -0300 | Add files via upload
 9838ffe | YuriSoaresD | 2026-11-11 22:05:31 -0300 | Update regras.py with new parsing and calculation methods
 e837679 | YuriSoaresD | 2026-11-11 22:05:09 -0300 | Enhance folha.py with Flask integration and refactoring
 142a2cc | YuriSoaresD | 2026-11-11 22:04:41 -0300 | Refactor folha.py for SQLite integration
-11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.txt
+11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.md
 9906773 | YuriSoaresD | 2026-11-11 21:44:09 -0300 | Implement triggers for closed period and payroll restrictions
 ddfa717 | João Vitor Fraga da Rocha | 2026-11-11 21:43:50 -0300 | Add files via upload
 dc31e9c | YuriSoaresD | 2026-11-11 21:43:49 -0300 | Add regex for Brazilian number formatting
@@ -57,7 +57,7 @@ d2b7591 | jvfraga01 | 2026-10-30 20:34:03 -0300 | docs: atualiza historico do gi
 1162855 | YuriSoaresD | 2026-10-30 20:33:42 -0300 | Adição arquivo Git
 9a50707 | YuriSoaresD | 2026-10-30 20:32:24 -0300 | Add technical review record for delivery A1
 d0a14c3 | Pedro da Silva Kolling | 2026-10-30 20:28:48 -0300 | Revise version control evidence documentation
-84a9b26 | João Vitor Fraga da Rocha | 2026-10-30 20:28:29 -0300 | Rename requirements.md to requirements.txt
+84a9b26 | João Vitor Fraga da Rocha | 2026-10-30 20:28:29 -0300 | Rename requirements.md to requirements.md
 20a90d3 | Pedro da Silva Kolling | 2026-10-30 20:28:19 -0300 | Update README with additional quality documents
 9bca3d5 | João Vitor Fraga da Rocha | 2026-10-30 20:27:59 -0300 | Update Flask version requirement to 3.1.3
 63f0402 | João Vitor Fraga da Rocha | 2026-10-30 20:27:16 -0300 | Refactor test cases for collaborator creation
@@ -79,7 +79,7 @@ e71a7e2 | YuriSoaresD | 2026-10-30 20:01:50 -0300 | Atualização UML
 2579567 | João Vitor Fraga da Rocha | 2026-10-30 19:56:50 -0300 | Fix evidence links in Registro de Aceite de Desvios
 f4c1711 | YuriSoaresD | 2026-10-30 19:56:12 -0300 | Atualização diagrama caso de uso
 421a4f5 | YuriSoaresD | 2026-10-30 19:55:14 -0300 | Atualização diagrama caso de uso
-0d94bba | Pedro da Silva Kolling | 2026-10-30 19:39:21 -0300 | Update and rename requirements.txt to requirements.md
+0d94bba | Pedro da Silva Kolling | 2026-10-30 19:39:21 -0300 | Update and rename requirements.md to requirements.md
 17ca31d | Pedro da Silva Kolling | 2026-10-30 19:37:49 -0300 | Update quality assurance plan with review process changes
 e3aa06a | YuriSoaresD | 2026-10-30 19:33:54 -0300 | Atualização de desvios aceitos
 269cca6 | Pedro da Silva Kolling | 2026-10-30 19:33:53 -0300 | Update versioning tags description in quality plan

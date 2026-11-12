@@ -20,9 +20,9 @@ OBRIGATORIOS = """README.md
 10_Qualidade/Relatorio_de_Revisao_Tecnica.md 10_Qualidade/Relatorio_Final_de_Qualidade.md
 10_Qualidade/Ata_de_Revisao_Tecnica_A1.md 10_Qualidade/Evidencia_Controle_de_Versao.md 10_Qualidade/Historico_Git.md
 11_Apresentacao/Apresentacao.pptx 11_Apresentacao/Roteiro_de_Demonstracao.md""".split()
-SOBRANDO = ["gitignore.txt", "gitattributes.txt", "10_Qualidade/Ata_de_Revisao_Tecnica_A1", "10_Qualidade/Historico_Git.txt",
-            "04_Testes/evidencias/saida_unittest.txt", "04_Testes/evidencias/cobertura.txt",
-            "04_Testes/evidencias/resumo_execucao.txt", "07_Executavel/Readme.md",
+SOBRANDO = ["gitignore.md", "gitattributes.md", "10_Qualidade/Ata_de_Revisao_Tecnica_A1", "10_Qualidade/Historico_Git.md",
+            "04_Testes/evidencias/saida_unittest.md", "04_Testes/evidencias/cobertura.md",
+            "04_Testes/evidencias/resumo_execucao.md", "07_Executavel/Readme.md",
             "Projeto_FolhaPagamento-1.0(Estrutura inicial do projeto.).zip"]
 erros, avisos = [], []
 
@@ -41,7 +41,7 @@ for p in RAIZ.rglob("*"):
             avisos.append(f"arquivo local que não deve ir no ZIP (o empacotar_entrega.py o exclui): {p.relative_to(RAIZ)}")
 for f in ("README.md", ".gitignore", ".gitattributes"):
     if f != "README.md" and not (RAIZ / f).exists():
-        avisos.append(f"na raiz falta {f} (o gitignore.txt/gitattributes.txt não têm efeito)")
+        avisos.append(f"na raiz falta {f} (o gitignore.md/gitattributes.md não têm efeito)")
 
 # campos em branco
 vazios = {}

@@ -1,7 +1,7 @@
 @echo off
-rem Gera 10_Qualidade\Historico_Git.txt com a evidencia do controle de versao.
+rem Gera 10_Qualidade\Historico_Git.md com a evidencia do controle de versao.
 rem Execute dentro do repositorio Git (raiz do projeto).
-set SAIDA=10_Qualidade\Historico_Git.txt
+set SAIDA=10_Qualidade\Historico_Git.md
 (
   echo Exportado em: %date% %time%
   echo.

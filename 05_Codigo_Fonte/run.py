@@ -18,7 +18,7 @@ except ImportError:
         sys.exit(1)
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "-r",
-                               os.path.join(AQUI, "requirements.txt")])
+                               os.path.join(AQUI, "requirements.md")])
     except subprocess.CalledProcessError:
         print("Não foi possível instalar automaticamente. Siga o arquivo INSTALACAO.md.")
         input("Pressione Enter para sair...")

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Gera 10_Qualidade/Historico_Git.txt com a evidência do controle de versão.
+# Gera 10_Qualidade/Historico_Git.md com a evidência do controle de versão.
 # Execute dentro do repositório Git (raiz do projeto).
 set -e
-SAIDA="10_Qualidade/Historico_Git.txt"
+SAIDA="10_Qualidade/Historico_Git.md"
 {
   echo "Exportado em: $(date '+%d/%m/%Y %H:%M')"
   echo; echo "== Repositório remoto =="; git remote -v
