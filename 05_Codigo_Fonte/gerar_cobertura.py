@@ -60,7 +60,7 @@ def main():
     executar(["coverage", "erase"])
 
     print("Rodando os testes com cobertura (pode levar alguns segundos)...")
-    testes = executar(["coverage", "run", "--source=app", "-m", "unittest", "discover", "-v"])
+    testes = executar(["coverage", "run", "--source=app", "-m", "pytest", "-v", "tests"])
     saida = (testes.stdout or "") + (testes.stderr or "")
     (EVID / "saida_unittest.txt").write_text(saida, encoding="utf-8")
 
@@ -68,7 +68,7 @@ def main():
     (EVID / "cobertura.txt").write_text(rel.stdout or rel.stderr, encoding="utf-8")
     executar(["coverage", "html", "-d", "htmlcov"])
 
-    m_ran = re.search(r"Ran (\d+) tests?", saida)
+    m_ran = re.search(r"(\d+) passed", saida)
     ultima = [l for l in saida.strip().splitlines() if l.strip()][-1:] or ["(sem saída)"]
     m_tot = re.search(r"^TOTAL\s+.*?(\d+(?:\.\d+)?)%\s*$", rel.stdout or "", re.M)
     total = float(m_tot.group(1)) if m_tot else None
@@ -78,7 +78,7 @@ def main():
         f"Execução em: {inicio:%d/%m/%Y %H:%M}",
         f"Python: {platform.python_version()} | Sistema: {platform.platform()}",
         f"Testes executados: {m_ran.group(1) if m_ran else 'não identificado'}",
-        f"Resultado do unittest: {ultima[0]}",
+        f"Resultado do pytest: {ultima[0]}",
         f"Cobertura total (app/): {f'{total:.1f}%' if total is not None else 'não identificada'}"
         f" (meta {META:.0f}%)",
         f"Meta de cobertura atingida: {'SIM' if total is not None and total >= META else 'NÃO'}",
