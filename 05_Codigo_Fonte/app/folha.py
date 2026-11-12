@@ -163,6 +163,12 @@ def gerar():
         "AND (data_fim_contrato IS NULL OR data_fim_contrato >= ?)", (ultimo, primeiro)).fetchall()
     ja_existem = {r["matricula"] for r in db.execute(
         "SELECT matricula FROM folha WHERE periodo_id = ?", (periodo_id,))}
+    # BUG005: quem deixou de ter contrato no mês (ex.: data de fim alterada) sai da folha ABERTA.
+    obsoletos = ja_existem - {c["matricula"] for c in elegiveis}
+    if obsoletos:
+        marcas = ",".join("?" * len(obsoletos))
+        db.execute(f"DELETE FROM folha WHERE periodo_id = ? AND matricula IN ({marcas})",
+                   (periodo_id, *obsoletos))
     novos = 0
     for c in elegiveis:
         if c["matricula"] in ja_existem:
@@ -179,7 +185,8 @@ def gerar():
              int(r["atingiu"]), r["pct"], r["adicionais"], r["total"]))
         novos += 1
     db.commit()
-    flash(f"Folha de {regras_mes(mes)}/{ano}: {novos} colaborador(es) adicionado(s).", "ok")
+    flash(f"Folha de {regras_mes(mes)}/{ano}: {novos} colaborador(es) adicionado(s), "
+          f"{len(obsoletos)} removido(s) por não terem contrato no mês.", "ok")
     return redirect(url_for("folha.lista", periodo=periodo_id))
 
 
