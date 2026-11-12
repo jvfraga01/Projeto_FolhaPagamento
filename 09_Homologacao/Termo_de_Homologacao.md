@@ -5,7 +5,7 @@ Entregável 6.11 (Anexo I, item 13).
 |---|---|
 | Projeto | Sistema de Folha de Pagamento (Grupo 10) |
 | Versão homologada | 1.3 (A3), tag `v1.3-A3`|
-| Commit | <<PREENCHER: hash curto do commit final>> |
+| Commit | 5234c9f |
   | Data da homologação | 11/11/2026 |
 | Cliente / responsável | Prof. Paulo Cesar Furlanetto Marques |
 | Equipe | João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini |
