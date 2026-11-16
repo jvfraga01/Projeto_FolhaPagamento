@@ -103,7 +103,7 @@ Situação possível: **Resolvido** (comportamento do cliente preservado), **Pen
 | RF012, RN015 | Nível 3 recebe 403 (sem dados) ao acessar a folha de outro ou áreas de gestão; Financeiro não altera nada. |
 | RF015, RF016, RN012 | Lançamentos recalculam a folha aberta; após fechar, qualquer alteração é recusada (aplicação e banco). |
 | RN001–RN007 | Valores inválidos ou negativos são recusados com mensagem. |
-| RNF001 | Roteiro de usabilidade (CT039): pelo menos 4 das 5 tarefas concluídas sem ajuda por todos os participantes aplicáveis, dentro dos limites de tempo e de erros de cada tarefa do Plano de Testes, e nota média ≥ 4 (escala 1 a 5) em "foi fácil de usar". |
+| RNF001 | Roteiro de usabilidade (CT039): todas as tarefas aplicáveis ao perfil de cada participante concluídas sem ajuda, dentro dos limites de tempo e de erros de cada tarefa do Plano de Testes, e nota média ≥ 4 (escala 1 a 5) em "foi fácil de usar". |
 | RNF002 | Dado inválido (nome vazio, valor negativo, texto no lugar de número) é recusado antes de qualquer cálculo ou gravação (CT042). |
 | RNF003 | Dados cadastrados continuam disponíveis após encerrar e reabrir o sistema (CT040). |
 | RNF004 | Um novo calculador pode ser incluído sem modificar os existentes: adicional fixo de R$ 100,00 sobre base de R$ 1.000,00 resulta em R$ 1.100,00 e os 3 tipos existentes mantêm os resultados (CT031). |
@@ -120,7 +120,7 @@ Casos de uso (UC) em `02_Analise/Casos_de_Uso.md`; casos de teste (CT) em `04_Te
 | RF004                 | UC001         | Colaborador, CalculoProducao      | CT003                         | Implementado  | Lançamento mensal: Aceito (D2) em 29/10/2026 |
 | RF005, RF018          | UC002         | Colaborador (lista/filtros)       | CT009, CT010, CT011           | Implementado  | Homologação A3 |
 | RF006, RN008          | UC003         | `regras.py` (calculadores)        | CT015–CT019                   | Implementado  | Fórmulas = cliente; homologação A3 |
-| RF019, RN009–RN011    | UC003         | `regras.py` (modo com metas)      | CT035, CT045                  | Implementado (opcional) | Aceito (D1) em 30/10/2026 |
+| RF019, RN009–RN011    | UC003         | `regras.py` (modo com metas)      | CT035, CT045, CT054, CT055                  | Implementado (opcional) | Aceito (D1) em 30/10/2026 |
 | RF007, RF014, RN014   | UC003         | Folha, Periodo (`folha.py`)       | CT020, CT034                  | Implementado  | Aceito (D4) em 29/10/2026 |
 | RF008, RF020          | UC004         | Folha (relatório)                 | CT021, CT030                  | Implementado  | Homologação A3 |
 | RF009, RN016          | UC005         | Colaborador                       | CT012, CT050                         | Implementado  | Exclusão lógica: Aceito (D3) em 29/10/2026 |
@@ -135,12 +135,59 @@ Casos de uso (UC) em `02_Analise/Casos_de_Uso.md`; casos de teste (CT) em `04_Te
 | RN001                 | UC001         | Banco (`AUTOINCREMENT`)           | CT008                         | Implementado  | Aceito (D5) em 29/10/2026 |
 | RN002–RN007           | UC001, UC010  | Validação (`regras.py`)           | CT004–CT007, CT038            | Implementado  | Homologação A3 |
 | RN017, RN018          | UC008, UC003  | `auth.py`, `regras.py`            | CT001, CT015, CT022           | Implementado  | Aceito (D6) em 30/10/2026 |
-| RNF001                | UC001–UC012   | Interface (`templates/`)          | CT039                         | Implementado; execução planejada A3 | Homologação A3 |
+| RNF001                | UC001–UC012   | Interface (`templates/`)          | CT039                         | Implementado; resultado na seção final | Homologação A3 |
 | RNF002                | UC001, UC010  | Validação (`regras.py`, rotas)    | CT042, CT004–CT007, CT046, CT047            | Implementado  | Homologação A3 |
 | RNF003                | todos         | `db.py`, `schema.sql` (SQLite)    | CT040                         | Implementado  | Homologação A3 |
 | RNF004                | —             | `CALCULADORES`                    | CT031                         | Implementado  | Homologação A3 |
 | RNF005                | UC008         | Segurança (`__init__.py`)         | CT024, CT025, CT032, CT033    | Implementado  | — (requisito da equipe) |
-| RNF006                | UC008         | `iniciar.bat`, `iniciar.sh`, `db.py` | CT037-A, CT037-M | Implementado; execução planejada A3 | — (requisito da equipe) |
+| RNF006                | UC008         | `iniciar.bat`, `iniciar.sh`, `db.py` | CT037-A, CT037-M | Implementado; resultado na seção final | — (requisito da equipe) |
 | RNF007                | UC003         | `regras.py` (centavos)            | CT041, CT016, CT019           | Implementado  | — (requisito da equipe) |
-| RNF008                | —             | `regras.py` isolado; `coverage.py`| CT043                         | Implementado; cobertura <!--A:cobertura-->92%<!--/A--> (`04_Testes/evidencias/`) | — (requisito do PGQ) |
+| RNF008                | —             | `regras.py` isolado; `coverage.py`; `atualizar_documentos.py` | CT043, CT058                  | Implementado; cobertura <!--A:cobertura-->92%<!--/A--> (`04_Testes/evidencias/`) | — (requisito do PGQ) |
 | RNF009                | —             | Python 3.10+ / Flask              | CT044                         | Verificado no Windows (`04_Testes/evidencias/`)  | — (requisito da equipe) |
+
+## Resultado dos testes por requisito
+Gerado por `05_Codigo_Fonte/atualizar_documentos.py` a partir de `04_Testes/Casos_de_Teste.md`, `09_Homologacao/Testes_de_Aceitacao.md` e das evidências em `04_Testes/evidencias/`. Complementa a matriz de rastreabilidade acima com o resultado obtido e o status final de cada requisito.
+
+<!--AUTO:resultado_requisitos-->
+| Requisito | Casos de teste | Resultado obtido | Status final |
+|---|---|---|---|
+| RF001 | CT001, CT047 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF002 | CT001 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF003 | CT002 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF004 | CT003 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF005 | CT009 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF006 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF007 | CT020 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF008 | CT021 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF009 | CT012, CT050 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF010 | CT022, CT037-A, CT037-M, CT052 | 3 de 4 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF011 | CT023, CT049, CT052 | 3 de 3 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF012 | CT024, CT026 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF013 | CT013, CT014, CT036, CT056 | 4 de 4 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF014 | CT020, CT056, CT057 | 3 de 3 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF015 | CT020, CT051 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF016 | CT027 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF017 | CT029-A, CT029-M | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF018 | CT010, CT011 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF019 | CT054, CT055 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF020 | CT030 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RF021 | CT052 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN001 | CT008 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN002 | CT004 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN003 | CT005, CT038, CT046 | 3 de 3 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN004 | CT006 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN005 | CT006 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN006 | CT007 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN007 | CT007 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN008 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN009 | CT045 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN010 | CT054 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN011 | CT035, CT055 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN012 | CT027, CT048 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN013 | CT028, CT048 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN014 | CT034, CT057 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN015 | CT025 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN016 | CT050, CT056 | 2 de 2 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN017 | CT049 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+| RN018 | CT015 | 1 de 1 caso(s) aprovado(s) (12/11/2026 19:30) | Atendido |
+<!--/AUTO-->
