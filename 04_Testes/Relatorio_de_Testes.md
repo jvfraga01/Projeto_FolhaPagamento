@@ -1,17 +1,21 @@
 # Relatório de Testes
 
 Modelo: Anexo I, item 10, mais os relatórios de execução (6.3) e de integração (6.4) do enunciado.
+Uma rodada só: data, executor, ambiente, duração, total de testes e cobertura vêm do mesmo `gerar_cobertura.py`. Distinção usada em todos os documentos: **métodos de teste** executados (esta tabela), **códigos de caso** e **linhas do catálogo** (`Casos_de_Teste.md`).
 Os números deste relatório são **copiados automaticamente** de `04_Testes/evidencias/` por `05_Codigo_Fonte/atualizar_documentos.py`, que roda no fim de `gerar_cobertura.py`. Nada é digitado à mão.
 
 ## 1. Execução automatizada
 | Item | Valor |
 |---|---|
-| Data e hora | <!--A:data-->12/11/2026 19:24<!--/A--> |
-| Executor | <!--A:executor-->Pedro da Silva Kolling<!--/A--> |
+| Data e hora | <!--A:data-->12/11/2026 19:30<!--/A--> |
+| Executor | <!--A:executor-->Pedro da Silova Kolling<!--/A--> |
 | Python / sistema | <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A--> |
-| Comando | `python gerar_cobertura.py` (`coverage run --source=app -m unittest discover -v`) |
-| Testes executados | <!--A:testes-->?<!--/A--> |
-| Resultado | <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A--> |
+| Executor de testes | <!--A:runner-->unittest<!--/A--> (`python gerar_cobertura.py` = `coverage run --source=app -m unittest discover -v`) |
+| Código de retorno | <!--A:retorno-->0<!--/A--> |
+| Duração dos testes | <!--A:duracao-->não identificado<!--/A--> |
+| Commit da rodada | <!--A:commit-->não identificado<!--/A--> |
+| Testes executados | <!--A:testes-->74<!--/A--> |
+| Resultado | <!--A:resultado-->OK, nenhum teste falhou<!--/A--> |
 | Cobertura total (`app/`) | <!--A:cobertura-->92%<!--/A--> (<!--A:stmts-->634<!--/A--> linhas, <!--A:miss-->48<!--/A--> sem cobertura); meta de 80% |
 | Evidências brutas | `evidencias/saida_unittest.md`, `evidencias/cobertura.md`, `evidencias/resumo_execucao.md` |
 
@@ -33,14 +37,14 @@ Todas as classes abaixo estão em `05_Codigo_Fonte/tests/`. Resultado de cada n�
 
 | Nível | Classes de teste | Testes | O que cobre |
 |---|---|---|---|
-| **Unitário** (sem banco nem web) | `CalculoTest`, `RegimeMetasTest`, `MilharTest` | 20 | Cálculo das 3 remunerações, arredondamento, negativos, zero, novo calculador, modo opcional de metas, conversão de dinheiro e percentual |
+| **Unitário** (sem banco nem web) | `CalculoTest`, `RegimeMetasTest`, `MilharTest`, `MetricasTest` | 26 | Cálculo das 3 remunerações, arredondamento, negativos, zero, novo calculador, modo opcional de metas, conversão de dinheiro e percentual; consolidador de métricas (CT058) |
 | **Integração: persistência** | `PersistenciaTest`, `PrimeiraExecucaoTest`, `BancoFolhaFechadaTest` | 5 | Dados sobrevivem a reabrir a aplicação; banco novo cria o admin; triggers do banco recusam alterar mês fechado |
 | **Integração: fluxos de negócio** | `FolhaTest`, `FolhaRegimeMetasTest`, `LancamentosTest`, `ReativacaoETermoDeContratoTest`, `EdicaoTest`, `CadastroMilharTest`, `FiltrosTest` | 26 | Cadastro, alteração, filtros, gerar → lançar → fechar, reativar, fim de contrato |
 | **Integração: relatórios e recibos** | `ListaEReciboTest` | 2 | Lista de colaboradores e recibo (o resumo do relatório, total 16.900,00, é verificado em `FolhaTest` e `FiltrosTest`) |
 | **Integração: segurança entre componentes** | `LoginTest`, `PermissaoTest`, `SenhaTest`, `ForcaTrocaSenhaTest` | 20 | Login, CSRF, 403 sem dados, troca e redefinição de senha, troca obrigatória |
 | **Sistema (interface estática)** | `ImpressaoTest` | 1 | CSS de impressão e botões de imprimir |
 
-Soma por nível: 20 + 5 + 26 + 2 + 20 + 1 = 74 testes no código. O total executado na última medição é o da seção 1 (a tabela só muda quando testes são adicionados).
+Soma por nível: 26 + 5 + 26 + 2 + 20 + 1 = 80 testes no código. O total executado na última medição é o da seção 1 (a tabela só muda quando testes são adicionados).
 
 ## 4. Casos manuais
 Os casos que dependem de uma pessoa (CT037-M e CT039) e seus resultados estão em `09_Homologacao/Testes_de_Aceitacao.md`, seção C. A persistência com `iniciar.bat` faz parte do CT037-M.
