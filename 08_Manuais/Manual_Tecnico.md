@@ -32,7 +32,7 @@ Triggers (imutabilidade de mês fechado, mesmo por acesso direto ao banco): `fol
 05_Codigo_Fonte/
 ├── run.py, iniciar.bat, iniciar.sh        inicialização
 ├── gerar_cobertura.py / .bat / .sh        testes + cobertura + evidências
-├── .coveragerc, requirements*.md         configuração e dependências
+├── .coveragerc, requirements*.txt        configuração e dependências
 ├── app/
 │   ├── __init__.py       fábrica do app, sessão, CSRF, CSP, troca obrigatória de senha, filtros, erros
 │   ├── auth.py           login, logout, troca de senha, decorators de permissão
@@ -61,8 +61,8 @@ Rotas principais: `/login`, `/logout`, `/senha`, `/colaboradores` (+ `/novo`, `/
 | Item | Versão |
 |---|---|
 | Python | 3.10 ou superior (verificado no Windows 11 com 3.13.3) |
-| Flask | 3.1.3 ou superior (`requirements.md`) |
-| coverage | 7.0 ou superior, só para medir cobertura (`requirements-dev.md`) |
+| Flask | 3.1.3 ou superior (`requirements.txt`) |
+| coverage | 7.0 ou superior, só para medir cobertura (`requirements-dev.txt`) |
 | SQLite | Embutido no Python |
 
 ## 6. Build, execução e deploy
@@ -74,7 +74,7 @@ cd 05_Codigo_Fonte
 python -m unittest discover -v
 python gerar_cobertura.py          # roda tudo com cobertura e salva em 04_Testes/evidencias/
 ```
-Última medição: <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> sobre `app/` (<!--A:data-->12/11/2026 19:24<!--/A-->). Detalhes: `04_Testes/Relatorio_de_Testes.md`.
+Última medição: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> sobre `app/` (<!--A:data-->12/11/2026 19:30<!--/A-->). Detalhes: `04_Testes/Relatorio_de_Testes.md`.
 
 ## 8. Manutenção
 | Tarefa | Como |
