@@ -1,7 +1,7 @@
 # Registro de Defeitos
 
 Modelo: Anexo I, itens 9 e 20. Fluxo do PGQ: **Novo → Em_Correcao → Corrigido → Homologado → Fechado**. Status adicional: **Não procede** (comportamento esperado, justificado e coberto por teste).
-Origem: avaliações A3 de 10/11/2026 e 11/11/2026 (leitura de código e execução). "Corrigido" = correção no código com teste de regressão aprovado na suíte. "Responsável" = papel de desenvolvimento conforme `03_Projeto/Planejamento_do_Projeto.md` (João Vitor Fraga, arquiteto/desenvolvedor).
+Origem: avaliações A3 de 10/11/2026, 11/11/2026 e 13/11/2026 (leitura de código, execução e conferência dos indicadores). "Corrigido" = correção no código com teste de regressão aprovado na suíte. "Responsável" = papel de desenvolvimento conforme `03_Projeto/Planejamento_do_Projeto.md` (João Vitor Fraga, arquiteto/desenvolvedor).
 
 | ID | Descrição | Severidade | Prioridade | Status | Responsável | Abertura | Correção | Solução aplicada | Teste |
 |---|---|---|---|---|---|---|---|---|---|
@@ -13,5 +13,6 @@ Origem: avaliações A3 de 10/11/2026 e 11/11/2026 (leitura de código e execuç
 | BUG006 | O admin inicial nasce com início de contrato = hoje; a massa de teste dependia do dia da execução. | Baixa | Baixa | Corrigido | João Vitor Fraga | 10/11/2026 | 11/11/2026 | `BaseTest` fixa o início do admin inicial em data futura; sem efeito no sistema. | Toda a suíte de folha (CT020, CT021) |
 | BUG007 | `parse_reais("1.5000")` e `"01.500"` viravam R$ 1,50 sem aviso (mesma família do BUG001). | Média | Alta | Corrigido | João Vitor Fraga | 11/11/2026 | 11/11/2026 | Ponto sem vírgula só vale como milhar (grupos de 3 dígitos) ou decimal de até 2 casas; o restante é recusado. | CT046 |
 | BUG008 | O pacote de entrega continha `instance/secret.key`, `folha.db`, `.coverage`, `htmlcov/` e `__pycache__/`. | Média | Alta | Corrigido | João Vitor Fraga | 11/11/2026 | 11/11/2026 | `empacotar_entrega.py` monta o ZIP sem esses itens. A chave local é regenerada ao apagar `instance/`. | Processo (conferir o conteúdo do ZIP) |
+| BUG009 | O painel de métricas mostrava "?" testes, 1/58 casos aprovados e 0/39 requisitos atendidos com 74 testes passando: o consolidador só entendia o resumo do unittest (o log tinha sido gerado pelo pytest), e a data, a duração e o ambiente divergiam entre os documentos. | Média | Alta | Corrigido | João Vitor Fraga | 13/11/2026 | 16/11/2026 | `gerar_cobertura.py` passa a gravar executor, código de retorno, duração e commit da mesma rodada; `atualizar_documentos.py` lê unittest e pytest, confere o total com os resultados individuais e recusa log de outro executor; `verificar_entrega.py` bloqueia evidência de outro executor. | CT058 |
 
 Resumo, taxa de correção e densidade: `10_Qualidade/Metricas_e_Indicadores.md` (calculado do quadro acima).
