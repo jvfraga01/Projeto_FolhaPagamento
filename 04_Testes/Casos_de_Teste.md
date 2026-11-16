@@ -1,17 +1,17 @@
 # 8. Especificação de Casos de Teste
 
-Total: **57 casos** (CT001–CT057; o CT029 e o CT037 têm duas linhas cada, sufixos `-A` e `-M`, e a coluna `Tipo` classifica cada linha).
+Total: **58 casos** (CT001–CT058; o CT029 e o CT037 têm duas linhas cada, sufixos `-A` e `-M`, e a coluna `Tipo` classifica cada linha).
 
 **Legenda de tipo**
-- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` e `tests/test_correcoes_a3.py` (última execução: <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, em <!--A:data-->12/11/2026 19:24<!--/A-->). Reexecutar a cada entrega com `python gerar_cobertura.py`.
-- **Manual (planejado)**: roteiro de execução manual **ainda não executado**; o resultado obtido será registrado na A3 com data e responsável.
+- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` e `tests/test_correcoes_a3.py` (última execução: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, em <!--A:data-->12/11/2026 19:30<!--/A-->). Reexecutar a cada entrega com `python gerar_cobertura.py`.
+- **Manual (planejado)**: roteiro de execução manual **ainda não executado**; o resultado obtido é registrado em `09_Homologacao/Testes_de_Aceitacao.md` com data e responsável.
 - Casos que têm uma parte automática e outra manual aparecem em **duas linhas** (sufixos `-A` e `-M`).
 
 **Massa de dados padrão** (criada pelos testes automatizados): Ana RH (nível 1, Padrão, 5.000,00); Fabio Financeiro (nível 2, Padrão, 4.000,00); Joao Comum (nível 3, Comissionado, base 3.000,00, comissão 3,00%); Maria Comum (nível 3, Por Produção, base 2.000,00, valor por unidade 2,50); Paulo Padrao (nível 3, Padrão, 2.500,00). Todos com nascimento 15/03/1990 (senha inicial 15031990) e contrato desde 01/01/2026.
 
 **Regra de cálculo usada nos resultados esperados:** fórmulas do cliente (sem meta, bônus ou teto), exceto nos casos marcados como *modo com metas (opcional)*.
 
-Resultado obtido e situação final de cada caso manual serão preenchidos na execução (A3).
+Resultado obtido e situação final dos casos manuais: `09_Homologacao/Testes_de_Aceitacao.md`.
 
 | Código | Requisito | Objetivo | Dados e passos | Resultado esperado | Tipo | Teste automatizado |
 |---|---|---|---|---|---|---|
@@ -53,9 +53,9 @@ Resultado obtido e situação final de cada caso manual serão preenchidos na ex
 | CT035 | RN011 (opcional) | **Modo com metas (opcional):** meta cresce no mês seguinte | Com REGIME_METAS ligado: bater a meta em março e gerar abril | Meta de abril: comissionado 7.000,00; produção 150 un | Auto | FolhaRegimeMetasTest.test_meta_cresce_no_mes_seguinte_se_bateu |
 | CT036 | RF013 | Não desabilitar a si mesmo | Ana tenta desabilitar a própria conta | Recusado; status continua Ativo | Auto | LoginTest.test_nao_desabilita_a_si_mesmo_nem_o_ultimo_admin |
 | CT037-A | RF010, RNF006 | Primeira execução cria banco e admin (parte automática) | Criar a aplicação com um arquivo de banco novo; entrar com 1 / 01012000 | Banco criado; admin matrícula 1, nível 1, ativo; o primeiro login redireciona para a troca de senha | Auto | PrimeiraExecucaoTest.test_banco_novo_cria_admin_e_exige_troca |
-| CT037-M | RF010, RNF006 | Dois cliques em iniciar.bat e persistência após reabrir (manual) | Apagar a pasta instance/; dar dois cliques em iniciar.bat; entrar com 1 / 01012000; trocar a senha; cadastrar um colaborador; fechar a janela; abrir de novo e consultar a lista | Navegador abre sozinho; login e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Manual (planejado) | — |
+| CT037-M | RF010, RNF006 | Dois cliques em iniciar.bat e persistência após reabrir (manual) | Descompactar `07_Executavel/Projeto_FolhaPagamento_Executavel.zip` em pasta limpa; dar dois cliques no atalho de inicialização; entrar com 1 / 01012000; trocar a senha; cadastrar um colaborador; fechar a janela; abrir de novo e consultar a lista | Navegador abre sozinho; login e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Manual (planejado) | — |
 | CT038 | RN003 | Salário zero válido | Cadastrar "Salario Zero", tipo Padrão, salário 0,00; calcular Comissionado com base 0,00, vendas 1.000,00, comissão 3% | Cadastro aceito (302), salário 0 centavos; cálculo: adicional 30,00 e total 30,00; Padrão com 0,00 = total 0,00 | Auto | FiltrosTest.test_cadastro_com_salario_zero_e_aceito; CalculoTest.test_salario_zero_valido |
-| CT039 | RNF001 | Roteiro de usabilidade (5 tarefas) | Executar as 5 tarefas do Plano de Testes (seção Roteiro de Usabilidade) com 2 participantes que não programaram a tela, sem ajuda do facilitador | Pelo menos 4 das 5 tarefas concluídas sem ajuda pelos 2 participantes e nota média ≥ 4 em "foi fácil de usar" | Manual (executado em 11/11/2026) | MM02 em `09_Homologacao/Testes_de_Aceitacao.md` |
+| CT039 | RNF001 | Roteiro de usabilidade (5 tarefas) | Executar as 5 tarefas do Plano de Testes (seção Roteiro de Usabilidade) com 2 participantes que não programaram a tela (um com conta RH e um com conta Financeiro, cada um nas tarefas do seu perfil), sem ajuda do facilitador | Todas as tarefas aplicáveis ao perfil de cada participante concluídas sem ajuda, dentro dos limites do Plano, e nota média ≥ 4 em "foi fácil de usar" | Manual (aplicado em 11/11/2026; falta fechar a conta de P2 em T2/T3 e a rodada do perfil Colaborador) | MM02 em `09_Homologacao/Testes_de_Aceitacao.md` |
 | CT040 | RNF003 | Persistência após encerrar e reabrir | Cadastrar colaborador (salário 1.234,56); encerrar o aplicativo; reabrir com o mesmo arquivo de banco; consultar | O colaborador existe com salário 123456 centavos. | Auto | PersistenciaTest.test_dados_sobrevivem_ao_reabrir_a_aplicacao |
 | CT041 | RNF007 | Arredondamento em centavos | Base 0,00; comissão 3%; vendas 1.000,50 e depois 4.999,99 | 30,015 → 30,02 (meio para cima); 149,9997 → 150,00; valores em inteiros | Auto | CalculoTest.test_arredondamento_meio_para_cima_em_centavos; CalculoTest.test_dinheiro |
 | CT042 | RNF002 | Validação antes do cálculo e da gravação | Enviar nome vazio, salário -5, vendas -5 e quantidade -3 | Todas recusadas com mensagem; nada é calculado nem gravado | Auto | CalculoTest.test_valores_negativos_sao_recusados; FolhaTest.test_valores_invalidos_nos_lancamentos_nao_salvam; FiltrosTest.test_cadastro_valida_e_cria_com_senha_de_nascimento |
@@ -74,13 +74,14 @@ Resultado obtido e situação final de cada caso manual serão preenchidos na ex
 | CT055 | RN011, RF019 | Modo com metas (opcional): meta mínima e crescimento | `proxima_meta` sem histórico, com meta batida e com meta não batida | Começa no mínimo; sobe um passo se bateu; repete se não bateu; nunca abaixo do mínimo | Auto | RegimeMetasTest.test_meta_cresce_quando_bate_e_nunca_cai_abaixo_do_minimo |
 | CT056 | RF013, RF014, RN016 | Reativar preserva o histórico e volta à folha (BUG004) | Fechar março/2026; desabilitar e reativar Paulo; gerar maio/2026 | Folha fechada de março intacta; contrato retomado (sem data de fim); Paulo entra na folha de maio. A data de fim é limpa por desenho: o histórico fica nas folhas fechadas | Auto | ReativacaoETermoDeContratoTest.test_reativar_preserva_folhas_fechadas_e_volta_a_entrar_nas_novas |
 | CT057 | RF014, RN014 | Quem perdeu o contrato sai da folha aberta (BUG005) | Gerar março/2026; mudar o fim de contrato de Paulo para 28/02/2026; gerar de novo | Paulo removido da folha aberta; os demais permanecem | Auto | ReativacaoETermoDeContratoTest.test_gerar_remove_da_folha_aberta_quem_perdeu_o_contrato_no_mes |
+| CT058 | RNF008 | Consolidador de métricas lê unittest e pytest e confere o total com os resultados individuais (BUG009) | Entregar ao `atualizar_documentos.py` saídas sintéticas de unittest e de pytest, com falha, vazia e com resumo divergente | Mesmo total para os dois formatos; falha não conta como aprovada; saída sem testes e resumo divergente são recusados; caso só é aprovado se todos os testes citados passaram | Auto | MetricasTest.test_contagem_vale_para_unittest_e_para_pytest; test_resultados_individuais_dos_dois_formatos; test_falha_no_resumo_nao_e_contada_como_aprovada; test_saida_sem_testes_e_recusada; test_resumo_diferente_dos_resultados_individuais_e_recusado; test_caso_so_e_aprovado_se_todos_os_testes_citados_passaram |
 
 ## Resumo por requisito (cobertura de casos)
 Cada requisito abaixo tem ao menos um caso associado na Matriz de Rastreabilidade (`01_Requisitos/ERS.md`).
 
 | Requisito | Casos | Como é verificado |
 |---|---|---|
-| RF001–RF021 | CT001–CT057 | Conforme a matriz de rastreabilidade |
+| RF001–RF021 | CT001–CT057 (CT058 cobre o RNF008) | Conforme a matriz de rastreabilidade |
 | RN001–RN008, RN012–RN018 | CT001–CT008, CT015–CT021, CT027, CT028, CT034, CT038 | Casos diretos |
 | RN009–RN011 (opcionais) | CT035, CT045 | Somente no modo com metas |
 | RNF001 | CT039 | Roteiro de usabilidade (execução na A3) |
@@ -90,7 +91,7 @@ Cada requisito abaixo tem ao menos um caso associado na Matriz de Rastreabilidad
 | RNF005 | CT024, CT025, CT032, CT033 | Segurança |
 | RNF006 | CT037-A, CT037-M | Primeira execução |
 | RNF007 | CT041 | Arredondamento e centavos |
-| RNF008 | CT043 | Medição de cobertura (A3) |
+| RNF008 | CT043, CT058 | Medição de cobertura (A3) e confiabilidade do consolidador de métricas |
 | RNF009 | CT044 | Execução no Windows |
 
-Itens marcados como "Manual (planejado)" não foram executados e não contam como evidência até o registro na A3.
+Itens marcados como "Manual (planejado)" não foram executados e só contam como evidência depois do registro em `09_Homologacao/Testes_de_Aceitacao.md`.
