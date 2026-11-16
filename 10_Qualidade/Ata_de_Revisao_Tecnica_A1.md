@@ -7,7 +7,7 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | Projeto | Sistema de Folha de Pagamento (Grupo 10) |
 | Entrega | A1 (revisada) e preparação da A3 |
 | Data da revisão | 12/11/2026 |
-| Participantes | João Vitor Fraga da Rocha, Luiggi Bortollini, Yuri Soares Dutra, Pedro da Silva Kolling|
+| Participantes | João Vitor Fraga da Rocha, Luiggi Bortolini, Yuri Soares Dutra, Pedro da Silva Kolling|
 | Itens revisados | ERS e matriz; casos de uso e sequências; plano e casos de teste; `regras.py`, `folha.py`, `auth.py`; testes automatizados; resultados da execução de 12/11/2026 |
 | Versão/commit revisado | 5234c9f |
 
@@ -18,7 +18,7 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | Segue o padrão de código? | Não verificado com ferramenta | PEP 8 conferido por leitura; o flake8 previsto no PGQ ainda não foi executado. |
 | Valida entradas? | Sim | CT004–CT007, CT042, CT046, CT047; BUG001 (ponto de milhar) corrigido. |
 | Checa permissão no backend? | Sim | CT024–CT026, CT025 e demais testes de `PermissaoTest`. |
-| Tem teste? | Sim | <!--A:testes-->?<!--/A--> testes, <!--A:resultado-->======================== 74 passed in 61.83s (0:01:01) ========================<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> (<!--A:data-->12/11/2026 19:24<!--/A-->). |
+| Tem teste? | Sim | <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92%<!--/A--> (<!--A:data-->12/11/2026 19:30<!--/A-->). |
 | Documentação atualizada? | Sim | Manuais, relatórios, métricas e registros criados; números atualizados automaticamente das evidências. |
 | Sem dados sensíveis no código? | Sim, com conferência pendente | Banco e `secret.key` fora do Git pelo `.gitignore` e do pacote (`empacotar_entrega.py`). No histórico, `instance/` foi commitado e apagado (commit a2d6225): conferir com `git show --stat a2d6225` se havia `secret.key` (BUG008). |
 
@@ -31,3 +31,5 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | 4 | BUG004 a BUG006 | João Vitor Fraga | Avaliador A3 | Corrigir ou justificar (CT056, CT057) | João Vitor Fraga | 11/11/2026 | Corrigidos ou não procede |
 | 5 | BUG008: pacote com `secret.key` e banco | João Vitor Fraga | Avaliador A3 | `empacotar_entrega.py` | João Vitor Fraga | 11/11/2026 | Corrigido |
 | 6 | Critério de usabilidade, tag, duplicados e versão | Equipe | Avaliador A3 | Unificar (tag `v1.3-A3`, versão 1.3, critério do Plano) | Equipe | 11/11/2026 | Corrigido |
+| 7 | BUG009: painel de métricas incoerente com os 74 testes | João Vitor Fraga | Avaliador A3 | Consolidador lê unittest e pytest; uma rodada por execução (CT058) | João Vitor Fraga | 16/11/2026 | Corrigido |
+
