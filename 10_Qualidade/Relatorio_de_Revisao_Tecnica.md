@@ -1,6 +1,6 @@
 # Relatório de Revisão Técnica (A3)
 
-Entregável 6.8. Revisões de 10/11/2026 e 11/11/2026 (ata: `Ata_de_Revisao_Tecnica_A1.md`; defeitos: `Registro_de_Defeitos.md`).
+Entregável 6.8. Revisões de 10/11/2026, 11/11/2026 e 13/11/2026 (ata: `Ata_de_Revisao_Tecnica_A1.md`; defeitos: `Registro_de_Defeitos.md`).
 
 ## Não conformidades e problemas encontrados
 | # | Problema | Origem | Severidade |
@@ -18,6 +18,10 @@ Entregável 6.8. Revisões de 10/11/2026 e 11/11/2026 (ata: `Ata_de_Revisao_Tecn
 | 11 | Pacote de entrega com `instance/secret.key`, banco, `.coverage`, `htmlcov/` | Avaliação de 11/11/2026 | Média (BUG008) |
 | 12 | Números de testes e cobertura divergentes entre documentos; relatórios com campos em branco | Avaliação de 11/11/2026 | Documental |
 | 13 | CT043 e CT044 com tipo incoerente; 5 testes sem caso associado; sem relatório de integração nem arquivo de métricas | Avaliação de 11/11/2026 | Documental |
+| 14 | Painel de métricas com "?" e 1/58 apesar de 74 testes aprovados; log do pytest e documentos do unittest; horário e duração divergentes | Avaliação de 13/11/2026 | Média (BUG009) |
+| 15 | Instruções que apontavam para o arquivo de dependências com a extensão errada (o arquivo real termina em `.txt`); atalho `iniciar(.bat)` no pacote principal e `iniciar.bat` no executável; scripts em versões diferentes nos dois ZIPs | Avaliação de 13/11/2026 | Documental |
+| 16 | MM01/CT037-M sem resultado consolidado nem prova de persistência com o pacote final; MM02 com tarefas de cadastro e folha atribuídas ao perfil Financeiro | Avaliação de 13/11/2026 | Processo |
+| 17 | Termo sem aceite e com divergência de data do commit; apresentação realizada sem registro | Avaliação de 13/11/2026 | Processo |
 
 ## Correções realizadas
 | # | Correção | Data | Evidência |
@@ -30,8 +34,10 @@ Entregável 6.8. Revisões de 10/11/2026 e 11/11/2026 (ata: `Ata_de_Revisao_Tecn
 | 6 | Números dos documentos passam a vir das evidências (marcadores automáticos); relatório de níveis de teste; `Metricas_e_Indicadores.md` | 11/11/2026 | Relatórios 04 e 10 |
 | 7 | Casos CT054–CT057 criados; CT030 automatizado; CT043 e CT044 reclassificados; CT039 simplificado | 11/11/2026 | `Casos_de_Teste.md` |
 | 8 | Versão 1.3 (A3) e tag `v1.3-A3` unificadas; duplicados removidos; apresentação, roteiro e pacote em `07_Executavel/` criados | 11/11/2026 | READMEs, pastas 07 e 11 |
+| 9 | Uma única rodada por execução: `gerar_cobertura.py` grava executor, retorno, duração e commit; consolidador lê unittest e pytest e confere o total (BUG009); testes `MetricasTest` (CT058) | 16/11/2026 | CT058 |
+| 10 | Atalhos sempre `iniciar.bat`; `empacotar_entrega.py` não renomeia mais; `requirements*.txt` corrigido; procedimento de empacotamento documentado em `07_Executavel/README.md`; MM01-B e MM02 reestruturados com passos e contas | 16/11/2026 | Pastas 05, 07 e 09 |
 
-Pendentes (dependem de pessoas): roteiros MM01 e MM02, Termo assinado, commit e tag finais.
+Pendentes (dependem de pessoas): MM01-B com o pacote final, fechamento do MM02, apresentação registrada, Termo com aceite do cliente, commit e tag finais.
 
 ## Lições aprendidas
 - Declarar "aprovado" só com evidência: cobertura e saída dos testes são geradas por script e guardadas no repositório.
