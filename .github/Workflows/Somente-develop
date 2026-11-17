@@ -1,0 +1,14 @@
+name: Somente develop para main
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  verificar-origem:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bloquear PR que não venha de develop
+        run: |
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "Pull requests para main só podem vir da branch develop."
+            exit 1
+          fi
