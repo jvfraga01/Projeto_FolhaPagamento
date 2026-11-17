@@ -13,10 +13,10 @@ Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não
 | Campo | Valor |
 |---|---|
 | Data observada nas capturas | 11/11/2026. O relógio do Windows marca 21:30 (captura 01), 21:31 (03), 21:47 (14) e a impressão do recibo traz 21:55 (22) |
-| Executor | <<PREENCHER: nome de quem executou. A captura 02 mostra o caminho `C:\Users\pedro\Downloads\...`>> |
+| Executor | Pedro da Silva Kolling. A captura 02 mostra o caminho `C:\Users\pedro\Downloads\...`>> |
 | Facilitador do MM02 | Conforme `09_Homologacao/Testes_de_Aceitacao.md`, seção C: Luiggi Bortolini |
 | Sistema operacional | <<PREENCHER: edição e versão do Windows>> |
-| Navegador | <<PREENCHER: nome e versão do navegador>> |
+| Navegador | Opera GX |
 | Python e Flask | <<PREENCHER: saída de `python --version` e `pip show flask`>> |
 | Versão do sistema testada | <<PREENCHER: tag, commit ou SHA-256 do ZIP usado>> |
 | Resultado do MM01/CT037-M | <<PREENCHER: Aprovado, Reprovado ou Aprovado com ressalvas>> |
