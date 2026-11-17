@@ -9,7 +9,7 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | Data da revisão | 17/11/2026 |
 | Participantes | João Vitor Fraga da Rocha, Luiggi Bortolini, Yuri Soares Dutra, Pedro da Silva Kolling|
 | Itens revisados | ERS e matriz; casos de uso e sequências; plano e casos de teste; `regras.py`, `folha.py`, `auth.py`; testes automatizados; resultados da execução de 12/11/2026 |
-| Versão/commit revisado | 5234c9f |
+| Versão/commit revisado | f1959e1 |
 
 ## Checklist do PGQ
 | Pergunta | Resposta | Observação |

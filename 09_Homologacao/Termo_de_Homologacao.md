@@ -5,7 +5,7 @@ Entregável 6.11 (Anexo I, item 13).
 |---|---|
 | Projeto | Sistema de Folha de Pagamento (Grupo 10) |
 | Versão homologada | 1.3 (A3), tag `v1.3-A3`|
-| Commit | 5234c9f |
+| Commit | f1959e1f70b35fd6c648d5484abc54718c2a188f |
   | Data da homologação | 11/11/2026 |
 | Cliente / responsável | Prof. Paulo Cesar Furlanetto Marques |
 | Equipe | João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini |
