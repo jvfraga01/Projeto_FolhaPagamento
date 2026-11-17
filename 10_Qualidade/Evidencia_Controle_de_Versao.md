@@ -8,9 +8,9 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 | Ramo principal | `main` |
 | Tag da entrega A1 | `v1.2-A1` |
 | Tag da entrega A3 | `v1.3-A3` |
-| Commit da tag A3 | <<PREENCHER: saída de `git rev-list -n 1 v1.3-A3` (hash curto)>> |
+| Commit da tag A3 | ffb2753: saída de `git rev-list -n 1 v1.3-A3` (hash curto)>> |
 | Último commit de conteúdo (antes desta evidência) | 5234c9f |
-| Data da exportação do histórico | 12/11/2026 |
+| Data da exportação do histórico | 17/11/2026 |
 | Arquivo com o log completo | `10_Qualidade/Historico_Git.md` |
 
 > A tag aponta para o commit final, que inclui este arquivo e o `Historico_Git.md`. Por isso o hash acima é o do

@@ -74,7 +74,7 @@ cd 05_Codigo_Fonte
 python -m unittest discover -v
 python gerar_cobertura.py          # roda tudo com cobertura e salva em 04_Testes/evidencias/
 ```
-Última medição: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,4%<!--/A--> sobre `app/` (<!--A:data-->17/11/2026 18:20<!--/A-->). Detalhes: `04_Testes/Relatorio_de_Testes.md`.
+Última medição: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,4%<!--/A--> sobre `app/` (<!--A:data-->17/11/2026 19:08<!--/A-->). Detalhes: `04_Testes/Relatorio_de_Testes.md`.
 
 ## 8. Manutenção
 | Tarefa | Como |

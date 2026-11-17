@@ -77,7 +77,7 @@ test_producao_com_meta_e_bonus (tests.test_sistema.RegimeMetasTest.test_producao
 test_progressao_1_ponto_a_cada_2_mil_e_teto_de_10 (tests.test_sistema.RegimeMetasTest.test_progressao_1_ponto_a_cada_2_mil_e_teto_de_10) ... ok
 
 ----------------------------------------------------------------------
-Ran 74 tests in 56.549s
+Ran 74 tests in 58.543s
 
 OK
 ```

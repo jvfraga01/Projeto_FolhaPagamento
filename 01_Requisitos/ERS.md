@@ -151,43 +151,43 @@ Gerado por `05_Codigo_Fonte/atualizar_documentos.py` a partir de `04_Testes/Caso
 <!--AUTO:resultado_requisitos-->
 | Requisito | Casos de teste | Resultado obtido | Status final |
 |---|---|---|---|
-| RF001 | CT001, CT047 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF002 | CT001 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF003 | CT002 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF004 | CT003 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF005 | CT009 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF006 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF007 | CT020 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF008 | CT021 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF009 | CT012, CT050 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF010 | CT022, CT037-A, CT037-M, CT052 | 3 de 4 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF011 | CT023, CT049, CT052 | 3 de 3 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF012 | CT024, CT026 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF013 | CT013, CT014, CT036, CT056 | 4 de 4 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF014 | CT020, CT056, CT057 | 3 de 3 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF015 | CT020, CT051 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF016 | CT027 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF017 | CT029-A, CT029-M | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF018 | CT010, CT011 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF019 | CT054, CT055 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF020 | CT030 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RF021 | CT052 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN001 | CT008 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN002 | CT004 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN003 | CT005, CT038, CT046 | 3 de 3 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN004 | CT006 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN005 | CT006 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN006 | CT007 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN007 | CT007 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN008 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN009 | CT045 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN010 | CT054 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN011 | CT035, CT055 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN012 | CT027, CT048 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN013 | CT028, CT048 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN014 | CT034, CT057 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN015 | CT025 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN016 | CT050, CT056 | 2 de 2 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN017 | CT049 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
-| RN018 | CT015 | 1 de 1 caso(s) aprovado(s) (17/11/2026 18:20) | Atendido |
+| RF001 | CT001, CT047 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF002 | CT001 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF003 | CT002 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF004 | CT003 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF005 | CT009 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF006 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF007 | CT020 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF008 | CT021 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF009 | CT012, CT050 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF010 | CT022, CT037-A, CT037-M, CT052 | 3 de 4 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF011 | CT023, CT049, CT052 | 3 de 3 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF012 | CT024, CT026 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF013 | CT013, CT014, CT036, CT056 | 4 de 4 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF014 | CT020, CT056, CT057 | 3 de 3 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF015 | CT020, CT051 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF016 | CT027 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF017 | CT029-A, CT029-M | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF018 | CT010, CT011 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF019 | CT054, CT055 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF020 | CT030 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF021 | CT052 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN001 | CT008 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN002 | CT004 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN003 | CT005, CT038, CT046 | 3 de 3 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN004 | CT006 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN005 | CT006 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN006 | CT007 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN007 | CT007 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN008 | CT015, CT016, CT017, CT018, CT019 | 5 de 5 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN009 | CT045 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN010 | CT054 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN011 | CT035, CT055 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN012 | CT027, CT048 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN013 | CT028, CT048 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN014 | CT034, CT057 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN015 | CT025 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN016 | CT050, CT056 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN017 | CT049 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RN018 | CT015 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 <!--/AUTO-->
