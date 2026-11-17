@@ -1,6 +1,6 @@
 # Manual do Usuário — Sistema de Folha de Pagamento
 
-Versão do sistema: 1.2 (A3). Imagens de tela: `<<PREENCHER: inserir os prints indicados em cada seção>>`.
+Versão do sistema: 1.3 (A3). As telas são descritas em texto.
 
 ## 1. Introdução
 O sistema calcula e controla a folha de pagamento mensal de uma empresa pequena. Existem três perfis:
@@ -21,14 +21,15 @@ Não há descontos: salário final = salário base + adicionais.
 ## 2. Instalação
 Requisitos: Windows com Python 3.10 ou superior e um navegador atual (Chrome, Edge ou Firefox). Internet só é necessária para baixar o Python e o Flask.
 
+0. Por segurança do e-mail e do antivírus, nos ZIPs os atalhos .bat podem vir com o nome entre parênteses (`iniciar(.bat)`). Renomeie para `iniciar.bat` ou rode `python run.py`. Na primeira abertura o Windows pode avisar "fornecedor desconhecido": clique em **Executar**.
 1. Instale o Python em https://www.python.org/downloads/ marcando **Add Python to PATH** (ou deixe o `iniciar.bat` oferecer a instalação).
 2. Na pasta `05_Codigo_Fonte`, dê dois cliques em **`iniciar.bat`**.
 3. Se o Flask não estiver instalado, o sistema pergunta se pode instalar: responda `S`.
 4. O navegador abre sozinho em http://127.0.0.1:5000. Para encerrar o sistema, feche a janela preta.
 
-`<<PREENCHER: print da janela do iniciar.bat e da tela de login>>`
 
-Comandos de terminal e instalação em Linux e macOS: `05_Codigo_Fonte/INSTALACAO.md` (Linux e macOS não são verificados nesta entrega).
+
+Comandos de terminal: `05_Codigo_Fonte/INSTALACAO.md`. O escopo verificado é o Windows; Linux e macOS são opcionais e não fazem parte da verificação.
 
 ## 3. Configuração
 | Item | Como |
@@ -46,14 +47,14 @@ Comandos de terminal e instalação em Linux e macOS: `05_Codigo_Fonte/INSTALACA
 2. Se a senha for a inicial, o sistema abre a tela **Alterar minha senha**. Informe a senha atual, a nova (mínimo 6 caracteres, diferente da inicial) e a confirmação.
 3. Para trocar a senha depois, use o menu **Senha**. Para sair, **Sair**.
 
-Mensagens de erro de login são genéricas ("Matrícula ou senha incorretos, ou usuário inativo"). `<<PREENCHER: print da troca de senha>>`
+Mensagens de erro de login são genéricas ("Matrícula ou senha incorretos, ou usuário inativo").
 
 ### 4.2 Cadastrar colaborador (RH)
 1. Menu **Novo colaborador**.
 2. Preencha nome, nascimento, início do contrato, nível de acesso, salário base e tipo. Para Comissionado informe a comissão (%); para Por Produção, o valor por unidade.
 3. **Confirmar cadastro**. A matrícula é gerada pelo sistema e a senha inicial é a data de nascimento (DDMMAAAA).
 
-Como digitar valores: `3000,00`, `3.000,00` e `3.000` valem R$ 3.000,00. Com ponto e sem vírgula, o ponto só vale como milhar quando é seguido de exatamente 3 dígitos; `12.50` vale R$ 12,50. Formatos ambíguos como `1,500.00` são recusados. Valores negativos e texto são recusados com mensagem no campo. `<<PREENCHER: print do formulário>>`
+Como digitar valores: `3000,00`, `3.000,00` e `3.000` valem R$ 3.000,00. Com ponto e sem vírgula, o ponto só vale como milhar quando é seguido de exatamente 3 dígitos; `12.50` vale R$ 12,50. Formatos ambíguos como `1,500.00` são recusados. Valores negativos e texto são recusados com mensagem no campo.
 
 ### 4.3 Consultar, filtrar e alterar colaboradores
 - Menu **Colaboradores** (RH e Financeiro). Filtros combináveis: nome, salário máximo, tipo e status (Ativo, Inativo, Todos).
@@ -65,7 +66,7 @@ Como digitar valores: `3000,00`, `3.000,00` e `3.000` valem R$ 3.000,00. Com pon
 2. **Lançar vendas / produção**: informe as vendas (comissionados) e a quantidade (produção) e clique em **Salvar e recalcular**. Enquanto o mês está aberto, a folha usa o salário e os percentuais atuais do cadastro.
 3. **Fechar mês**: congela os valores. **Não é possível reabrir.** O sistema pede confirmação.
 
-Mês aberto = prévia; mês fechado = congelado. `<<PREENCHER: print da tela de folha e de lançamentos>>`
+Mês aberto = prévia; mês fechado = congelado.
 
 ### 4.5 Recibo individual
 - Colaboradores: menu **Minhas folhas** lista apenas meses fechados; abra o **Recibo** e use **Imprimir recibo**.
@@ -73,7 +74,7 @@ Mês aberto = prévia; mês fechado = congelado. `<<PREENCHER: print da tela de 
 - O recibo mostra matrícula, nome, tipo, salário base, vendas ou produção, adicional e **líquido a receber**.
 
 ## 5. Relatórios
-Menu **Relatório** (RH e Financeiro): escolha o mês e veja o total da folha, a quantidade de colaboradores, o total por categoria e o detalhamento (matrícula, nome, tipo, salário base, adicionais e salário final). **Imprimir relatório** abre a impressão sem menu nem botões. Mês aberto exibe aviso de prévia. `<<PREENCHER: print do relatório>>`
+Menu **Relatório** (RH e Financeiro): escolha o mês e veja o total da folha, a quantidade de colaboradores, o total por categoria e o detalhamento (matrícula, nome, tipo, salário base, adicionais e salário final). **Imprimir relatório** abre a impressão sem menu nem botões. Mês aberto exibe aviso de prévia.
 
 ## 6. Tema e preferências
 O botão 🌙/☀️ no menu alterna entre tema claro e escuro; a escolha fica salva no navegador.

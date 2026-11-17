@@ -1,9 +1,5 @@
-# Gerados automaticamente: NÃO versionar
 __pycache__/
 *.pyc
+instance/
 .venv/
 .coverage
-htmlcov/
-# Banco de dados e chave secreta locais
-instance/
-*.db

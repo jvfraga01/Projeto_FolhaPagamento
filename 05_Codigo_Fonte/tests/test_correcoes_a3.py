@@ -40,6 +40,11 @@ class MilharTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             regras.parse_reais("1,500.00")
 
+    def test_pontos_em_formato_invalido_sao_recusados(self):
+        for texto in ("1.5000", "01.500", "1..500", "1.50.0", "1.2345"):  # D-04
+            with self.assertRaises(ValueError, msg=texto):
+                regras.parse_reais(texto)
+
 
 class BaseCorrecoes(test_sistema.BaseTest):
     def _status_login(self, matricula, senha):
@@ -308,6 +313,57 @@ class ListaEReciboTest(BaseCorrecoes):
                          "LÍQUIDO A RECEBER", "R$ 3.150,00", "data-print"):
             self.assertIn(esperado, html)
         self.assertNotIn("PRÉVIA", html)
+
+
+class ReativacaoETermoDeContratoTest(BaseCorrecoes):
+    """CT056 (BUG004) e CT057 (BUG005)."""
+
+    def test_reativar_preserva_folhas_fechadas_e_volta_a_entrar_nas_novas(self):
+        adm, p, f = self._fechar_marco()
+        self.post(adm, f"/colaboradores/{self.padrao}/desabilitar")
+        db = get_db()
+        self.assertIsNotNone(db.execute("SELECT data_fim_contrato FROM colaborador WHERE matricula=?",
+                                        (self.padrao,)).fetchone()[0])
+        self.post(adm, f"/colaboradores/{self.padrao}/reativar")
+        c = db.execute("SELECT status, data_fim_contrato FROM colaborador WHERE matricula=?",
+                       (self.padrao,)).fetchone()
+        self.assertEqual((c["status"], c["data_fim_contrato"]), ("Ativo", None))
+        fo = db.execute("SELECT total_centavos FROM folha WHERE id=?", (f[self.padrao],)).fetchone()
+        self.assertEqual(fo["total_centavos"], 250000)  # folha fechada continua igual
+        self.post(adm, "/folha/gerar", {"ano": 2026, "mes": 5})
+        n = db.execute("SELECT COUNT(*) FROM folha f JOIN periodo p ON p.id=f.periodo_id "
+                       "WHERE p.mes=5 AND f.matricula=?", (self.padrao,)).fetchone()[0]
+        self.assertEqual(n, 1)
+
+    def test_gerar_remove_da_folha_aberta_quem_perdeu_o_contrato_no_mes(self):
+        adm, p, f = self.gerar_e_lancar()
+        db = get_db()
+        db.execute("UPDATE colaborador SET data_fim_contrato='2026-02-28' WHERE matricula=?", (self.padrao,))
+        db.commit()
+        self.post(adm, "/folha/gerar", {"ano": 2026, "mes": 3})
+        n = db.execute("SELECT COUNT(*) FROM folha WHERE periodo_id=? AND matricula=?",
+                       (p, self.padrao)).fetchone()[0]
+        self.assertEqual(n, 0)
+        n = db.execute("SELECT COUNT(*) FROM folha WHERE periodo_id=?", (p,)).fetchone()[0]
+        self.assertEqual(n, 4)  # os demais continuam
+
+
+class ImpressaoTest(unittest.TestCase):
+    """CT030: regras de impressão do CSS e botões de impressão nas telas (a pré-visualização
+    visual fica no roteiro de demonstração)."""
+
+    def test_css_de_impressao_oculta_menu_e_botoes(self):
+        pasta = os.path.join(os.path.dirname(os.path.dirname(__file__)), "app")
+        with open(os.path.join(pasta, "static", "style.css"), encoding="utf-8") as f:
+            css = f.read()
+        bloco = css[css.index("@media print"):]
+        for seletor in (".navbar", "button", ".filtros"):
+            self.assertIn(seletor, bloco)
+        self.assertIn("display:none", bloco.replace(" ", ""))
+        for tela in ("recibo.html", "relatorio.html"):
+            with open(os.path.join(pasta, "templates", tela), encoding="utf-8") as f:
+                html = f.read()
+            self.assertIn("data-print", html)
 
 
 if __name__ == "__main__":

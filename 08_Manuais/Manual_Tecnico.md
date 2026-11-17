@@ -32,7 +32,7 @@ Triggers (imutabilidade de mês fechado, mesmo por acesso direto ao banco): `fol
 05_Codigo_Fonte/
 ├── run.py, iniciar.bat, iniciar.sh        inicialização
 ├── gerar_cobertura.py / .bat / .sh        testes + cobertura + evidências
-├── .coveragerc, requirements*.txt         configuração e dependências
+├── .coveragerc, requirements*.md         configuração e dependências
 ├── app/
 │   ├── __init__.py       fábrica do app, sessão, CSRF, CSP, troca obrigatória de senha, filtros, erros
 │   ├── auth.py           login, logout, troca de senha, decorators de permissão
@@ -71,10 +71,10 @@ Não há build. Execução local: `python run.py` (ou `iniciar.bat`), em http://
 ## 7. Testes e cobertura
 ```bash
 cd 05_Codigo_Fonte
-python -m unittest discover -v     # 70 testes
+python -m unittest discover -v
 python gerar_cobertura.py          # roda tudo com cobertura e salva em 04_Testes/evidencias/
 ```
-Última medição registrada: 10/11/2026, 61 testes OK e 92,2% de cobertura sobre `app/` (antes das correções do BUG002). Reexecução dos 70: <<PREENCHER: resultado de gerar_cobertura.py>>. Detalhes: `04_Testes/Relatorio_de_Testes.md`.
+Última medição: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,4%<!--/A--> sobre `app/` (<!--A:data-->17/11/2026 18:20<!--/A-->). Detalhes: `04_Testes/Relatorio_de_Testes.md`.
 
 ## 8. Manutenção
 | Tarefa | Como |
@@ -86,4 +86,4 @@ python gerar_cobertura.py          # roda tudo com cobertura e salva em 04_Teste
 | Regra de mudança | Mudança de regra de negócio em relação ao cliente só entra como padrão com aceite registrado (PGQ) |
 
 ## 9. Limitações conhecidas
-SQLite com poucas escritas simultâneas; sem cálculo proporcional (pró-rata); sem bloqueio por tentativas de login; defeitos BUG004–BUG006 abertos (`10_Qualidade/Registro_de_Defeitos.md`); verificação apenas no Windows.
+SQLite com poucas escritas simultâneas; sem cálculo proporcional (pró-rata); sem bloqueio por tentativas de login; verificação apenas no Windows; defeitos conhecidos e suas soluções em `10_Qualidade/Registro_de_Defeitos.md`.
