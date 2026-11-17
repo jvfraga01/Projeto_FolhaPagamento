@@ -3,14 +3,16 @@
 Sistema de Folha de Pagamento desenvolvido para o Trabalho Integrador (A1 e A3) da unidade curricular
 **Garantia da Qualidade de Software**.
 
-**Equipe:** João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini · **Versão:** 1.2 (A1, revisada) · **Linguagem:** Python 3 + Flask + SQLite
+**Equipe:** João Vitor Fraga, Pedro Kolling, Yuri Soares e Luiggi Bortolini · **Versão:** 1.3 (A3) · **Linguagem:** Python 3 + Flask + SQLite
 
 ## Como usar (resumo)
 1. Instale o Python 3.10+ (ou deixe o `iniciar.bat` oferecer a instalação).
 2. Dê dois cliques em `05_Codigo_Fonte/iniciar.bat` (Windows) ou execute `05_Codigo_Fonte/iniciar.sh`.
-3. Entre com matrícula **1** e senha **01012000** e o sistema pedirá a troca da senha no primeiro acesso.
+3. Entre com matrícula **1** e senha **01012000** e troque a senha no menu.
 
 Comandos de terminal, requisitos e solução de problemas: [`05_Codigo_Fonte/INSTALACAO.md`](05_Codigo_Fonte/INSTALACAO.md).
+
+> Por segurança do e-mail e do antivírus, nos ZIPs os atalhos .bat podem vir com o nome entre parênteses (`iniciar(.bat)`). Renomeie para `iniciar.bat` ou rode `python run.py`. Na primeira abertura o Windows pode avisar "fornecedor desconhecido": clique em **Executar**.
 
 ## Estrutura de entrega
 | Pasta | Conteúdo | Entrega |
@@ -18,7 +20,7 @@ Comandos de terminal, requisitos e solução de problemas: [`05_Codigo_Fonte/INS
 | `01_Requisitos` | Documento de Visão, ERS (com rastreabilidade), Registro de Aceite de Desvios | A1 |
 | `02_Analise` | Casos de Uso, diagramas UML | A1 |
 | `03_Projeto` | Arquitetura, planejamento (EAP, cronograma, responsabilidades) | A1 |
-| `04_Testes` | Plano de Testes, Casos de Teste (53), Relatório de Testes | A1 / A3 |
+| `04_Testes` | Plano de Testes, Casos de Teste (57) | A1 |
 | `05_Codigo_Fonte` | Sistema, testes automatizados, instruções | A1 (estrutura) / A3 |
 | `06_Banco_Dados` | Script do banco | A3 |
 | `07_Executavel` | Pacote executável | A3 |
@@ -31,7 +33,7 @@ Os diagramas estão em **Mermaid** (aparecem prontos no GitHub e no VS Code com 
 
 ## Repositório e histórico
 - URL do repositório: https://github.com/jvfraga01/Projeto_FolhaPagamento.git
-- Tags de entrega: `v1.2-A1` (A1) e `v-A3` (A3, a criar na entrega final)
+- Tags de entrega: `v1.2-A1` (A1) e `v1.3-A3` (A3)
 - Evidência do histórico (log, autores, datas, tags): [`10_Qualidade/Evidencia_Controle_de_Versao.md`](10_Qualidade/Evidencia_Controle_de_Versao.md)
 
 ## Regra de cálculo
@@ -40,5 +42,5 @@ O sistema calcula pelas fórmulas do cliente: comissionado = salário base + ven
 ## Testes
 ```bash
 cd 05_Codigo_Fonte
-python -m unittest discover -v      # 70 testes
+python -m unittest discover -v
 ```

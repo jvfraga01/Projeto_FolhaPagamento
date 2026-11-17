@@ -26,6 +26,8 @@ ADMIN_NASCIMENTO = "2000-01-01"   # senha inicial do admin = 01012000
 # Ponto de milhar no padrão brasileiro: grupos de exatamente 3 dígitos (1.500 / 1.234.567).
 # Não casa com "12.50" nem "0.500" (esses continuam sendo decimais com ponto).
 _PONTO_DE_MILHAR = re.compile(r"[1-9]\d{0,2}(\.\d{3})+")
+# Decimal com ponto, sem vírgula: até 2 casas ("12.50", "2.5") ou zero à esquerda ("0.500").
+_DECIMAL_COM_PONTO = re.compile(r"(0|[1-9]\d*)\.\d{1,2}|0\.\d+")
 
 
 # ---------------------------------------------------------------- dinheiro
@@ -39,8 +41,12 @@ def _decimal(texto):
         if t.rfind(".") > t.rfind(","):  # ex.: 1,500.00 (formato americano): ambíguo, recusa
             raise ValueError("Valor inválido. Exemplo: 1500,00")
         t = t.replace(".", "").replace(",", ".")
-    elif _PONTO_DE_MILHAR.fullmatch(t):
-        t = t.replace(".", "")  # "1.500" = mil e quinhentos, não 1,5 (BUG001)
+    elif "." in t:
+        if _PONTO_DE_MILHAR.fullmatch(t):
+            t = t.replace(".", "")  # "1.500" = mil e quinhentos, não 1,5 (BUG001)
+        elif not _DECIMAL_COM_PONTO.fullmatch(t):
+            # "1.5000", "01.500", "1..500": ambíguos, recusa em vez de gravar valor errado (D-04)
+            raise ValueError("Valor inválido. Exemplo: 1500,00")
     try:
         d = Decimal(t)
     except InvalidOperation:

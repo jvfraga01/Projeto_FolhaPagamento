@@ -199,3 +199,58 @@ stateDiagram-v2
     ABERTO --> FECHADO : fechar mes
     FECHADO --> [*]
 ```
+
+## Modelo de Dados (ER)
+```mermaid
+erDiagram
+    COLABORADOR ||--o{ FOLHA : possui
+    PERIODO ||--o{ FOLHA : contem
+    COLABORADOR {
+        int matricula PK
+        string nome
+        string data_nascimento
+        string data_inicio_contrato
+        string data_fim_contrato
+        int nivel_acesso
+        string status
+        string senha_hash
+        string tipo
+        int salario_base_centavos
+        int percentual_comissao_bp
+        int valor_unidade_centavos
+    }
+    PERIODO {
+        int id PK
+        int ano
+        int mes
+        string status
+    }
+    FOLHA {
+        int id PK
+        int periodo_id FK
+        int matricula FK
+        string nome
+        string tipo
+        int salario_base_centavos
+        int percentual_comissao_bp
+        int valor_unidade_centavos
+        int meta
+        int vendas_centavos
+        int quantidade_produzida
+        int meta_atingida
+        int percentual_aplicado_bp
+        int adicionais_centavos
+        int total_centavos
+     }
+     }
+     }
+```
+
+## Diagrama de Estados – Período da folha
+```mermaid
+stateDiagram-v2
+    [*] --> ABERTO : gerar folha
+    ABERTO --> ABERTO : lancar vendas e producao
+    ABERTO --> FECHADO : fechar mes
+    FECHADO --> [*]
+```
