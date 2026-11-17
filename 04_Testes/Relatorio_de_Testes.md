@@ -7,8 +7,8 @@ Os números deste relatório são **copiados automaticamente** de `04_Testes/evi
 ## 1. Execução automatizada
 | Item | Valor |
 |---|---|
-| Data e hora | <!--A:data-->12/11/2026 19:30<!--/A--> |
-| Executor | <!--A:executor-->Pedro da Silova Kolling<!--/A--> |
+| Data e hora | <!--A:data-->16/11/2026 21:17<!--/A--> |
+| Executor | <!--A:executor-->Yuri Soares<!--/A--> |
 | Python / sistema | <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A--> |
 | Executor de testes | <!--A:runner-->unittest<!--/A--> (`python gerar_cobertura.py` = `coverage run --source=app -m unittest discover -v`) |
 | Código de retorno | <!--A:retorno-->0<!--/A--> |

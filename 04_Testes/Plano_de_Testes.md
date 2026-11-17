@@ -76,7 +76,7 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos atendidos.
 
 ## Situação atual
-- Suíte automatizada: <!--A:testes-->74<!--/A--> testes na última execução (<!--A:resultado-->OK, nenhum teste falhou<!--/A-->, <!--A:data-->12/11/2026 19:30<!--/A-->, <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A-->) e cobertura de <!--A:cobertura-->92%<!--/A--> sobre `app/`. Detalhes: `04_Testes/Relatorio_de_Testes.md`.
+- Suíte automatizada: <!--A:testes-->74<!--/A--> testes na última execução (<!--A:resultado-->OK, nenhum teste falhou<!--/A-->, <!--A:data-->16/11/2026 21:17<!--/A-->, <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A-->) e cobertura de <!--A:cobertura-->92%<!--/A--> sobre `app/`. Detalhes: `04_Testes/Relatorio_de_Testes.md`.
 - Dos 58 casos, **os marcados "Auto" estão automatizados**. O CT039 (roteiro de usabilidade) foi aplicado em 11/11/2026 (linha MM02 em `09_Homologacao/Testes_de_Aceitacao.md`) e fica **parcial** até registrar a conta usada por P2 em T2 e T3 e a rodada do perfil Colaborador. O CT037-M tem a rodada 1 parcial (MM01) e a rodada com o pacote final (MM01-B) ainda por executar. O CT043 (cobertura) e o CT044 (Windows) são executados por `gerar_cobertura.py`.
 - Casos por tipo, aprovados e requisitos atendidos: `10_Qualidade/Metricas_e_Indicadores.md` (calculado das evidências).
 - Aceite do cliente para os desvios D1 a D6: registrado em 29 e 30/10/2026 (ver Registro de Aceite).

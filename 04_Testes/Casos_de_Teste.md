@@ -3,7 +3,7 @@
 Total: **58 casos** (CT001–CT058; o CT029 e o CT037 têm duas linhas cada, sufixos `-A` e `-M`, e a coluna `Tipo` classifica cada linha).
 
 **Legenda de tipo**
-- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` e `tests/test_correcoes_a3.py` (última execução: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, em <!--A:data-->12/11/2026 19:30<!--/A-->). Reexecutar a cada entrega com `python gerar_cobertura.py`.
+- **Auto**: automatizado em `05_Codigo_Fonte/tests/test_sistema.py` e `tests/test_correcoes_a3.py` (última execução: <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, em <!--A:data-->16/11/2026 21:17<!--/A-->). Reexecutar a cada entrega com `python gerar_cobertura.py`.
 - **Manual (planejado)**: roteiro de execução manual **ainda não executado**; o resultado obtido é registrado em `09_Homologacao/Testes_de_Aceitacao.md` com data e responsável.
 - Casos que têm uma parte automática e outra manual aparecem em **duas linhas** (sufixos `-A` e `-M`).
 
