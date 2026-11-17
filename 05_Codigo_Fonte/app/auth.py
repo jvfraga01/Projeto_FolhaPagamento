@@ -5,6 +5,7 @@ from flask import (Blueprint, abort, flash, g, redirect, render_template, reques
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from .db import get_db
+from .regras import senha_inicial
 
 bp = Blueprint("auth", __name__)
 HASH_FALSO = generate_password_hash("hash-para-tempo-constante")
@@ -52,26 +53,20 @@ def login():
         linha = None
         if matricula.isdigit() and len(matricula) <= 9:
             linha = get_db().execute(
-                "SELECT matricula, senha_hash, status FROM colaborador WHERE matricula = ?",
+                "SELECT matricula, senha_hash, status, data_nascimento FROM colaborador WHERE matricula = ?",
                 (int(matricula),)).fetchone()
         senha_ok = check_password_hash(linha["senha_hash"] if linha else HASH_FALSO, senha)
         if linha and senha_ok and linha["status"] == "Ativo":
             session.clear()
             session["matricula"] = linha["matricula"]
             session.permanent = True
+            # BUG002: quem entra com a senha inicial (data de nascimento) é obrigado a trocá-la.
+            if senha == senha_inicial(linha["data_nascimento"]):
+                session["trocar_senha"] = True
+                return redirect(url_for("auth.trocar_senha"))
             return redirect(url_for("inicio"))
         erro = "Matrícula ou senha incorretos, ou usuário inativo."
-    return render_template("login.html", erro=erro, dica=_dica_primeiro_acesso()), (401 if erro else 200)
-
-
-def _dica_primeiro_acesso():
-    """Enquanto o admin inicial não trocar a senha, a tela de login mostra como entrar."""
-    from .regras import ADMIN_NASCIMENTO, senha_inicial
-    a = get_db().execute("SELECT matricula, senha_hash FROM colaborador WHERE matricula = 1 "
-                         "AND nivel_acesso = 1 AND status = 'Ativo'").fetchone()
-    if a and check_password_hash(a["senha_hash"], senha_inicial(ADMIN_NASCIMENTO)):
-        return {"matricula": 1, "senha": senha_inicial(ADMIN_NASCIMENTO)}
-    return None
+    return render_template("login.html", erro=erro), (401 if erro else 200)
 
 
 @bp.route("/logout", methods=["POST"])
@@ -88,18 +83,21 @@ def trocar_senha():
         nova = request.form.get("nova", "")
         confirma = request.form.get("confirma", "")
         db = get_db()
-        linha = db.execute("SELECT senha_hash FROM colaborador WHERE matricula = ?",
+        linha = db.execute("SELECT senha_hash, data_nascimento FROM colaborador WHERE matricula = ?",
                            (g.usuario["matricula"],)).fetchone()
         if not check_password_hash(linha["senha_hash"], atual):
             flash("Senha atual incorreta.", "erro")
         elif len(nova) < 6:
             flash("A nova senha precisa ter pelo menos 6 caracteres.", "erro")
+        elif nova == senha_inicial(linha["data_nascimento"]):
+            flash("A nova senha não pode ser a senha inicial (data de nascimento).", "erro")
         elif nova != confirma:
             flash("A confirmação não confere com a nova senha.", "erro")
         else:
             db.execute("UPDATE colaborador SET senha_hash = ? WHERE matricula = ?",
                        (generate_password_hash(nova), g.usuario["matricula"]))
             db.commit()
+            session.pop("trocar_senha", None)
             flash("Senha alterada com sucesso.", "ok")
             return redirect(url_for("inicio"))
     return render_template("senha.html")

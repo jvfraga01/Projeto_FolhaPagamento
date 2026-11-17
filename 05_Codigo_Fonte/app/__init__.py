@@ -4,7 +4,7 @@ import secrets
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from flask import Flask, abort, g, redirect, render_template, request, session, url_for
+from flask import Flask, abort, flash, g, redirect, render_template, request, session, url_for
 
 from . import db, regras
 
@@ -67,6 +67,14 @@ def create_app(test_config=None):
             esperado = session.get("csrf", "")
             if not esperado or not hmac.compare_digest(enviado, esperado):
                 abort(400, "Token de segurança inválido. Recarregue a página e tente de novo.")
+
+    @app.before_request
+    def exigir_troca_de_senha():
+        # BUG002: enquanto a senha inicial não for trocada, só a troca de senha e o logout funcionam.
+        if g.usuario is not None and session.get("trocar_senha"):
+            if request.endpoint not in ("auth.trocar_senha", "auth.logout", "static"):
+                flash("Por segurança, troque a senha inicial antes de continuar.", "erro")
+                return redirect(url_for("auth.trocar_senha"))
 
     @app.after_request
     def cabecalhos(resposta):

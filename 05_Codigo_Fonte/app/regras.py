@@ -23,6 +23,10 @@ TIPOS = {"PADRAO": "Padrão", "COMISSIONADO": "Comissionado", "PRODUCAO": "Por P
 NIVEIS = {1: "Admin/RH", 2: "Financeiro", 3: "Comum"}
 ADMIN_NASCIMENTO = "2000-01-01"   # senha inicial do admin = 01012000
 
+# Ponto de milhar no padrão brasileiro: grupos de exatamente 3 dígitos (1.500 / 1.234.567).
+# Não casa com "12.50" nem "0.500" (esses continuam sendo decimais com ponto).
+_PONTO_DE_MILHAR = re.compile(r"[1-9]\d{0,2}(\.\d{3})+")
+
 
 # ---------------------------------------------------------------- dinheiro
 def _decimal(texto):
@@ -32,7 +36,11 @@ def _decimal(texto):
     if t.startswith("-"):
         raise ValueError("O valor não pode ser negativo.")
     if "," in t:
+        if t.rfind(".") > t.rfind(","):  # ex.: 1,500.00 (formato americano): ambíguo, recusa
+            raise ValueError("Valor inválido. Exemplo: 1500,00")
         t = t.replace(".", "").replace(",", ".")
+    elif _PONTO_DE_MILHAR.fullmatch(t):
+        t = t.replace(".", "")  # "1.500" = mil e quinhentos, não 1,5 (BUG001)
     try:
         d = Decimal(t)
     except InvalidOperation:

@@ -4,7 +4,7 @@
 | Item | Versão | Observação |
 |---|---|---|
 | Python | 3.10 ou superior | https://www.python.org/downloads/ |
-| Flask | 3.0 ou superior | instalado pelo `pip` (arquivo `requirements.txt`) |
+| Flask | 3.1.3 ou superior | instalado pelo `pip` (arquivo `requirements.txt`) |
 | Navegador | qualquer atual | Chrome, Edge, Firefox |
 | Internet | só na instalação | para baixar Python e Flask |
 
@@ -46,15 +46,17 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Abra http://127.0.0.1:5000 . **Primeiro acesso:** matrícula `1`, senha `01012000` (troque no menu "Senha").
+Abra http://127.0.0.1:5000 . **Primeiro acesso:** matrícula `1`, senha `01012000`. O sistema obriga a troca da senha no primeiro login.
 
 ## Testes
 ```bash
 python -m unittest discover -v
 
-# cobertura de testes (meta: 80%)
+# cobertura de testes (meta: 80%). Atalho que já salva as evidências em 04_Testes/evidencias:
+python gerar_cobertura.py
+# ou, manualmente:
 pip install coverage
-python -m coverage run -m unittest discover
+python -m coverage run --source=app -m unittest discover
 python -m coverage report -m
 ```
 

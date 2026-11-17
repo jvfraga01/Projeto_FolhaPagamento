@@ -14,12 +14,14 @@
   <button type="submit">Filtrar</button>
 </form>
 <table>
-  <thead><tr><th>Matrícula</th><th>Nome</th><th>Tipo</th><th>Salário base</th><th>Status</th>{% if pode('colaborador.editar') %}<th>Ações</th>{% endif %}</tr></thead>
+  <thead><tr><th>Matrícula</th><th>Nome</th><th>Tipo</th><th>Salário base</th><th>Comissão</th><th>Valor/unidade</th><th>Status</th>{% if pode('colaborador.editar') %}<th>Ações</th>{% endif %}</tr></thead>
   <tbody>
   {% for c in linhas %}
     <tr>
       <td>{{ c.matricula }}</td><td>{{ c.nome }}</td><td>{{ c.tipo|tipo_nome }}</td>
       <td>{{ c.salario_base_centavos|brl }}</td>
+      <td>{% if c.tipo == 'COMISSIONADO' %}{{ c.percentual_comissao_bp|pct }}{% else %}—{% endif %}</td>
+      <td>{% if c.tipo == 'PRODUCAO' %}{{ c.valor_unidade_centavos|brl }}{% else %}—{% endif %}</td>
       <td>{% if c.status == 'Inativo' %}<span class="inativo">Inativo</span>{% else %}Ativo{% endif %}</td>
       {% if pode('colaborador.editar') %}
       <td class="acoes">
@@ -37,7 +39,7 @@
       {% endif %}
     </tr>
   {% else %}
-    <tr><td colspan="6">Nenhum colaborador encontrado.</td></tr>
+    <tr><td colspan="8">Nenhum colaborador encontrado.</td></tr>
   {% endfor %}
   </tbody>
 </table>

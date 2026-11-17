@@ -157,6 +157,10 @@ class BaseTest(unittest.TestCase):
             token = re.search(r'name="csrf_token" value="([^"]+)"', r.get_data(as_text=True)).group(1)
             r = c.post("/login", data={"matricula": matricula, "senha": senha, "csrf_token": token})
             self.assertEqual(r.status_code, 302, "login deveria funcionar")
+            with c.session_transaction() as s:
+                # A massa de teste usa a senha inicial; a troca obrigatória (BUG002) é testada
+                # em tests/test_correcoes_a3.py (ForcaTrocaSenhaTest), sem este atalho.
+                s.pop("trocar_senha", None)
         return c
 
     def post(self, c, url, dados=None):
@@ -387,8 +391,14 @@ class FiltrosTest(BaseTest):
 
     def test_cadastro_valida_e_cria_com_senha_de_nascimento(self):
         adm = self.cliente(self.admin)
-        r = self.post(adm, "/colaboradores/novo", {"nome": "", "salario_base": "-5"})
+        base = {"data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
+                "nivel_acesso": "3", "tipo": "PADRAO"}
+        r = self.post(adm, "/colaboradores/novo", {**base, "nome": "", "salario_base": "2000,00"})  # CT004
         self.assertEqual(r.status_code, 400)
+        r = self.post(adm, "/colaboradores/novo", {**base, "nome": "Fulano Negativo", "salario_base": "-5"})  # CT005
+        self.assertEqual(r.status_code, 400)
+        n = get_db().execute("SELECT COUNT(*) FROM colaborador WHERE nome IN ('', 'Fulano Negativo')").fetchone()[0]
+        self.assertEqual(n, 0)
         r = self.post(adm, "/colaboradores/novo", {
             "nome": "Novo Fulano", "data_nascimento": "2000-12-01", "data_inicio_contrato": "2026-01-01",
             "nivel_acesso": "3", "tipo": "PADRAO", "salario_base": "2000,00"})
@@ -448,6 +458,7 @@ class FiltrosTest(BaseTest):
         # total geral = 5.000 + 4.000 + 3.150 + 2.250 + 2.500 = 16.900,00
         for esperado in ("R$ 16.900,00", "R$ 3.150,00", "R$ 2.250,00"):
             self.assertIn(esperado, html)
+        self.assertIn('<span class="destaque">5</span>', html)  # quantidade de colaboradores
 
 
 if __name__ == "__main__":
