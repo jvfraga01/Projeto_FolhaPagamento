@@ -50,14 +50,16 @@ gantt
 ```
 
 
-| Marco | Data |
-|---|---|
-| Entrega A1 | 20/10/2026 |
-| Ajustes e evolução do sistema concluídos | 11/11/2026 |
-| Cobertura ≥ 80% atingida (fim da atividade de testes unitários e cobertura) | 17/11/2026 |
-| Aceite do cliente sobre os desvios D1–D6 registrado | 30/10/2026 |
-| Fim da execução dos testes de aceitação | 24/11/2026 |
-| Entrega A3 | 01/12/2026 |
+| Marco | Previsto | Realizado |
+|---|---|---|
+| Entrega A1 | 20/10/2026 | 20/10/2026 |
+| Aceite do cliente sobre os desvios D1–D6 registrado | 30/10/2026 | 30/10/2026 (D2 a D5 em 29/10) |
+| Ajustes e evolução do sistema concluídos | 11/11/2026 | 11/11/2026 |
+| Cobertura ≥ 80% atingida (fim da atividade de testes unitários e cobertura) | 17/11/2026 | 10/11/2026 (primeira medição; ver `04_Testes/evidencias/`) |
+| Fim da execução dos testes de aceitação | 24/11/2026 | MM02 em 11/11/2026; MM01-B (executável final): <<PREENCHER: data>> |
+| Entrega A3 | 01/12/2026 | <<PREENCHER: data do envio>> |
+
+O cronograma (Gantt) acima mostra o **planejado**; a coluna "Realizado" da tabela de marcos registra as datas efetivas.
 
 ## Distribuição de responsabilidades
 | Papel | Responsável | Atividades |

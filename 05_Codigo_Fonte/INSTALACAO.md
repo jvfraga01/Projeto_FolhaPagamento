@@ -1,5 +1,7 @@
 # Instalação e execução
 
+**Escopo verificado: Windows com Python 3.10+.** As instruções de Linux e macOS abaixo são opcionais e não fazem parte da verificação desta entrega.
+
 ## O que é necessário
 | Item | Versão | Observação |
 |---|---|---|

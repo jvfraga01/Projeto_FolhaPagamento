@@ -1,3 +1,6 @@
+# Saída dos testes
+
+```text
 test_banco_recusa_insert_de_folha_em_periodo_fechado (tests.test_correcoes_a3.BancoFolhaFechadaTest.test_banco_recusa_insert_de_folha_em_periodo_fechado) ... ok
 test_banco_recusa_reabrir_e_apagar_periodo_fechado (tests.test_correcoes_a3.BancoFolhaFechadaTest.test_banco_recusa_reabrir_e_apagar_periodo_fechado) ... ok
 test_periodo_aberto_continua_aceitando_novos_colaboradores (tests.test_correcoes_a3.BancoFolhaFechadaTest.test_periodo_aberto_continua_aceitando_novos_colaboradores) ... ok
@@ -12,6 +15,7 @@ test_nova_senha_nao_pode_ser_a_inicial (tests.test_correcoes_a3.ForcaTrocaSenhaT
 test_redefinicao_pelo_rh_volta_a_exigir_a_troca (tests.test_correcoes_a3.ForcaTrocaSenhaTest.test_redefinicao_pelo_rh_volta_a_exigir_a_troca) ... ok
 test_tela_de_login_nao_exibe_credencial_do_admin (tests.test_correcoes_a3.ForcaTrocaSenhaTest.test_tela_de_login_nao_exibe_credencial_do_admin) ... ok
 test_trocar_a_senha_libera_o_acesso (tests.test_correcoes_a3.ForcaTrocaSenhaTest.test_trocar_a_senha_libera_o_acesso) ... ok
+test_css_de_impressao_oculta_menu_e_botoes (tests.test_correcoes_a3.ImpressaoTest.test_css_de_impressao_oculta_menu_e_botoes) ... ok
 test_tela_de_lancamentos_em_mes_aberto_e_fechado (tests.test_correcoes_a3.LancamentosTest.test_tela_de_lancamentos_em_mes_aberto_e_fechado) ... ok
 test_texto_no_lugar_de_numero_nao_salva_nada (tests.test_correcoes_a3.LancamentosTest.test_texto_no_lugar_de_numero_nao_salva_nada) ... ok
 test_lista_de_colaboradores_para_rh_e_financeiro (tests.test_correcoes_a3.ListaEReciboTest.test_lista_de_colaboradores_para_rh_e_financeiro) ... ok
@@ -20,7 +24,10 @@ test_formato_ambiguo_e_recusado (tests.test_correcoes_a3.MilharTest.test_formato
 test_percentual_com_ponto (tests.test_correcoes_a3.MilharTest.test_percentual_com_ponto) ... ok
 test_ponto_de_milhar_sem_virgula (tests.test_correcoes_a3.MilharTest.test_ponto_de_milhar_sem_virgula) ... ok
 test_ponto_decimal_e_virgula_continuam_validos (tests.test_correcoes_a3.MilharTest.test_ponto_decimal_e_virgula_continuam_validos) ... ok
+test_pontos_em_formato_invalido_sao_recusados (tests.test_correcoes_a3.MilharTest.test_pontos_em_formato_invalido_sao_recusados) ... ok
 test_banco_novo_cria_admin_e_exige_troca (tests.test_correcoes_a3.PrimeiraExecucaoTest.test_banco_novo_cria_admin_e_exige_troca) ... ok
+test_gerar_remove_da_folha_aberta_quem_perdeu_o_contrato_no_mes (tests.test_correcoes_a3.ReativacaoETermoDeContratoTest.test_gerar_remove_da_folha_aberta_quem_perdeu_o_contrato_no_mes) ... ok
+test_reativar_preserva_folhas_fechadas_e_volta_a_entrar_nas_novas (tests.test_correcoes_a3.ReativacaoETermoDeContratoTest.test_reativar_preserva_folhas_fechadas_e_volta_a_entrar_nas_novas) ... ok
 test_rh_redefine_senha_para_data_de_nascimento (tests.test_correcoes_a3.SenhaTest.test_rh_redefine_senha_para_data_de_nascimento) ... ok
 test_troca_de_senha_com_senha_atual_correta (tests.test_correcoes_a3.SenhaTest.test_troca_de_senha_com_senha_atual_correta) ... ok
 test_troca_recusada_senha_errada_curta_ou_confirmacao_diferente (tests.test_correcoes_a3.SenhaTest.test_troca_recusada_senha_errada_curta_ou_confirmacao_diferente) ... ok
@@ -70,6 +77,7 @@ test_producao_com_meta_e_bonus (tests.test_sistema.RegimeMetasTest.test_producao
 test_progressao_1_ponto_a_cada_2_mil_e_teto_de_10 (tests.test_sistema.RegimeMetasTest.test_progressao_1_ponto_a_cada_2_mil_e_teto_de_10) ... ok
 
 ----------------------------------------------------------------------
-Ran 70 tests in 79.572s
+Ran 74 tests in 56.549s
 
 OK
+```
