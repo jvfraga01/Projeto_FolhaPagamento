@@ -11,7 +11,7 @@ Papéis conforme `03_Projeto/Planejamento_do_Projeto.md`. Antes de começar: apa
 | 13:00–15:00 | Homologação e conclusão (slides 9–10) | Documentação / homologação | Termo de Homologação, pendências, lições aprendidas |
 
 ## Passo a passo da demonstração (6 minutos)
-1. **Primeiro acesso e troca obrigatória (1 min):** se o Windows mostrar "fornecedor desconhecido" ao abrir o atalho, clicar em **Executar** (o arquivo não tem assinatura digital). Entrar com matrícula `1`, senha `01012000`. A tela de login não mostra credenciais. O sistema leva à troca de senha; tentar abrir "Colaboradores" antes de trocar mostra o bloqueio. Trocar a senha.
+1. **Primeiro acesso e troca obrigatória (1 min):** entrar com matrícula `1`, senha `01012000`. A tela de login não mostra credenciais. O sistema leva à troca de senha; tentar abrir "Colaboradores" antes de trocar mostra o bloqueio. Trocar a senha.
 2. **Cadastro (1 min):** Novo colaborador, tipo Comissionado, salário `3.000,00`, comissão `3,00`. Mostrar matrícula gerada. Tentar salário `abc`: erro no campo e nada gravado. Mostrar que `1.500` vale R$ 1.500,00.
 3. **Folha (2 min):** Folha → gerar o mês → Lançar vendas `5.000,00` → conferir R$ 3.150,00 → Fechar mês (confirmação; não reabre).
 4. **Relatório e recibo (1 min):** Relatório com total, quantidade e total por categoria. Abrir um recibo e **Imprimir**: na pré-visualização, menu e botões somem (CT030).
@@ -22,15 +22,3 @@ Se o navegador ou o sistema falhar, mostrar a execução de `python gerar_cobert
 
 ## Antes do dia
 Rodar `python gerar_cobertura.py`, conferir os números nos slides 6 a 8 com `Relatorio_de_Testes.md` e `Registro_de_Defeitos.md`, e rodar `python empacotar_entrega.py`.
-
-## Registro da apresentação realizada
-Preencher no dia, logo depois da apresentação. Serve de evidência para o Termo de Homologação.
-
-| Item | Valor |
-|---|---|
-| Data e horário | <<PREENCHER>> |
-| Formato (presencial, remoto) | <<PREENCHER>> |
-| Versão e commit demonstrados | 1.3 (A3), tag `v1.3-A3`, commit <<PREENCHER: hash>> |
-| Pacote usado na demonstração | `07_Executavel/Projeto_FolhaPagamento_Executavel.zip` |
-| Quem apresentou cada parte | <<PREENCHER: nome por parte da tabela acima>> |
-| Perguntas e ajustes pedidos | <<PREENCHER>> |

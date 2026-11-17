@@ -8,7 +8,7 @@ Fórmulas: casos aprovados ÷ executados; requisitos atendidos = RF e RN com ao 
 <!--AUTO:metricas-->
 | Métrica (PGQ) | Meta | Resultado | Como foi calculado |
 |---|---|---|---|
-| Cobertura de testes | ≥ 80% | **92,4%** (meta atingida) | `coverage report`, 634 linhas, 48 sem cobertura (17/11/2026 18:20) |
+| Cobertura de testes | ≥ 80% | **92,4%** (meta atingida) | `coverage report`, 634 linhas, 48 sem cobertura (17/11/2026 19:08) |
 | Testes automatizados | — | **74** executados: OK, nenhum teste falhou | `evidencias/saida_unittest.md` |
 | Casos de teste planejados | — | **57** códigos em 59 linhas | `Casos_de_Teste.md` (57 Auto, 2 Manual) |
 | Casos executados | — | **58** de 59 linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |

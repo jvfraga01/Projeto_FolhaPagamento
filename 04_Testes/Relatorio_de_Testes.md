@@ -6,7 +6,7 @@ Os números deste relatório são **copiados automaticamente** de `04_Testes/evi
 ## 1. Execução automatizada
 | Item | Valor |
 |---|---|
-| Data e hora | <!--A:data-->17/11/2026 18:20<!--/A--> |
+| Data e hora | <!--A:data-->17/11/2026 19:08<!--/A--> |
 | Executor | <!--A:executor-->João Vitor Fraga<!--/A--> |
 | Python / sistema | <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A--> |
 | Comando | `python gerar_cobertura.py` (`coverage run --source=app -m unittest discover -v`) |
