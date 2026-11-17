@@ -1,7 +1,0 @@
-Execução em: 11/11/2026 07:32
-Python: 3.13.3 | Sistema: Windows-11-10.0.26200-SP0
-Testes executados: 70
-Resultado do unittest: OK
-Cobertura total (app/): 92.3% (meta 80%)
-Meta de cobertura atingida: SIM
-Executor: João Vitor Fraga

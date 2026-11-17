@@ -1,18 +1,118 @@
-Exportado em: 30/10/2026 20:34:00,28
+# Histórico do Git
 
-== Repositorio remoto ==
+Exportado em: 17/11/2026 17:44
+
+```text
+== Repositório remoto ==
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 
 == Ramos ==
-* main
+  Develop
+  consolidar
+* correcao
+  main
+  remotes/origin/Develop
   remotes/origin/HEAD -> origin/main
+  remotes/origin/PedroKolling7-patch-1
+  remotes/origin/consolidar
+  remotes/origin/correcao
   remotes/origin/main
+  remotes/origin/recuperacao
+  remotes/origin/recuperacao-pedro
+  remotes/origin/yuri
 
 == Tags ==
 v1.2-A1         Entrega A1 revisada
+v1.3-A3         Entrega A3
 
-== Commits - hash, autor, data e mensagem ==
+== Commits (hash | autor | data | mensagem) ==
+bfce1b4 | João Vitor Fraga da Rocha | 2026-11-17 11:25:06 -0300 | Add workflow to restrict PRs from non-develop branches
+3abb67d | João Vitor Fraga da Rocha | 2026-11-17 11:03:38 -0300 | Add CODEOWNERS file for repository ownership
+88d2e68 | PedroKolling7 | 2026-11-16 22:43:42 -0300 | Create verificar_entrega.py
+25f0405 | João Vitor Fraga da Rocha | 2026-11-16 22:38:16 -0300 | Merge pull request #1 from jvfraga01/recuperacao-pedro
+c0bd88a | Pedro da Silva Kolling | 2026-11-16 22:00:54 -0300 | Update executor and browser information in documentation
+edba674 | jvfraga01 | 2026-11-16 22:36:21 -0300 | Reincorpora o historico anterior
+5b0d288 | Pedro da Silva Kolling | 2026-11-16 22:12:08 -0300 | Delete renomear_prints.ps1
+5e03661 | Pedro da Silva Kolling | 2026-11-16 22:11:27 -0300 | Rename evidence files for chronological order
+212a612 | Pedro da Silva Kolling | 2026-11-16 22:00:54 -0300 | Update executor and browser information in documentation
+016eee2 | PedroKolling7 | 2026-11-16 21:57:53 -0300 | alterando a sequencia daos prints das evidencias e os nomes
+a46cec0 | Yuri Soares Dutra | 2026-11-16 21:43:46 -0300 | Atualiza documentação, testes e qualidade do projeto
+748218c | jvfraga01 | 2026-11-16 21:26:59 -0300 | Atualização dos testes rodados
+8813802 | jvfraga01 | 2026-11-16 21:14:49 -0300 | Merge branch 'main' of https://github.com/jvfraga01/Projeto_FolhaPagamento
+3ff96fd | jvfraga01 | 2026-11-16 21:14:35 -0300 | Arquivo diz que foi modificado, mesmo nao sendo
+2a4a518 | YuriSoaresD | 2026-11-16 21:13:57 -0300 | Add files via upload
+d4b7b8f | jvfraga01 | 2026-11-16 21:12:01 -0300 | Recriação de documento
+8992cc6 | YuriSoaresD | 2026-11-16 21:01:18 -0300 | Change test framework from pytest to unittest
+24e4af0 | YuriSoaresD | 2026-11-16 19:51:12 -0300 | Update README with technical review and corrections
+952033b | YuriSoaresD | 2026-11-16 19:49:35 -0300 | Revise verificar_entrega.py for technical review and issues
+c798b7a | YuriSoaresD | 2026-11-16 19:44:46 -0300 | Update technical review report with new revisions and issues
+e6ad8d1 | YuriSoaresD | 2026-11-16 19:44:18 -0300 | Update defect log with additional evaluations and bugs
+631276c | YuriSoaresD | 2026-11-16 19:43:42 -0300 | Correct participant name and update test results
+9f2674a | Pedro da Silva Kolling | 2026-11-16 19:11:25 -0300 | Update file extensions in Manual_Tecnico.md
+04240bf | Pedro da Silva Kolling | 2026-11-16 19:11:06 -0300 | Update installation instructions in user manual
+4eab061 | Pedro da Silva Kolling | 2026-11-16 19:10:26 -0300 | Revise README with updated packaging and installation steps
+0c5a4d6 | Pedro da Silva Kolling | 2026-11-16 19:09:27 -0300 | Revise test report with updated execution data
+77d2ea7 | Pedro da Silva Kolling | 2026-11-16 19:08:58 -0300 | Update framework version and usability testing details
+091e35e | Pedro da Silva Kolling | 2026-11-16 19:08:24 -0300 | Update test case specification and add CT058
+14897ea | Pedro da Silva Kolling | 2026-11-16 19:07:40 -0300 | Update usability script requirements and results
+9934ca8 | jvfraga01 | 2026-11-12 20:49:04 -0300 | Termo de homologação
+4cd6fc0 | jvfraga01 | 2026-11-12 20:44:51 -0300 | docs: historico do git, ata e termo
+5234c9f | jvfraga01 | 2026-11-12 20:38:52 -0300 | Atualização do gerador de historico
+6e183a1 | jvfraga01 | 2026-11-12 20:11:34 -0300 | atualização dos documentos
+22a2498 | jvfraga01 | 2026-11-12 20:10:14 -0300 | Update atualizar_documentos.py
+b3794df | jvfraga01 | 2026-11-12 19:56:10 -0300 | Nomes dos arquivos
+c87095a | Pedro da Silva Kolling | 2026-11-12 19:49:22 -0300 | Add files via upload
+97b6e8f | Pedro da Silva Kolling | 2026-11-12 19:48:26 -0300 | Rename 04_Testes/evidencias/evidencia_MM01.1.png to 04_Testes/evidencias/Prints/evidencia_MM01.1.png
+da15f95 | Pedro da Silva Kolling | 2026-11-12 19:47:11 -0300 | Add files via upload
+ad0ac72 | jvfraga01 | 2026-11-12 19:32:48 -0300 | Atualização de informações referentes aos testes
+3b484c8 | jvfraga01 | 2026-11-12 19:21:23 -0300 | Merge branch 'main' of https://github.com/jvfraga01/Projeto_FolhaPagamento
+af836d1 | jvfraga01 | 2026-11-12 19:20:36 -0300 | Arquivos faltantes
+cf2ea68 | Pedro da Silva Kolling | 2026-11-12 19:05:25 -0300 | Update Termo de Homologacao with final details
+e54e888 | jvfraga01 | 2026-11-12 18:57:42 -0300 | Merge branch 'main' of https://github.com/jvfraga01/Projeto_FolhaPagamento
+ce93eb2 | YuriSoaresD | 2026-11-12 18:42:12 -0300 | Switch from unittest to pytest for test coverage
+e80e6e1 | jvfraga01 | 2026-11-12 00:16:58 -0300 | docs: evidencia de controle de versao, ata e termo
+1d5d406 | YuriSoaresD | 2026-11-12 00:14:33 -0300 | Refactor folha.py to improve structure and clarity
+ffb2753 | Luiggi Bortolini | 2026-11-12 00:01:48 -0300 |    docs: adiciona seção C com resultado do roteiro de usabilidade (MM02)
+f9e8233 | Luiggi Bortolini | 2026-11-12 00:01:26 -0300 |    docs: atualiza situação atual do plano e registra facilitador do roteiro
+283a83b | Luiggi Bortolini | 2026-11-12 00:00:11 -0300 |    docs: marca CT039 como executado em 11/11/2026
+a9276fd | João Vitor Fraga da Rocha | 2026-11-11 23:04:42 -0300 | Rename requirements.md to requirements.txt
+d98eb63 | João Vitor Fraga da Rocha | 2026-11-11 23:04:26 -0300 | Rename requirements-dev.md to requirements-dev.txt
+79bfc42 | João Vitor Fraga da Rocha | 2026-11-11 22:05:43 -0300 | Add files via upload
+9838ffe | YuriSoaresD | 2026-11-11 22:05:31 -0300 | Update regras.py with new parsing and calculation methods
+e837679 | YuriSoaresD | 2026-11-11 22:05:09 -0300 | Enhance folha.py with Flask integration and refactoring
+142a2cc | YuriSoaresD | 2026-11-11 22:04:41 -0300 | Refactor folha.py for SQLite integration
+11fda32 | João Vitor Fraga da Rocha | 2026-11-11 21:45:20 -0300 | Delete 05_Codigo_Fonte/requirements.txt
+9906773 | YuriSoaresD | 2026-11-11 21:44:09 -0300 | Implement triggers for closed period and payroll restrictions
+ddfa717 | João Vitor Fraga da Rocha | 2026-11-11 21:43:50 -0300 | Add files via upload
+dc31e9c | YuriSoaresD | 2026-11-11 21:43:49 -0300 | Add regex for Brazilian number formatting
+2005f0e | YuriSoaresD | 2026-11-11 21:43:31 -0300 | Enhance flash message for folha updates
+ce98edc | YuriSoaresD | 2026-11-11 21:41:12 -0300 | Enhance auth.py with password change logic and queries
+47c3633 | João Vitor Fraga da Rocha | 2026-11-11 21:40:34 -0300 | Add files via upload
+88d50ad | YuriSoaresD | 2026-11-11 21:39:51 -0300 | Implement password change enforcement before access
+cd07fd7 | João Vitor Fraga da Rocha | 2026-11-11 21:39:26 -0300 | Delete 05_Codigo_Fonte/tests/__init__.py
+16caf40 | João Vitor Fraga da Rocha | 2026-11-11 21:38:49 -0300 | Add files via upload
+e69c26d | Pedro da Silva Kolling | 2026-11-11 21:20:59 -0300 | Add files via upload
+1dbf59f | Pedro da Silva Kolling | 2026-11-11 21:20:39 -0300 | Update README with acceptance tests and homologation info
+6294a72 | YuriSoaresD | 2026-11-11 20:31:26 -0300 | Relatorio de Teste
+bdf16c9 | YuriSoaresD | 2026-11-11 20:29:20 -0300 | Revise Plano de Testes com atualizações e detalhes
+5b35a9e | YuriSoaresD | 2026-11-11 20:28:26 -0300 | Revise test case specification and update totals
+4e25730 | YuriSoaresD | 2026-11-11 20:27:43 -0300 | Update Planejamento_do_Projeto.md
+1eddc7c | YuriSoaresD | 2026-11-11 20:26:58 -0300 | Clarify database triggers and password change policy
+33bb98f | YuriSoaresD | 2026-11-11 20:26:05 -0300 | Add newline at end of Diagramas_UML.md
+f55e3f3 | João Vitor Fraga da Rocha | 2026-11-11 20:25:47 -0300 | Update README.md
+9a40ae9 | João Vitor Fraga da Rocha | 2026-11-11 20:25:17 -0300 | Add files via upload
+7bd8332 | João Vitor Fraga da Rocha | 2026-11-11 20:23:52 -0300 | Add files via upload
+36ea12b | João Vitor Fraga da Rocha | 2026-11-11 20:23:04 -0300 | Delete 07_Executavel directory
+235c57f | YuriSoaresD | 2026-11-11 20:21:55 -0300 | Enhance UC008 flow with password change requirement
+e4e09ed | YuriSoaresD | 2026-11-11 20:20:38 -0300 | Add non-acceptance decisions section to document
+0f597b8 | João Vitor Fraga da Rocha | 2026-11-11 20:19:06 -0300 | Add files via upload
+6615c2e | YuriSoaresD | 2026-11-11 20:18:44 -0300 | Add password change requirement and update requirements
+e8e000a | João Vitor Fraga da Rocha | 2026-11-11 20:15:53 -0300 | Update Readme.md
+8b97ed1 | YuriSoaresD | 2026-11-11 20:14:18 -0300 | Simplify version information in vision document
+c0f1078 | João Vitor Fraga da Rocha | 2026-11-11 20:08:31 -0300 | Enhance schema with triggers and improved comments
+3ed7e12 | YuriSoaresD | 2026-11-11 20:06:57 -0300 | Revise date and version in Documento de Visao
+d2b7591 | jvfraga01 | 2026-10-30 20:34:03 -0300 | docs: atualiza historico do git
 1162855 | YuriSoaresD | 2026-10-30 20:33:42 -0300 | Adição arquivo Git
 9a50707 | YuriSoaresD | 2026-10-30 20:32:24 -0300 | Add technical review record for delivery A1
 d0a14c3 | Pedro da Silva Kolling | 2026-10-30 20:28:48 -0300 | Revise version control evidence documentation
@@ -138,10 +238,11 @@ bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
 fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
 
 == Commits por autor ==
-    51	João Vitor Fraga da Rocha
-    44	Pedro da Silva Kolling
-    12	Yuri Soares Dutra
-     9	YuriSoaresD
-     3	Luiggi Bortolini
-     2	PedroKolling7
-     2	jvfraga01
+    69	João Vitor Fraga da Rocha
+    61	Pedro da Silva Kolling
+    37	YuriSoaresD
+    19	jvfraga01
+    13	Yuri Soares Dutra
+     6	Luiggi Bortolini
+     4	PedroKolling7
+```

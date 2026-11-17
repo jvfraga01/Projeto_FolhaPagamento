@@ -1,48 +1,114 @@
-# Relatório de Revisão Técnica (A3)
+"""Confere o projeto ANTES do commit final e do ZIP. Uso (na raiz do projeto):  python verificar_entrega.py
+Mostra o que falta, o que sobrou e o que ainda está sem preencher. Não altera nada. Código de saída 1 se houver erro."""
+import re
+import subprocess
+from pathlib import Path
 
-Entregável 6.8. Revisões de 10/11/2026, 11/11/2026 e 13/11/2026 (ata: `Ata_de_Revisao_Tecnica_A1.md`; defeitos: `Registro_de_Defeitos.md`).
+RAIZ = Path(__file__).resolve().parent
+OBRIGATORIOS = """README.md
+01_Requisitos/Documento_de_Visao.md 01_Requisitos/ERS.md 01_Requisitos/Registro_de_Aceite_de_Desvios.md
+02_Analise/Casos_de_Uso.md 02_Analise/Diagramas_UML.md
+03_Projeto/Documento_de_Arquitetura.md 03_Projeto/Planejamento_do_Projeto.md
+04_Testes/Plano_de_Testes.md 04_Testes/Casos_de_Teste.md 04_Testes/Relatorio_de_Testes.md
+04_Testes/evidencias/saida_unittest.md 04_Testes/evidencias/cobertura.md 04_Testes/evidencias/resumo_execucao.md
+05_Codigo_Fonte/run.py 05_Codigo_Fonte/gerar_cobertura.py 05_Codigo_Fonte/atualizar_documentos.py
+05_Codigo_Fonte/tests/test_sistema.py 05_Codigo_Fonte/tests/test_correcoes_a3.py 05_Codigo_Fonte/INSTALACAO.md
+06_Banco_Dados/schema.sql 07_Executavel/README.md 07_Executavel/Projeto_FolhaPagamento_Executavel.zip
+08_Manuais/Manual_do_Usuario.md 08_Manuais/Manual_Tecnico.md
+09_Homologacao/Testes_de_Aceitacao.md 09_Homologacao/Termo_de_Homologacao.md
+10_Qualidade/Plano_de_Garantia_da_Qualidade.md 10_Qualidade/Registro_de_Defeitos.md 10_Qualidade/Metricas_e_Indicadores.md
+10_Qualidade/Relatorio_de_Revisao_Tecnica.md 10_Qualidade/Relatorio_Final_de_Qualidade.md
+10_Qualidade/Ata_de_Revisao_Tecnica_A1.md 10_Qualidade/Evidencia_Controle_de_Versao.md 10_Qualidade/Historico_Git.md
+11_Apresentacao/Apresentacao.pptx 11_Apresentacao/Roteiro_de_Demonstracao.md""".split()
+T = ".t" + "xt"  # montado assim para o conversor de .txt->.md não reescrever esta lista
+SOBRANDO = ["gitignore" + T, "gitattributes" + T, "10_Qualidade/Ata_de_Revisao_Tecnica_A1",
+            "10_Qualidade/Historico_Git" + T, "04_Testes/evidencias/saida_unittest" + T,
+            "04_Testes/evidencias/cobertura" + T, "04_Testes/evidencias/resumo_execucao" + T,
+            "07_Executavel/Readme.md", "Projeto_FolhaPagamento-1.0(Estrutura inicial do projeto.).zip"]
+erros, avisos = [], []
 
-## Não conformidades e problemas encontrados
-| # | Problema | Origem | Severidade |
-|---|---|---|---|
-| 1 | Valor "1.500" gravado como R$ 1,50 | Avaliação A3 de 10/11/2026 (leitura) | Alta (BUG001) |
-| 2 | Credencial do admin exibida na tela de login | Avaliação A3 | Alta (BUG002) |
-| 3 | Banco aceitava reabrir mês e inserir folha em mês fechado, contra RN012 | Avaliação A3 | Média (BUG003) |
-| 4 | `reativar` perde a data de fim de contrato original | Avaliação A3 | Média (BUG004) |
-| 5 | `gerar` não remove quem perdeu o contrato no mês aberto | Avaliação A3 | Baixa (BUG005) |
-| 6 | Massa de teste depende da data de execução | Avaliação A3 | Baixa (BUG006) |
-| 7 | Critério de usabilidade divergente entre ERS e Plano | Reavaliação A1 | Documental |
-| 8 | Tag A3 divergente; ata sem extensão e duplicada; `.gitignore`/`.gitattributes` duplicados; `LEIA-ME.md` repetidos | Avaliação A3 | Documental |
-| 9 | Entregáveis de A3 só com README (sem evidências de execução, cobertura, defeitos, manuais) | Avaliação A3 | Processo |
-| 10 | `parse_reais("1.5000")` e `"01.500"` aceitos como R$ 1,50 | Avaliação de 11/11/2026 | Média (BUG007) |
-| 11 | Pacote de entrega com `instance/secret.key`, banco, `.coverage`, `htmlcov/` | Avaliação de 11/11/2026 | Média (BUG008) |
-| 12 | Números de testes e cobertura divergentes entre documentos; relatórios com campos em branco | Avaliação de 11/11/2026 | Documental |
-| 13 | CT043 e CT044 com tipo incoerente; 5 testes sem caso associado; sem relatório de integração nem arquivo de métricas | Avaliação de 11/11/2026 | Documental |
-| 14 | Painel de métricas com "?" e 1/58 apesar de 74 testes aprovados; log do pytest e documentos do unittest; horário e duração divergentes | Avaliação de 13/11/2026 | Média (BUG009) |
-| 15 | Instruções que apontavam para o arquivo de dependências com a extensão errada (o arquivo real termina em `.txt`); atalho `iniciar(.bat)` no pacote principal e `iniciar.bat` no executável; scripts em versões diferentes nos dois ZIPs | Avaliação de 13/11/2026 | Documental |
-| 16 | MM01/CT037-M sem resultado consolidado nem prova de persistência com o pacote final; MM02 com tarefas de cadastro e folha atribuídas ao perfil Financeiro | Avaliação de 13/11/2026 | Processo |
-| 17 | Termo sem aceite e com divergência de data do commit; apresentação realizada sem registro | Avaliação de 13/11/2026 | Processo |
+for f in OBRIGATORIOS:
+    if not (RAIZ / f).exists():
+        erros.append(f"FALTA: {f}")
+for f in SOBRANDO:
+    if (RAIZ / f).exists():
+        erros.append(f"SOBRA (apagar ou converter): {f}")
+for p in RAIZ.rglob("LEIA-ME.md"):
+    erros.append(f"SOBRA (duplicado): {p.relative_to(RAIZ)}")
+for p in RAIZ.rglob("*"):
+    partes = set(p.relative_to(RAIZ).parts)
+    if p.is_file() and (partes & {"instance", "htmlcov", "__pycache__"} or p.name in (".coverage", "secret.key") or p.suffix in (".db", ".pyc")):
+        if ".git" not in partes:
+            avisos.append(f"arquivo local que não deve ir no ZIP (o empacotar_entrega.py o exclui): {p.relative_to(RAIZ)}")
+for f in ("README.md", ".gitignore", ".gitattributes"):
+    if f != "README.md" and not (RAIZ / f).exists():
+        avisos.append(f"na raiz falta {f} (o gitignore.txt/gitattributes.txt não têm efeito)")
 
-## Correções realizadas
-| # | Correção | Data | Evidência |
-|---|---|---|---|
-| 1 | `_decimal`: ponto de milhar e recusa de formatos ambíguos (BUG001, BUG007) | 10 e 11/11/2026 | CT046, CT047 |
-| 2 | Troca obrigatória da senha inicial e remoção da dica no login (BUG002, RF021) | 10/11/2026 | CT052, CT053, CT037-A |
-| 3 | Triggers para período fechado (BUG003) | 10/11/2026 | CT048 |
-| 4 | `gerar` remove quem perdeu o contrato; reativar documentado e testado; massa de teste sem dependência de data (BUG004–BUG006) | 11/11/2026 | CT056, CT057 |
-| 5 | `gerar_cobertura.py` registra o executor e atualiza os documentos; `empacotar_entrega.py` monta o ZIP limpo (BUG008) | 11/11/2026 | `04_Testes/evidencias/` |
-| 6 | Números dos documentos passam a vir das evidências (marcadores automáticos); relatório de níveis de teste; `Metricas_e_Indicadores.md` | 11/11/2026 | Relatórios 04 e 10 |
-| 7 | Casos CT054–CT057 criados; CT030 automatizado; CT043 e CT044 reclassificados; CT039 simplificado | 11/11/2026 | `Casos_de_Teste.md` |
-| 8 | Versão 1.3 (A3) e tag `v1.3-A3` unificadas; duplicados removidos; apresentação, roteiro e pacote em `07_Executavel/` criados | 11/11/2026 | READMEs, pastas 07 e 11 |
-| 9 | Uma única rodada por execução: `gerar_cobertura.py` grava executor, retorno, duração e commit; consolidador lê unittest e pytest e confere o total (BUG009); testes `MetricasTest` (CT058) | 16/11/2026 | CT058 |
-| 10 | Atalhos sempre `iniciar.bat`; `empacotar_entrega.py` não renomeia mais; `requirements*.txt` corrigido; procedimento de empacotamento documentado em `07_Executavel/README.md`; MM01-B e MM02 reestruturados com passos e contas | 16/11/2026 | Pastas 05, 07 e 09 |
+# campos em branco
+vazios = {}
+for p in RAIZ.rglob("*.md"):
+    if {"evidencias", ".git"} & set(p.relative_to(RAIZ).parts) or p.name == "Historico_Git.md":
+        continue
+    n = len(re.findall(r"<<PREENCHER", p.read_text(encoding="utf-8", errors="ignore")))
+    if n:
+        vazios[str(p.relative_to(RAIZ))] = n
+for f, n in sorted(vazios.items()):
+    avisos.append(f"{n} campo(s) <<PREENCHER>> em {f}")
 
-Pendentes (dependem de pessoas): MM01-B com o pacote final, fechamento do MM02, apresentação registrada, Termo com aceite do cliente, commit e tag finais.
+# números coerentes com as evidências
+ev = RAIZ / "04_Testes" / "evidencias"
+if (ev / "saida_unittest.md").exists():
+    saida = (ev / "saida_unittest.md").read_text(encoding="utf-8")
+    m = re.search(r"Ran (\d+) tests?", saida) or re.search(r"(\d+) passed", saida)
+    if not m:
+        erros.append("evidencias/saida_unittest.md não tem o resumo dos testes (nenhum teste rodou?)")
+    elif re.search(r"Ran \d+ tests?", saida) and not re.search(r"^OK\s*$", saida, re.M):
+        erros.append("a última execução em evidencias/saida_unittest.md NÃO terminou em OK")
+    elif re.search(r"\d+ (failed|error)", saida):
+        erros.append("a última execução em evidencias/saida_unittest.md tem testes falhando")
+    if m:
+        dispersos = set()
+        for p in RAIZ.rglob("*.md"):
+            t = p.read_text(encoding="utf-8", errors="ignore")
+            for v in re.findall(r"<!--A:testes-->(.*?)<!--/A-->", t):
+                if v != m.group(1):
+                    dispersos.add(str(p.relative_to(RAIZ)))
+        for p in sorted(dispersos):
+            erros.append(f"número de testes desatualizado em {p}: rode gerar_cobertura.py")
+        atual = sum(len(re.findall(r"^    def test_", (RAIZ / "05_Codigo_Fonte/tests" / f).read_text(encoding="utf-8"), re.M))
+                    for f in ("test_sistema.py", "test_correcoes_a3.py") if (RAIZ / "05_Codigo_Fonte/tests" / f).exists())
+        if atual and str(atual) != m.group(1):
+            erros.append(f"o código tem {atual} testes, mas a última execução registrada tem {m.group(1)}: rode gerar_cobertura.py de novo")
 
-## Lições aprendidas
-- Declarar "aprovado" só com evidência: cobertura e saída dos testes são geradas por script e guardadas no repositório.
-- Números repetidos em vários documentos divergem; copiá-los automaticamente das evidências evita o problema.
-- Revisar documentos junto com o código: vários apontamentos eram divergências entre ERS, Plano e implementação.
-- Tratar entradas reais do usuário (ponto de milhar) evita erro silencioso em valor monetário, e a correção precisa cobrir a família inteira de casos, não só o exemplo.
-- Decisões de segurança "por simplicidade" (senha inicial visível) merecem revisão no início do projeto.
-- Conferir o que vai dentro do pacote de entrega: chave secreta e banco local não devem sair da máquina.
+# referências quebradas e pacote de testes
+if not (RAIZ / "05_Codigo_Fonte" / "tests" / "__init__.py").exists():
+    erros.append("FALTA 05_Codigo_Fonte/tests/__init__.py: sem ele o unittest roda 0 testes")
+for p in RAIZ.rglob("*"):
+    if p.is_file() and p.suffix in (".md", ".py", ".bat", ".sh", ".txt") and ".git" not in p.parts and p.name not in ("Historico_Git.md", "verificar_entrega.py"):
+        txt = p.read_text(encoding="utf-8", errors="ignore")
+        if re.search(r"requirements(-dev)?\.md", txt):
+            erros.append(f"referência a requirements.md (o arquivo é .txt): {p.relative_to(RAIZ)}")
+
+# git
+if (RAIZ / ".git").exists():
+    def git(*a):
+        return subprocess.run(["git", *a], cwd=RAIZ, capture_output=True, text=True).stdout
+    pendentes = git("status", "--porcelain").splitlines()
+    for l in pendentes[:8]:
+        avisos.append(f"git, ainda não commitado: {l}")
+    if len(pendentes) > 8:
+        avisos.append(f"git: mais {len(pendentes) - 8} arquivo(s) não commitado(s) (rode git status)")
+    rastreados = [x for x in git("ls-files").splitlines() if re.search(r"instance/|secret\.key|\.db$|(^|/)\.coverage$|htmlcov/|__pycache__", x)]
+    for x in rastreados:
+        erros.append(f"git rastreia arquivo que não deveria: {x}")
+    if "v1.3-A3" not in git("tag").split():
+        avisos.append("a tag v1.3-A3 ainda não existe")
+
+print(f"{len(erros)} erro(s), {len(avisos)} aviso(s)\n")
+for e in erros:
+    print("ERRO  ", e)
+for a in avisos:
+    print("AVISO ", a)
+if not erros and not avisos:
+    print("Tudo certo: pode gerar o ZIP com empacotar_entrega.py.")
+raise SystemExit(1 if erros else 0)

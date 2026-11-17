@@ -14,7 +14,7 @@
 - Git, repositório único com a estrutura de entrega (`Projeto_FolhaPagamento/`).
 - Ramo main sempre funcional; commits diretos em main, sem pull requests; revisão técnica registrada em ata antes de cada entrega.
 - Evidência do histórico (URL do repositório, log de commits e tags): `10_Qualidade/Evidencia_Controle_de_Versao.md`.
-- Marcos com *tags*: `v1.2-A1` (entrega A1) e `v-A3` (entrega A3, a criar na data final).
+- Marcos com *tags*: `v1.2-A1` (entrega A1) e a tag da A3 é `v1.3-A3`.
 - Não versionar: `__pycache__/`, `instance/` (banco e chave secreta), `.venv/`, `.coverage`.
 
 ## Revisões Técnicas
@@ -33,7 +33,7 @@
 | Usabilidade | Teste de aceitação com roteiro do manual; instalação com dois cliques |
 | Confiabilidade / integridade | Valores em centavos, restrições do banco, folha fechada imutável |
 | Manutenibilidade | Código modular, regras isoladas, cobertura ≥ 80% |
-| Portabilidade | Execução em Windows |
+| Portabilidade | Execução em Windows e Linux |
 
 ## Métricas Adotadas
 | Métrica | Fórmula | Meta |

@@ -134,6 +134,10 @@ class BaseTest(unittest.TestCase):
         self.joao = self.novo("Joao Comum", 3, "COMISSIONADO", 300000, pct=300)
         self.maria = self.novo("Maria Comum", 3, "PRODUCAO", 200000, un=250)
         self.padrao = self.novo("Paulo Padrao", 3, "PADRAO", 250000)
+        # BUG006: o admin inicial nasce com início de contrato = hoje; fixamos uma data futura para
+        # que as folhas de 2026 da massa de teste não dependam do dia em que a suíte roda.
+        get_db().execute("UPDATE colaborador SET data_inicio_contrato='2099-01-01' WHERE matricula=1")
+        get_db().commit()
 
     def tearDown(self):
         self.ctx.pop()

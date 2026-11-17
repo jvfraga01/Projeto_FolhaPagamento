@@ -2,7 +2,7 @@
 
 ## Como rodar (sem terminal) — detalhes e comandos de terminal em `INSTALACAO.md`
 1. Instale o Python (python.org) uma vez, marcando "Add Python to PATH".
-2. Dê **dois cliques em `iniciar.bat`** (Windows) ou `iniciar.sh` (Linux/Mac), ou em `run.py`.
+2. Dê **dois cliques em `iniciar.bat`** (Windows) ou `run.py`. O `iniciar.sh` (Linux/Mac) é opcional e não faz parte da verificação.
    Na primeira vez ele instala o Flask sozinho, cria o banco e abre o navegador.
 3. Para encerrar, feche a janela preta.
 
@@ -27,6 +27,8 @@ Cobertura (meta 80%): `python gerar_cobertura.py` ou dois cliques em `gerar_cobe
 | `app/templates/`, `app/static/` | telas, CSS e JS |
 | `tests/test_sistema.py` | testes de cálculo, permissões, folha e filtros |
 | `tests/test_correcoes_a3.py` | ponto de milhar, imutabilidade no banco, senha, troca obrigatória, edição, lançamentos, lista e recibo |
+| `gerar_cobertura.py`, `atualizar_documentos.py` | rodam testes + cobertura, gravam `04_Testes/evidencias/` e copiam os números reais para os documentos |
+| `empacotar_entrega.py` (na raiz do projeto) | monta o ZIP da entrega e o pacote de `07_Executavel/` sem banco nem chave secreta |
 
 ## Banco (3 tabelas)
 - `colaborador`: dados pessoais + login (usuário e colaborador são a mesma entidade), nível, status, tipo, salário e parâmetros.
