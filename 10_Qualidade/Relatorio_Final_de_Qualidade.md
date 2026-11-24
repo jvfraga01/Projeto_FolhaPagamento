@@ -27,8 +27,8 @@ Entregável 6.12 (Anexo I, item 14). Números copiados automaticamente das evid�
 | Cobertura de testes | ≥ 80% | **92,4%** (meta atingida) | `coverage report`, 634 linhas, 48 sem cobertura (17/11/2026 19:08) |
 | Testes automatizados | — | **74** executados: OK, nenhum teste falhou | `evidencias/saida_unittest.md` |
 | Casos de teste planejados | — | **57** códigos em 59 linhas | `Casos_de_Teste.md` (57 Auto, 2 Manual) |
-| Casos executados | — | **58** de 59 linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |
-| Casos aprovados ÷ executados | ≥ 95% | **100,0%** (58/58) | Auto: todos os testes citados no caso passaram no log; manuais aprovados |
+| Casos executados | — | **57** de 59 linhas | Auto executados na suíte + manuais com resultado em `Testes_de_Aceitacao.md` |
+| Casos aprovados ÷ executados | ≥ 95% | **100,0%** (57/57) | Auto: todos os testes citados no caso passaram no log; manuais aprovados |
 | Requisitos atendidos | 100% | **100,0%** (39/39 RF e RN) | RF/RN com ao menos um caso aprovado; sem caso aprovado: nenhum |
 | Defeitos encontrados | acompanhar | **8** | `Registro_de_Defeitos.md` |
 | Defeitos corrigidos | 100% dos críticos e altos | **7** de 8 | críticos/altos abertos: nenhum |
@@ -36,9 +36,9 @@ Entregável 6.12 (Anexo I, item 14). Números copiados automaticamente das evid�
 
 ```mermaid
 pie title Situação dos casos de teste
-    "Aprovados" : 58
+    "Aprovados" : 57
     "Reprovados" : 0
-    "Não executados" : 1
+    "Não executados" : 2
 ```
 <!--/AUTO-->
 
@@ -50,5 +50,5 @@ Defeitos e demais métricas: `Metricas_e_Indicadores.md` e `Registro_de_Defeitos
 ## 5. Conclusões
 - O sistema segue as fórmulas do cliente, tem autorização verificada no backend e folha fechada imutável também no banco.
 - As metas do PGQ (cobertura, críticos e altos abertos = 0) são atendidas conforme a tabela da seção 3.
-- Falta apenas o que depende de pessoas: roteiros MM01 e MM02, Termo de Homologação assinado e commit/tag finais.
+- Falta apenas o que depende de pessoas: a rodada B dos testes manuais (MM01-B e MM02-B, com `run.py`, em <<PREENCHER: data da sessão>>), a assinatura do Termo de Homologação e o commit/tag finais.
 - Limitações: SQLite com poucas escritas simultâneas, sem bloqueio por tentativas de login, verificação apenas no Windows.

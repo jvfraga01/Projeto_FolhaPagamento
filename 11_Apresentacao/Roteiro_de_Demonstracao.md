@@ -1,6 +1,6 @@
 # Roteiro de Apresentação e Demonstração (15 minutos)
 
-Papéis conforme `03_Projeto/Planejamento_do_Projeto.md`. Antes de começar: apagar `05_Codigo_Fonte/instance/`, abrir `iniciar.bat`, deixar o navegador em http://127.0.0.1:5000 e ter este roteiro e `Apresentacao.pptx` abertos.
+Papéis conforme `03_Projeto/Planejamento_do_Projeto.md`. Antes de começar: apagar `05_Codigo_Fonte/instance/`, abrir `05_Codigo_Fonte/run.py`, deixar o navegador em http://127.0.0.1:5000 e ter este roteiro e `Apresentacao.pptx` abertos.
 
 | Tempo | Parte | Quem (papel) | O que mostrar |
 |---|---|---|---|

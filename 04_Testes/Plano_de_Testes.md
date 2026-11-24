@@ -56,7 +56,7 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 - (D1 a D6) têm aceito registrado (29 e 30/10/2026); Teste aprovado + desvio aceito = "validado pelo cliente".
 
 ## Roteiro de Usabilidade (RNF001, CT039)
-**Participantes:** 2 pessoas que não programaram as telas (colegas, familiares ou outros alunos): uma com conta **RH** (T1 a T5) e outra com conta **Financeiro** (T1, T4 e T5: o perfil só consulta, então T2 e T3 não se aplicam a ela). As tarefas T1 e T5 do perfil **Colaborador** (nível 3) são verificadas na rodada do CT037-M com uma conta nível 3. **Ambiente:** Chrome ou Edge, sistema recém-instalado, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar (na aplicação de 11/11/2026, o facilitador foi Luiggi Bortolini).
+**Participantes:** 2 integrantes da equipe (autorizado pelo professor em <<PREENCHER: data>>): uma com conta **RH** (T1 a T5) e outra com conta **Financeiro** (T1, T4 e T5: o perfil só consulta, então T2 e T3 não se aplicam a ela). As tarefas T1 e T5 do perfil **Colaborador** (nível 3) são verificadas na rodada do CT037-M com uma conta nível 3. **Ambiente:** Chrome ou Edge, sistema recém-instalado, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar (na rodada B, o facilitador foi <<PREENCHER: nome do facilitador>>).
 
 | Tarefa | Perfil | Resultado esperado | Medida |
 |---|---|---|---|
@@ -77,7 +77,7 @@ Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos
 
 ## Situação atual
 - Suíte automatizada: <!--A:testes-->74<!--/A--> testes na última execução (<!--A:resultado-->OK, nenhum teste falhou<!--/A-->, <!--A:data-->17/11/2026 19:08<!--/A-->, <!--A:ambiente-->3.13.3 / Windows-11-10.0.26200-SP0<!--/A-->) e cobertura de <!--A:cobertura-->92,4%<!--/A--> sobre `app/`. Detalhes: `04_Testes/Relatorio_de_Testes.md`.
-- Dos 57 casos, **os marcados "Auto" estão automatizados**; o CT039 (roteiro de usabilidade) foi executado em 11/11/2026 e aprovado (linha MM02 em `09_Homologacao/Testes_de_Aceitacao.md`). **Só o CT037-M (manual, planejado) ainda não foi executado.** O CT043 (cobertura) e o CT044 (Windows) são executados por `gerar_cobertura.py`.
+- Dos 57 casos, **os marcados "Auto" estão automatizados**; os dois casos manuais, CT037-M (persistência com `run.py`) e CT039 (roteiro de usabilidade), são executados na rodada B e registrados nas linhas MM01 e MM02 de `09_Homologacao/Testes_de_Aceitacao.md`. **Enquanto a coluna "Situação" dessas linhas não começar com Aprovado ou Reprovado, eles contam como não executados.** O CT043 (cobertura) e o CT044 (Windows) são executados por `gerar_cobertura.py`.
 - Casos por tipo, aprovados e requisitos atendidos: `10_Qualidade/Metricas_e_Indicadores.md` (calculado das evidências).
 - Aceite do cliente para os desvios D1 a D6: registrado em 29 e 30/10/2026 (ver Registro de Aceite).
 

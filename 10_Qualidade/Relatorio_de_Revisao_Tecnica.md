@@ -31,7 +31,7 @@ Entregável 6.8. Revisões de 10/11/2026 e 11/11/2026 (ata: `Ata_de_Revisao_Tecn
 | 7 | Casos CT054–CT057 criados; CT030 automatizado; CT043 e CT044 reclassificados; CT039 simplificado | 11/11/2026 | `Casos_de_Teste.md` |
 | 8 | Versão 1.3 (A3) e tag `v1.3-A3` unificadas; duplicados removidos; apresentação e executável dispensados pelo professor em <<23/11/2026>> | 11/11/2026 | READMEs, pastas 07 e 11 |
 
-Pendentes (dependem de pessoas): roteiros MM01 e MM02, Termo assinado, commit e tag finais.
+Pendentes (dependem de pessoas): rodada B dos testes manuais (MM01-B e MM02-B, com `run.py`, em <<PREENCHER: data da sessão>>), assinatura do Termo de Homologação, commit e tag finais.
 
 ## Lições aprendidas
 - Declarar "aprovado" só com evidência: cobertura e saída dos testes são geradas por script e guardadas no repositório.
