@@ -17,7 +17,7 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 > último commit de conteúdo, feito antes da evidência.
 
 ## Como gerar a evidência
-Na raiz do repositório clonado, execute `10_Qualidade/exportar_historico_git.bat` (Windows) ou
+Na raiz do repositório clonado, execute `10_Qualidade/exportar_historico_git.py` (Windows) ou
 `10_Qualidade/exportar_historico_git.sh` (Linux/macOS). Será criado o arquivo `10_Qualidade/Historico_Git.md`
 com hash, autor, data e mensagem de cada commit, além da lista de tags e do endereço do repositório remoto.
 

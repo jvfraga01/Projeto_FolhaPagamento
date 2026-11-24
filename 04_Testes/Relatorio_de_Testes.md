@@ -43,7 +43,7 @@ Todas as classes abaixo estão em `05_Codigo_Fonte/tests/`. Resultado de cada n�
 Soma por nível: 20 + 5 + 26 + 2 + 20 + 1 = 74 testes no código. O total executado na última medição é o da seção 1 (a tabela só muda quando testes são adicionados).
 
 ## 4. Casos manuais
-Os casos que dependem de uma pessoa (CT037-M e CT039) e seus resultados estão em `09_Homologacao/Testes_de_Aceitacao.md`, seção C. A persistência com `iniciar.bat` faz parte do CT037-M.
+Os casos que dependem de uma pessoa (CT037-M e CT039) e seus resultados estão em `09_Homologacao/Testes_de_Aceitacao.md`, seção C. 
 
 ## 5. Indicadores dos casos de teste (Anexo I)
 Contagens e percentuais calculados no bloco de métricas de `10_Qualidade/Metricas_e_Indicadores.md`.

@@ -1,4 +1,4 @@
-"""Inicia o sistema. Basta dar dois cliques neste arquivo (ou em iniciar.bat)."""
+"""Inicia o sistema. Basta dar dois cliques neste arquivo."""
 import os
 import subprocess
 import sys

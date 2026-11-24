@@ -70,7 +70,7 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 
 ## Verificação de Persistência (RNF003, CT040)
 1. Automático: `PersistenciaTest` grava um colaborador, descarta a aplicação, recria a aplicação sobre o mesmo arquivo e confirma que o registro (salário 1.234,56) permanece.
-2. Manual: faz parte do CT037-M, executado com o pacote `07_Executavel/Projeto_FolhaPagamento_Executavel.zip` (iniciar o atalho, trocar a senha, cadastrar, fechar a janela, reabrir e consultar o mesmo cadastro); resultado e capturas em `09_Homologacao/Testes_de_Aceitacao.md`, linhas MM01 e MM01-B.
+2. Manual: faz parte do CT037-M, executado com o ZIP do projeto descompactado em pasta limpa (`python 05_Codigo_Fonte/run.py`, trocar a senha, cadastrar, fechar a janela, reabrir e consultar o mesmo cadastro); resultado e capturas em `09_Homologacao/Testes_de_Aceitacao.md`, linha MM01.
 
 ## Critérios de Aprovação
 Ver PGQ: ≥ 95% dos casos aprovados, 0 defeitos críticos e 100% dos requisitos atendidos.

@@ -43,7 +43,7 @@ flowchart LR
 ## Organização dos componentes
 ```
 05_Codigo_Fonte/
-├── run.py, iniciar.bat, iniciar.sh   inicialização
+├── run.py, iniciar.sh   inicialização
 ├── app/
 │   ├── __init__.py   fábrica do app, sessão, CSRF, cabeçalhos, filtros, erros
 │   ├── auth.py       login, logout, senha, decorators de permissão
