@@ -26,6 +26,15 @@ Desvio = o que contraria ou amplia o **T1 (requisitos do cliente)**. O enunciado
 | Roteiro de usabilidade com 2 participantes e CT030 como verificação do CSS | O método de verificação é da equipe; o T1 só pede interface amigável (RNF001) |
 | Remover casos de teste ou requisitos "Equipe/Responsável" que não possam ser entregues | Só os itens do T1, do enunciado e do Anexo I são obrigatórios; esses continuam todos presentes |
 
+## Dispensas confirmadas pelo professor
+
+| Item | Decisão confirmada | Data da confirmação | Evidência |
+|---|---|---|---|
+| Apresentação | Dispensada; pasta `11_Apresentacao` removida | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
+| Executável | Dispensado | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
+| Testes manuais | Realizados pela equipe | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
+| Homologação | Realizada por e-mail | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
+
 
 ## Como preencher
 1. Envie ao professor/cliente a mensagem abaixo (ou equivalente) e guarde a resposta em `01_Requisitos/evidencias/`.
