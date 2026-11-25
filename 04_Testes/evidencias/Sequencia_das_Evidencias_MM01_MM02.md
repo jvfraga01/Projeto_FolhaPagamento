@@ -23,16 +23,7 @@ Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não
 | Versão do sistema testada | não registrado (rodada preliminar) |
 | Resultado do MM01/CT037-M | não registrado (rodada preliminar) |
 
-## 2. Ressalva sobre a versão testada
-
-As capturas 01, 02 e 06 a 09 mostram a pasta `05_Codigo_Fonte`, e o aviso do Windows (02, 07, 08 e 09) indica origem em `C:\Users\pedro\Downloads\Projeto_FolhaPagamento_...`. Nessa pasta já existem `__pycache__` e `htmlcov` (gerados por execuções anteriores), e os arquivos estão datados de 11/11/2026 21:11. A captura 01 mostra a página do GitHub ao fundo, com o último commit `6294a72` "1 hour ago".
-
-Portanto, **estas capturas não mostram o ZIP `07_Executavel/Projeto_FolhaPagamento_Executavel.zip` descompactado em pasta limpa**, que é o procedimento descrito no CT037-M, e elas antecedem os commits de 12/11/2026. A avaliação pede "a versão exata do executável que será entregue". Há duas saídas, e a escolha é da equipe:
-
-1. Repetir o CT037-M com o ZIP final, em pasta limpa, e substituir ou complementar estas capturas.
-2. Manter estas capturas e declarar no relatório, de forma explícita, que elas se referem à versão de 11/11/2026 (commit: não registrado (rodada preliminar)), registrando o MM01 como "Aprovado com ressalvas".
-
-## 3. MM01 / CT037-M: abrir pelo atalho e persistir após reabrir
+## 2. MM01 / CT037-M: abrir pelo atalho e persistir após reabrir
 
 Passos do CT037-M: descompactar em pasta limpa, dois cliques no atalho, entrar com `1 / 01012000`, trocar a senha, cadastrar um colaborador, fechar a janela, abrir de novo e consultar a lista.
 
@@ -48,7 +39,7 @@ Passos do CT037-M: descompactar em pasta limpa, dois cliques no atalho, entrar c
 | Abrir de novo pelo atalho | 06, 07, 08, 09 | 06: pasta com `iniciar` selecionado. 07, 08 e 09: o mesmo aviso do Windows em três recortes do mesmo momento. A tela de fundo mostra o roteiro com o passo "abra de novo pelo `iniciar.bat`" | Comprovado (sem relógio visível) |
 | Mesmo cadastro continua na lista | 10, 11 | Lista com Administrador e Pedro Kolling, sem mensagem de confirmação, o que indica carga nova da página. 10 mostra o console do servidor ao lado; 11 mostra a mesma lista em tela cheia | Comprovado em parte: falta a prova do cadastro anterior |
 
-## 4. MM02 / CT039: capturas por tarefa e por conta
+## 3. MM02 / CT039: capturas por tarefa e por conta
 
 Regras do sistema para confirmar a conta de cada tarefa (conforme `colaboradores.py` e `folha.py`, `@nivel_exigido`): cadastrar, alterar, lançar vendas, gerar e fechar a folha exigem nível 1 (Admin/RH). O nível 2 (Financeiro) consulta colaboradores e folha. O nível 3 (Comum) vê apenas "Minhas folhas" e "Meus dados".
 
@@ -64,7 +55,7 @@ Regras do sistema para confirmar a conta de cada tarefa (conforme `colaboradores
 
 Conferências aritméticas feitas sobre as imagens: 22.000,00 × 5% = 1.100,00 e 2.500,00 + 1.100,00 = 3.600,00 (captura 21); 0 + 13.000 + 2.680 + 3.600 + 6.700 = 25.980,00 (captura 19).
 
-## 5. Lacunas que a equipe precisa fechar
+## 4. Lacunas que a equipe precisa fechar
 
 1. **Versão testada** (seção 2): repetir com o ZIP final ou declarar a ressalva.
 2. **Cadastro e encerramento no CT037-M:** faltam o formulário e a confirmação de cadastro, a lista antes de fechar e o fechamento da janela. Sem eles, as capturas 10 e 11 não provam que é o "mesmo cadastro" criado antes de fechar.
@@ -74,7 +65,7 @@ Conferências aritméticas feitas sobre as imagens: 22.000,00 × 5% = 1.100,00 e
 6. **Participante Financeiro:** não há captura de T1 e T5 para ele. Associar P1 e P2 de `Testes_de_Aceitacao.md` às matrículas usadas.
 7. **Consolidação final:** com a seção 1 preenchida, copiar o resultado do MM01 para `09_Homologacao/Testes_de_Aceitacao.md` (seção C) e para o relatório de testes, usando esta sequência como referência.
 
-## 6. Correspondência entre os nomes antigos e os novos
+## 5. Correspondência entre os nomes antigos e os novos
 
 A coluna "Confiança" indica o quanto a posição na sequência está sustentada pelo conteúdo da imagem.
 
@@ -107,7 +98,7 @@ A coluna "Confiança" indica o quanto a posição na sequência está sustentada
 
 Os nomes 12 a 24 usam o prefixo `MM02` porque as telas correspondem às tarefas do roteiro de usabilidade (T1 a T5) e à conta Colaborador, e não aos passos do CT037-M. A avaliação chama as 24 capturas de "MM01"; se a equipe preferir manter o prefixo único, basta trocar `MM02` por `MM01` nos nomes.
 
-## 7. Como a ordem foi definida
+## 6. Como a ordem foi definida
 
 - **Relógios visíveis:** 21:30, 21:31, 21:47 e 21:55 fixam as capturas 01, 03, 14 e 22.
 - **Mensagens de confirmação:** a captura 17 ("Colaborador cadastrado") vem depois do formulário 16. A 19 ("Lançamentos salvos") vem depois da 18, e a 20 ("Folha fechada") vem depois da 19.
