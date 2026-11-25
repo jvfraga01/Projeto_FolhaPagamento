@@ -160,7 +160,7 @@ Gerado por `05_Codigo_Fonte/atualizar_documentos.py` a partir de `04_Testes/Caso
 | RF007 | CT020 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 | RF008 | CT021 | 1 de 1 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 | RF009 | CT012, CT050 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
-| RF010 | CT022, CT037-A, CT037-M, CT052 | 3 de 4 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
+| RF010 | CT022, CT037-A, CT037-M, CT052 | 4 de 4 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 | RF011 | CT023, CT049, CT052 | 3 de 3 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 | RF012 | CT024, CT026 | 2 de 2 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |
 | RF013 | CT013, CT014, CT036, CT056 | 4 de 4 caso(s) aprovado(s) (17/11/2026 19:08) | Atendido |

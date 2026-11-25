@@ -50,5 +50,5 @@ Defeitos e demais métricas: `Metricas_e_Indicadores.md` e `Registro_de_Defeitos
 ## 5. Conclusões
 - O sistema segue as fórmulas do cliente, tem autorização verificada no backend e folha fechada imutável também no banco.
 - As metas do PGQ (cobertura, críticos e altos abertos = 0) são atendidas conforme a tabela da seção 3.
-- Falta apenas o que depende de pessoas: roteiros MM01 e MM02, Termo de Homologação assinado e commit/tag finais.
+- Falta apenas o que depende de pessoas: registrar tempos, erros, notas e a situação final do MM02 (rodada B de 24/11/2026, capturas `MM02B_NN`); concluir as capturas pendentes da rodada B; a homologação do professor por e-mail, com o Termo de Homologação datado depois do último commit; e o commit e a tag finais.
 - Limitações: SQLite com poucas escritas simultâneas, sem bloqueio por tentativas de login, verificação apenas no Windows.

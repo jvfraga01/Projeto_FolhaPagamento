@@ -1,10 +1,12 @@
 # Sequência das Evidências Manuais: MM01 (CT037-M) e MM02 (CT039)
 
+> **Rodada preliminar de 11/11, substituída pela rodada B.** A rodada B de 24/11/2026, feita com `python run.py`, está em `Sequencia_das_Evidencias_MM01B_MM02B.md`. Este arquivo fica como histórico, e as capturas `01_` a `24_` mostram `iniciar.bat` e o aviso do Windows, que não fazem parte da rodada B.
+
 Este arquivo relaciona cada captura da pasta `04_Testes/evidencias/Prints/` ao passo que ela comprova, na ordem em que os passos foram executados. Ele atende aos itens 2 e 3 de "O que falta para a entrega final" da Avaliação A3 de 13/11/2026 (conclusão do MM01/CT037-M e validação do MM02 com as permissões previstas).
 
 As capturas foram renomeadas para o padrão `NN_<teste>_<descrição>.png`, em que `NN` é a posição na sequência (01 a 24). Os nomes antigos (`MM01_Evidencia_N.png`) estão na seção 6.
 
-Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não aparece nelas está marcado com `<<PREENCHER: ...>>` e precisa ser informado pela equipe.
+Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não aparece nelas está marcado como "não registrado (rodada preliminar)".
 
 ---
 
@@ -13,13 +15,13 @@ Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não
 | Campo | Valor |
 |---|---|
 | Data observada nas capturas | 11/11/2026. O relógio do Windows marca 21:30 (captura 01), 21:31 (03), 21:47 (14) e a impressão do recibo traz 21:55 (22) |
-| Executor | Pedro da Silva Kolling. A captura 02 mostra o caminho `C:\Users\pedro\Downloads\...`>> |
+| Executor | Pedro da Silva Kolling. A captura 02 mostra o caminho `C:\Users\pedro\Downloads\...` |
 | Facilitador do MM02 | Conforme `09_Homologacao/Testes_de_Aceitacao.md`, seção C: Luiggi Bortolini |
-| Sistema operacional | <<PREENCHER: edição e versão do Windows>> |
+| Sistema operacional | não registrado (rodada preliminar) |
 | Navegador | Opera GX |
-| Python e Flask | <<PREENCHER: saída de `python --version` e `pip show flask`>> |
-| Versão do sistema testada | <<PREENCHER: tag, commit ou SHA-256 do ZIP usado>> |
-| Resultado do MM01/CT037-M | <<PREENCHER: Aprovado, Reprovado ou Aprovado com ressalvas>> |
+| Python e Flask | não registrado (rodada preliminar) |
+| Versão do sistema testada | não registrado (rodada preliminar) |
+| Resultado do MM01/CT037-M | não registrado (rodada preliminar) |
 
 ## 2. Ressalva sobre a versão testada
 
@@ -28,7 +30,7 @@ As capturas 01, 02 e 06 a 09 mostram a pasta `05_Codigo_Fonte`, e o aviso do Win
 Portanto, **estas capturas não mostram o ZIP `07_Executavel/Projeto_FolhaPagamento_Executavel.zip` descompactado em pasta limpa**, que é o procedimento descrito no CT037-M, e elas antecedem os commits de 12/11/2026. A avaliação pede "a versão exata do executável que será entregue". Há duas saídas, e a escolha é da equipe:
 
 1. Repetir o CT037-M com o ZIP final, em pasta limpa, e substituir ou complementar estas capturas.
-2. Manter estas capturas e declarar no relatório, de forma explícita, que elas se referem à versão de 11/11/2026 (commit <<PREENCHER: hash do commit usado>>), registrando o MM01 como "Aprovado com ressalvas".
+2. Manter estas capturas e declarar no relatório, de forma explícita, que elas se referem à versão de 11/11/2026 (commit: não registrado (rodada preliminar)), registrando o MM01 como "Aprovado com ressalvas".
 
 ## 3. MM01 / CT037-M: abrir pelo atalho e persistir após reabrir
 
@@ -54,11 +56,11 @@ Regras do sistema para confirmar a conta de cada tarefa (conforme `colaboradores
 |---|---|---|---|---|
 | T1. Entrar e trocar a própria senha | Colaborador (Comum) | 12, 13 | 12: "Pedro Kolling (Comum)" com o aviso "Por segurança, troque a senha inicial antes de continuar". 13: "Minhas folhas" vazia ("Nenhuma folha fechada ainda") | Visível: Pedro Kolling, matrícula 2 |
 | T1. Entrar e trocar a própria senha | Admin/RH | 04, 05 | Ver seção 3 | Visível: Administrador, matrícula 1 |
-| Início de sessão com a matrícula 4 | A confirmar | 15 | Tela de login com matrícula `4` e senha de 8 caracteres. Na lista (14), a matrícula 4 é Jose Patricio | <<PREENCHER: quem usou a matrícula 4, em qual perfil e para qual tarefa>> |
-| T2. Cadastrar colaborador Comissionado | Exige nível 1 | 16, 17 | 16: formulário "Novo colaborador" preenchido (Luiggi, Comissionado, R$ 2.500,00, nível 3 Comum). 17: "Colaborador cadastrado. Matrícula 5" e a lista com Luiggi | <<PREENCHER: matrícula e perfil da conta. A barra de menu não aparece nas capturas>> |
-| T3. Lançar vendas, gerar e fechar a folha | Exige nível 1 | 18, 19, 20 | 18: "Lançamentos de Novembro/2026" com vendas 0,00. 19: "Lançamentos salvos e folha recalculada", mês ABERTO (prévia), total R$ 25.980,00. 20: "Folha fechada...", mês FECHADO (congelado) | <<PREENCHER: matrícula e perfil da conta>> |
+| Início de sessão com a matrícula 4 | A confirmar | 15 | Tela de login com matrícula `4` e senha de 8 caracteres. Na lista (14), a matrícula 4 é Jose Patricio | não registrado (rodada preliminar) |
+| T2. Cadastrar colaborador Comissionado | Exige nível 1 | 16, 17 | 16: formulário "Novo colaborador" preenchido (Luiggi, Comissionado, R$ 2.500,00, nível 3 Comum). 17: "Colaborador cadastrado. Matrícula 5" e a lista com Luiggi | não registrado (rodada preliminar) |
+| T3. Lançar vendas, gerar e fechar a folha | Exige nível 1 | 18, 19, 20 | 18: "Lançamentos de Novembro/2026" com vendas 0,00. 19: "Lançamentos salvos e folha recalculada", mês ABERTO (prévia), total R$ 25.980,00. 20: "Folha fechada...", mês FECHADO (congelado) | não registrado (rodada preliminar) |
 | T5. Abrir e imprimir o próprio recibo | Colaborador (Comum) | 21, 22 | 21: recibo de Pedro Kolling, matrícula 2, vendas R$ 22.000,00, comissão 5,00% = R$ 1.100,00, líquido R$ 3.600,00. 22: visualização de impressão (cabeçalho "11/11/2026, 21:55", rodapé `127.0.0.1:5000/folha/2`, destino "Microsoft Print to PDF") e menu "(Comum)" | Visível: Pedro Kolling, matrícula 2 |
-| Consulta e filtros | Somente consulta | 23, 24 | Lista de Colaboradores sem a coluna "Ações". 23: tipo "Comissionado" escolhido, mas ainda com o resultado do filtro anterior (só Padrão). 24: salário máximo 5000, Administrador, Luiggi e Pedro Kolling | <<PREENCHER: matrícula e perfil da conta (compatível com Financeiro, mas o menu não aparece)>> |
+| Consulta e filtros | Somente consulta | 23, 24 | Lista de Colaboradores sem a coluna "Ações". 23: tipo "Comissionado" escolhido, mas ainda com o resultado do filtro anterior (só Padrão). 24: salário máximo 5000, Administrador, Luiggi e Pedro Kolling | não registrado (rodada preliminar) |
 
 Conferências aritméticas feitas sobre as imagens: 22.000,00 × 5% = 1.100,00 e 2.500,00 + 1.100,00 = 3.600,00 (captura 21); 0 + 13.000 + 2.680 + 3.600 + 6.700 = 25.980,00 (captura 19).
 
