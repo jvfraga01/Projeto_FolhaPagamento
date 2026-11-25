@@ -39,16 +39,16 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 
 | Participante | Perfil | Conta usada (matrícula) | Tarefa | Medida esperada | Sem ajuda? | Tempo | Erros | Capturas |
 |---|---|---|---|---|---|---|---|---|
-| P1 | RH | 2 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_01 a 03 |
-| P1 | RH | 2 | T2. Cadastrar colaborador Comissionado | ≤ 3 min; ≤ 2 erros | Sim | 1 min | <<PREENCHER: nº>> | MM02B_04 e 05 |
-| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | Sim | 3 min | <<PREENCHER: nº>> | MM02B_06 a 10; o resumo (tela Relatório) não foi capturado: <<PREENCHER: nova captura>> |
-| P1 | RH | 2 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_11 a 14 |
-| P1 | RH | 2 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_15 a 17; o fechamento do mês não foi capturado |
-| P2 | Financeiro | 4 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_20 a 23 |
+| P1 | RH | 2 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_01 a 03 |
+| P1 | RH | 2 | T2. Cadastrar colaborador Comissionado | ≤ 3 min; ≤ 2 erros | Sim | 1 min | 0 | MM02B_04 e 05 |
+| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | Sim | 3 min | 0 | MM02B_06 a 10; o resumo (tela Relatório) não foi capturado: <<PREENCHER: nova captura>> |
+| P1 | RH | 2 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_11 a 14 |
+| P1 | RH | 2 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_15 a 17; o fechamento do mês não foi capturado |
+| P2 | Financeiro | 4 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_20 a 23 |
 | P2 | Financeiro | 4 | T2. Cadastrar colaborador Comissionado | não se aplica ao perfil Financeiro | não se aplica | não se aplica | não se aplica | menu sem "Novo colaborador" em MM02B_22 |
 | P2 | Financeiro | 4 | T3. Gerar a folha, lançar vendas e consultar o resumo | não se aplica ao perfil Financeiro | não se aplica | não se aplica | não se aplica | menu sem lançamentos |
-| P2 | Financeiro | 4 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_24 a 27 |
-| P2 | Financeiro | 4 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_29 a 31 (recibo de Dezembro/2026; a preparação está em MM02B_28) |
+| P2 | Financeiro | 4 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_24 a 27 |
+| P2 | Financeiro | 4 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_29 a 31 (recibo de Dezembro/2026; a preparação está em MM02B_28) |
 
 **Perfil Colaborador (nível 3)**: T1 e T5 com uma conta nível 3. Verificação do Plano, fora do critério dos 2 participantes.
 
@@ -65,4 +65,4 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 | P2 (Financeiro) | 3 de 3 aplicáveis | 5 |
 | Média | | 5,0 |
 
-Critério de aprovação: todas as tarefas aplicáveis ao perfil de cada participante (RH: T1 a T5; Financeiro: T1, T4 e T5) concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4. Resultado: <<PREENCHER: Aprovado ou Reprovado>>.
+Critério de aprovação: todas as tarefas aplicáveis ao perfil de cada participante (RH: T1 a T5; Financeiro: T1, T4 e T5) concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4. Resultado: Aprovado.
