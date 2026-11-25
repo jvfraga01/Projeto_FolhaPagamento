@@ -56,7 +56,7 @@ Testes verdes comprovam o sistema apenas contra os critérios escritos. Para com
 - (D1 a D6) têm aceito registrado (29 e 30/10/2026); Teste aprovado + desvio aceito = "validado pelo cliente".
 
 ## Roteiro de Usabilidade (RNF001, CT039)
-**Participantes:** 2 integrantes da equipe (autorizado pelo professor em 23/11/2026, `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg`): uma com conta **RH** (T1 a T5) e outra com conta **Financeiro** (T1, T4 e T5: o perfil só consulta, então T2 e T3 não se aplicam a ela). As tarefas T1 e T5 do perfil **Colaborador** (nível 3) são verificadas na rodada do CT037-M com uma conta nível 3. **Ambiente:** navegador moderno (o utilizado fica registrado em cada rodada), sistema iniciado com `python run.py`, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar (na rodada B de 24/11/2026, o facilitador foi <<PREENCHER: nome do facilitador>>).
+**Participantes:** 2 integrantes da equipe (autorizado pelo professor em 23/11/2026, `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg`): uma com conta **RH** (T1 a T5) e outra com conta **Financeiro** (T1, T4 e T5: o perfil só consulta, então T2 e T3 não se aplicam a ela). As tarefas T1 e T5 do perfil **Colaborador** (nível 3) são verificadas na rodada do CT037-M com uma conta nível 3. **Ambiente:** navegador moderno (o utilizado fica registrado em cada rodada), sistema iniciado com `python run.py`, massa de dados padrão. **Facilitador:** analista de testes (QA), que observa sem ajudar (na rodada B de 24/11/2026, o facilitador foi João Vitor Fraga).
 
 | Tarefa | Perfil | Resultado esperado | Medida |
 |---|---|---|---|
