@@ -27,7 +27,6 @@ flowchart TD
     M --> M2["Manual técnico"]
     H --> H1["Revisão técnica e relatório final"]
     H --> H2["Termo de homologação"]
-    H --> H3["Apresentação"]
 ```
 ## Cronograma
 
@@ -46,7 +45,7 @@ gantt
     Testes de integração :tarefa4, 2026-11-03, 2026-11-18
     Testes de aceitação e defeitos :tarefa5, 2026-11-11, 2026-11-24
     Manuais e relatórios de qualidade :tarefa6, 2026-11-17, 2026-11-25
-    Homologação e apresentação :tarefa7, 2026-11-25, 2026-12-01
+    Homologação :tarefa7, 2026-11-25, 2026-12-01
 ```
 
 
@@ -67,7 +66,7 @@ O cronograma (Gantt) acima mostra o **planejado**; a coluna "Realizado" da tabel
 | Gerente do projeto / Analista de requisitos | Yuri Soares | Cronograma, ERS, rastreabilidade, ata de revisão |
 | Arquiteto / Desenvolvedor | João Vitor Fraga | Arquitetura, implementação, manual técnico |
 | Analista de testes (QA) | Luiggi Bortolini | Plano de testes, casos de teste, execução, registro de defeitos, métricas |
-| Documentação / Homologação | Pedro Kolling | Manual do usuário, termo de homologação, apresentação |
+| Documentação / Homologação | Pedro Kolling | Manual do usuário, termo de homologação |
 
 ## Riscos
 | Risco | Probabilidade | Ação |
