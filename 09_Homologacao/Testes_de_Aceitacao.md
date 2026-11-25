@@ -20,13 +20,6 @@ Casos que dependem de uma pessoa. O resultado de cada um está na tabela abaixo,
 | MM01 | CT037-M | Iniciar com `python run.py`, trocar a senha, cadastrar um colaborador, fechar e reabrir | Login `1 / 01012000` e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Login e troca de senha do Administrador conferidos (MM01B_03 a 06). Cadastro de Pedro Kolling, matrícula 2 (MM01B_07 e 08). Servidor reiniciado, com log novo (MM01B_12). Lista reaberta com Administrador e Pedro Kolling (MM01B_13). Ressalvas na nota abaixo da tabela | Aprovado | 24/11/2026 | Pedro Kolling |
 | MM02 | CT039 | Roteiro de usabilidade com 2 participantes (P1 RH, P2 Financeiro) | Todas as tarefas aplicáveis ao perfil concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4 | P1 (RH, matrícula 2): T1 a T5, 5 de 5 aplicáveis, chegaram ao resultado esperado nas capturas MM02B_01 a 17. P2 (Financeiro, matrícula 4): 3 de 3 aplicáveis (T1, T4 e T5), capturas MM02B_20 a 31. Todas feitas sem ajuda; tempos de 1 min por tarefa, exceto o T3 do P1, com 3 min; notas 5 e 5 (média 5,0); erros por tarefa: 0 | Aprovado | 24/11/2026 | João Vitor Fraga da Rocha |
 
-**Ressalvas do MM01 (conferir antes da entrega)**
-
-- Versão testada: a pasta das capturas é `Downloads\Projeto_FolhaPagamento-develop\Projeto_FolhaPagamento-develop\05_Codigo_Fonte` (ZIP da branch do GitHub), e não o ZIP final de entrega. Commit ou SHA-256: <<PREENCHER: hash do commit ou do ZIP usado>>.
-- A pasta `instance` já aparece em MM01B_01, antes da primeira execução. O login `1 / 01012000` e a lista só com o Administrador em MM01B_06 indicam banco novo. <<PREENCHER: confirmar se a pasta `instance` estava vazia>>.
-- Não há captura do fechamento do console. O reinício aparece no log novo de MM01B_12, que começa às 20:49:57, depois do log de MM01B_09, que termina às 20:47:23.
-- Versões de Python, Flask, Windows e navegador: <<PREENCHER: saída de `python --version`, `pip show flask`, versão do Windows e navegador>>.
-
 ### Registro do roteiro de usabilidade (MM02 / CT039)
 
 Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas conforme `Plano_de_Testes.md`, seção "Roteiro de Usabilidade". Perfil Financeiro: T2 e T3 não se aplicam, porque cadastro, geração da folha e lançamentos exigem nível 1 (`colaboradores.py:119`, `folha.py:140, 199, 243`).

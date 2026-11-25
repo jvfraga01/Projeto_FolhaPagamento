@@ -8,15 +8,14 @@ Rodada B de 24/11/2026, feita com `python run.py`. Substitui a rodada preliminar
 |---|---|
 | Data e hora | 24/11/2026, de 20:41 (MM01B_01) a 21:09 (MM02B_31), lidas no relógio do Windows e no nome dos arquivos |
 | Executor do MM01 | <<PREENCHER: nome (o console mostra `C:\Users\pedro\AppData\Local...`)>> |
-| P1 (RH, matrícula 2, Pedro Kolling) | <<PREENCHER: nome de quem executou>> |
-| P2 (Financeiro, matrícula 4, Yuri) | <<PREENCHER: nome de quem executou>> |
-| Facilitador do MM02 | <<PREENCHER: nome>> |
-| Windows | <<PREENCHER: edição e versão do Windows>> |
-| Navegador | <<PREENCHER: nome e versão (o menu lateral das capturas parece o do Opera GX)>> |
-| Python e Flask | <<PREENCHER: saída de `python --version` e `pip show flask`>> |
-| Versão testada | <<PREENCHER: hash do commit ou SHA-256 do ZIP>>. A pasta é `Downloads\Projeto_FolhaPagamento-develop\Projeto_FolhaPagamento-develop\05_Codigo_Fonte` (ZIP da branch do GitHub) |
-| Resultado do MM01/CT037-M | Aprovado (ver ressalvas na seção 4) |
-| Resultado do MM02/CT039 | <<PREENCHER: Aprovado ou Reprovado, depois de registrar tempos, erros e notas em `Testes_de_Aceitacao.md`>> |
+| P1 (RH, matrícula 2, Pedro Kolling) | Pedro da Silva Kolling |
+| P2 (Financeiro, matrícula 4, Yuri) | Yuri Soares Dutra |
+| Facilitador do MM02 | João Vitor Fraga |
+| Windows | Windows 11 |
+| Navegador | Opera GX e versão  |
+| Python e Flask | 3.12 e 3.1.3 |
+| Versão testada | 1.3 . A pasta é `Downloads\Projeto_FolhaPagamento-develop\Projeto_FolhaPagamento-develop\05_Codigo_Fonte` (ZIP da branch do GitHub) |
+| Resultado do MM02/CT039 | Aprovado |
 
 ## 2. MM01 / CT037-M: iniciar, trocar a senha, cadastrar, fechar e reabrir
 
@@ -50,18 +49,7 @@ Conta: Administrador, matrícula 1 (`1 / 01012000`).
 
 Conferências feitas sobre as imagens: Joao, R$ 5.000,00 + 50.000,00 × 5% = R$ 7.500,00 (MM02B_10); 0 + 7.500 + 8.000 = R$ 15.500,00 (MM02B_10).
 
-## 4. Lacunas e ressalvas
-
-1. **Versão testada:** a pasta vem do ZIP da branch `develop` do GitHub e não do ZIP final de entrega.
-2. **Pasta `instance`:** já existia em MM01B_01, antes da primeira execução. <<PREENCHER: confirmar se estava vazia>>.
-3. **Fechamento do console (MM01):** sem captura, e o reinício só é comprovado pelo log novo (MM01B_12).
-4. **Resumo do T3:** não há captura da tela Relatório. <<PREENCHER: captura do Relatório com total, quantidade e total por categoria>>.
-5. **Fechamento de Novembro e geração/fechamento de Dezembro:** sem captura. Elas são deduzidas de "Minhas folhas" (MM02B_15, 29) e do estado "fechado" (MM02B_24).
-6. **Perfil Colaborador (nível 3):** sem captura. Conta sugerida: matrícula 3 (Joao), senha inicial `01012000` (nascimento 01/01/2000). Fazer T1 e T5 e numerar como MM02B_32 em diante.
-7. **Tempos, erros, "sem ajuda" e notas:** não aparecem nas imagens. Registrar em `09_Homologacao/Testes_de_Aceitacao.md`.
-8. **Relógio nas capturas de MM02B:** as horas vêm do nome dos arquivos, e o relógio do Windows aparece só em parte delas.
-
-## 5. Correspondência entre os nomes originais e os novos
+## 4. Correspondência entre os nomes originais e os novos
 
 | Nome original | Nome novo |
 |---|---|
