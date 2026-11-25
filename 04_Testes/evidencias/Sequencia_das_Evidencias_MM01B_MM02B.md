@@ -1,14 +1,12 @@
 # Sequência das Evidências Manuais, rodada B: MM01 (CT037-M) e MM02 (CT039)
 
-Rodada B de 24/11/2026, feita com `python run.py`. Substitui a rodada preliminar de 11/11/2026 (`Sequencia_das_Evidencias_MM01_MM02.md`, mantida como histórico). Tudo o que consta como "visto" foi lido nas próprias capturas (nomes `MM01B_NN_...` e `MM02B_NN_...` em `04_Testes/evidencias/Prints/`). O que não aparece nelas está marcado com `<<PREENCHER: ...>>`.
-
 ## 1. Identificação da rodada
 
 | Campo | Valor |
 |---|---|
 | Data e hora | 24/11/2026, de 20:41 (MM01B_01) a 21:09 (MM02B_31), lidas no relógio do Windows e no nome dos arquivos |
-| Executor do MM01 | <<PREENCHER: nome (o console mostra `C:\Users\pedro\AppData\Local...`)>> |
-| P1 (RH, matrícula 2, Pedro Kolling) | Pedro da Silva Kolling |
+| Executor do MM01 | Pedro Kolling (o console mostra `C:\Users\pedro\AppData\Local...`)>> |
+| P1 (RH, matrícula 2, Pedro Kolling) | Pedro Kolling |
 | P2 (Financeiro, matrícula 4, Yuri) | Yuri Soares Dutra |
 | Facilitador do MM02 | João Vitor Fraga |
 | Windows | Windows 11 |
