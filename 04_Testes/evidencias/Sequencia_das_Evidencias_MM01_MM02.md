@@ -104,12 +104,3 @@ A coluna "Confiança" indica o quanto a posição na sequência está sustentada
 | 24 | `MM01_Evidencia_24.png` | `24_MM02_consulta_colaboradores_filtro_salario_maximo.png` | Média (Luiggi já existe, então vem depois da 17) |
 
 Os nomes 12 a 24 usam o prefixo `MM02` porque as telas correspondem às tarefas do roteiro de usabilidade (T1 a T5) e à conta Colaborador, e não aos passos do CT037-M. A avaliação chama as 24 capturas de "MM01"; se a equipe preferir manter o prefixo único, basta trocar `MM02` por `MM01` nos nomes.
-
-## 7. Como a ordem foi definida
-
-- **Relógios visíveis:** 21:30, 21:31, 21:47 e 21:55 fixam as capturas 01, 03, 14 e 22.
-- **Mensagens de confirmação:** a captura 17 ("Colaborador cadastrado") vem depois do formulário 16. A 19 ("Lançamentos salvos") vem depois da 18, e a 20 ("Folha fechada") vem depois da 19.
-- **Estado dos dados:** Pedro Kolling aparece a partir da 10, e Luiggi só a partir da 17. "Nenhuma folha fechada ainda" (13) só é possível antes do fechamento (20).
-- **Recibo:** a tela do recibo (21) vem antes da janela de impressão (22).
-- **Reabertura:** as capturas 07, 08 e 09 têm o mesmo fundo (roteiro aberto no passo de reabrir), por isso foram agrupadas após a 05. A 06 aparece como a seleção de `iniciar` imediatamente anterior.
-- **Pontos de menor certeza:** 15 (login da matrícula 4) e 23 (filtro de tipo) não têm relógio nem mensagem que fixem a posição. Se a equipe souber a ordem real, é só trocar o prefixo numérico.
