@@ -17,8 +17,8 @@ Casos que dependem de uma pessoa. O resultado de cada um está na tabela abaixo,
 
 | Código | Caso | Descrição | Critério | Resultado | Situação | Data | Responsável |
 |---|---|---|---|---|---|---|---|
-| MM01 | CT037-M | Iniciar com `python run.py`, trocar a senha, cadastrar um colaborador, fechar e reabrir | Login `1 / 01012000` e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Login e troca de senha do Administrador conferidos (MM01B_03 a 06). Cadastro de Pedro Kolling, matrícula 2 (MM01B_07 e 08). Servidor reiniciado, com log novo (MM01B_12). Lista reaberta com Administrador e Pedro Kolling (MM01B_13). Ressalvas na nota abaixo da tabela | Aprovado | 24/11/2026 | <<PREENCHER: executor do MM01 (as capturas mostram o caminho C:\Users\pedro)>> |
-| MM02 | CT039 | Roteiro de usabilidade com 2 participantes (P1 RH, P2 Financeiro) | Todas as tarefas aplicáveis ao perfil concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4 | P1 (RH, matrícula 2): T1 a T5, 5 de 5 aplicáveis, chegaram ao resultado esperado nas capturas MM02B_01 a 17. P2 (Financeiro, matrícula 4): 3 de 3 aplicáveis (T1, T4 e T5), capturas MM02B_20 a 31. Ajuda, tempos, erros e notas: <<PREENCHER: conferir o registro abaixo>> | <<PREENCHER: Aprovado ou Reprovado, depois de registrar tempos, erros e notas abaixo>> | 24/11/2026 | <<PREENCHER: facilitador>> |
+| MM01 | CT037-M | Iniciar com `python run.py`, trocar a senha, cadastrar um colaborador, fechar e reabrir | Login `1 / 01012000` e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Login e troca de senha do Administrador conferidos (MM01B_03 a 06). Cadastro de Pedro Kolling, matrícula 2 (MM01B_07 e 08). Servidor reiniciado, com log novo (MM01B_12). Lista reaberta com Administrador e Pedro Kolling (MM01B_13). Ressalvas na nota abaixo da tabela | Aprovado | 24/11/2026 | Pedro Kolling |
+| MM02 | CT039 | Roteiro de usabilidade com 2 participantes (P1 RH, P2 Financeiro) | Todas as tarefas aplicáveis ao perfil concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4 | P1 (RH, matrícula 2): T1 a T5, 5 de 5 aplicáveis, chegaram ao resultado esperado nas capturas MM02B_01 a 17. P2 (Financeiro, matrícula 4): 3 de 3 aplicáveis (T1, T4 e T5), capturas MM02B_20 a 31. Ajuda, tempos, erros e notas: <<PREENCHER: conferir o registro abaixo>> | <<PREENCHER: Aprovado ou Reprovado, depois de registrar tempos, erros e notas abaixo>> | 24/11/2026 | João Victor |
 
 **Ressalvas do MM01 (conferir antes da entrega)**
 
@@ -33,9 +33,9 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 
 | Participante | Nome | Perfil | Conta usada (matrícula) |
 |---|---|---|---|
-| P1 | <<PREENCHER: nome de quem executou como P1>> | RH (nível 1) | 2 (Pedro Kolling) |
-| P2 | <<PREENCHER: nome de quem executou como P2>> | Financeiro (nível 2) | 4 (Yuri) |
-| Facilitador | <<PREENCHER: nome do facilitador>> | QA | não se aplica |
+| P1 | Pedro Kolling | RH (nível 1) | 2 (Pedro Kolling) |
+| P2 | Yuri | Financeiro (nível 2) | 4 (Yuri) |
+| Facilitador | João Victor | QA | não se aplica |
 
 | Participante | Perfil | Conta usada (matrícula) | Tarefa | Medida esperada | Sem ajuda? | Tempo | Erros | Capturas |
 |---|---|---|---|---|---|---|---|---|
