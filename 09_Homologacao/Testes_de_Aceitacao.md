@@ -17,8 +17,8 @@ Casos que dependem de uma pessoa. O resultado de cada um está na tabela abaixo,
 
 | Código | Caso | Descrição | Critério | Resultado | Situação | Data | Responsável |
 |---|---|---|---|---|---|---|---|
-| MM01 | CT037-M | Iniciar com `python run.py`, trocar a senha, cadastrar um colaborador, fechar e reabrir | Login `1 / 01012000` e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Login e troca de senha do Administrador conferidos (MM01B_03 a 06). Cadastro de Pedro Kolling, matrícula 2 (MM01B_07 e 08). Servidor reiniciado, com log novo (MM01B_12). Lista reaberta com Administrador e Pedro Kolling (MM01B_13). Ressalvas na nota abaixo da tabela | Aprovado | 24/11/2026 | Pedro Kolling |
-| MM02 | CT039 | Roteiro de usabilidade com 2 participantes (P1 RH, P2 Financeiro) | Todas as tarefas aplicáveis ao perfil concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4 | P1 (RH, matrícula 2): T1 a T5, 5 de 5 aplicáveis, chegaram ao resultado esperado nas capturas MM02B_01 a 17. P2 (Financeiro, matrícula 4): 3 de 3 aplicáveis (T1, T4 e T5), capturas MM02B_20 a 31. Ajuda, tempos, erros e notas: <<PREENCHER: conferir o registro abaixo>> | <<PREENCHER: Aprovado ou Reprovado, depois de registrar tempos, erros e notas abaixo>> | 24/11/2026 | João Victor |
+| MM01 | CT037-M | Iniciar com `python run.py`, trocar a senha, cadastrar um colaborador, fechar e reabrir | Login `1 / 01012000` e troca obrigatória funcionam; o colaborador cadastrado continua na lista depois de reabrir | Login e troca de senha do Administrador conferidos (MM01B_03 a 06). Cadastro de Pedro Kolling, matrícula 2 (MM01B_07 e 08). Servidor reiniciado, com log novo (MM01B_12). Lista reaberta com Administrador e Pedro Kolling (MM01B_13). Ressalvas na nota abaixo da tabela | Aprovado | 24/11/2026 | <<PREENCHER: executor do MM01 (as capturas mostram o caminho C:\Users\pedro)>> |
+| MM02 | CT039 | Roteiro de usabilidade com 2 participantes (P1 RH, P2 Financeiro) | Todas as tarefas aplicáveis ao perfil concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4 | P1 (RH, matrícula 2): T1 a T5, 5 de 5 aplicáveis, chegaram ao resultado esperado nas capturas MM02B_01 a 17. P2 (Financeiro, matrícula 4): 3 de 3 aplicáveis (T1, T4 e T5), capturas MM02B_20 a 31. Todas feitas sem ajuda; tempos de 1 min por tarefa, exceto o T3 do P1, com 3 min; notas 5 e 5 (média 5,0); erros por tarefa: <<PREENCHER: conferir o registro abaixo>> | <<PREENCHER: Aprovado ou Reprovado, depois de registrar tempos, erros e notas abaixo>> | 24/11/2026 | João Vitor Fraga da Rocha |
 
 **Ressalvas do MM01 (conferir antes da entrega)**
 
@@ -33,22 +33,22 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 
 | Participante | Nome | Perfil | Conta usada (matrícula) |
 |---|---|---|---|
-| P1 | Pedro Kolling | RH (nível 1) | 2 (Pedro Kolling) |
-| P2 | Yuri | Financeiro (nível 2) | 4 (Yuri) |
-| Facilitador | João Victor | QA | não se aplica |
+| P1 | Yuri (usou a conta de Pedro Kolling) | RH (nível 1) | 2 (Pedro Kolling) |
+| P2 | Pedro (usou a conta de Yuri) | Financeiro (nível 2) | 4 (Yuri) |
+| Facilitador | João Vitor Fraga da Rocha | QA | não se aplica |
 
 | Participante | Perfil | Conta usada (matrícula) | Tarefa | Medida esperada | Sem ajuda? | Tempo | Erros | Capturas |
 |---|---|---|---|---|---|---|---|---|
-| P1 | RH | 2 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_01 a 03 |
-| P1 | RH | 2 | T2. Cadastrar colaborador Comissionado | ≤ 3 min; ≤ 2 erros | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_04 e 05 |
-| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_06 a 10; o resumo (tela Relatório) não foi capturado: <<PREENCHER: nova captura>> |
-| P1 | RH | 2 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_11 a 14 |
-| P1 | RH | 2 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_15 a 17; o fechamento do mês não foi capturado |
-| P2 | Financeiro | 4 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_20 a 23 |
+| P1 | RH | 2 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_01 a 03 |
+| P1 | RH | 2 | T2. Cadastrar colaborador Comissionado | ≤ 3 min; ≤ 2 erros | Sim | 1 min | <<PREENCHER: nº>> | MM02B_04 e 05 |
+| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | Sim | 3 min | <<PREENCHER: nº>> | MM02B_06 a 10; o resumo (tela Relatório) não foi capturado: <<PREENCHER: nova captura>> |
+| P1 | RH | 2 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_11 a 14 |
+| P1 | RH | 2 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_15 a 17; o fechamento do mês não foi capturado |
+| P2 | Financeiro | 4 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_20 a 23 |
 | P2 | Financeiro | 4 | T2. Cadastrar colaborador Comissionado | não se aplica ao perfil Financeiro | não se aplica | não se aplica | não se aplica | menu sem "Novo colaborador" em MM02B_22 |
 | P2 | Financeiro | 4 | T3. Gerar a folha, lançar vendas e consultar o resumo | não se aplica ao perfil Financeiro | não se aplica | não se aplica | não se aplica | menu sem lançamentos |
-| P2 | Financeiro | 4 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_24 a 27 |
-| P2 | Financeiro | 4 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | <<PREENCHER: Sim/Não>> | <<PREENCHER: min:s>> | <<PREENCHER: nº>> | MM02B_29 a 31 (recibo de Dezembro/2026; a preparação está em MM02B_28) |
+| P2 | Financeiro | 4 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_24 a 27 |
+| P2 | Financeiro | 4 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | <<PREENCHER: nº>> | MM02B_29 a 31 (recibo de Dezembro/2026; a preparação está em MM02B_28) |
 
 **Perfil Colaborador (nível 3)**: T1 e T5 com uma conta nível 3. Verificação do Plano, fora do critério dos 2 participantes.
 
@@ -61,8 +61,8 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 
 | Participante | Tarefas aplicáveis concluídas sem ajuda | Nota "foi fácil de usar" (1 a 5) |
 |---|---|---|
-| P1 (RH) | <<PREENCHER: nº>> de 5 aplicáveis | <<PREENCHER: nota>> |
-| P2 (Financeiro) | <<PREENCHER: nº>> de 3 aplicáveis | <<PREENCHER: nota>> |
-| Média | | <<PREENCHER: média>> |
+| P1 (RH) | 5 de 5 aplicáveis | 5 |
+| P2 (Financeiro) | 3 de 3 aplicáveis | 5 |
+| Média | | 5,0 |
 
 Critério de aprovação: todas as tarefas aplicáveis ao perfil de cada participante (RH: T1 a T5; Financeiro: T1, T4 e T5) concluídas sem ajuda, dentro dos limites de tempo e de erros do Plano, e nota média ≥ 4. Resultado: <<PREENCHER: Aprovado ou Reprovado>>.
