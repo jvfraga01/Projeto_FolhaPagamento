@@ -1,6 +1,6 @@
 """Roda a suíte de testes COM cobertura e grava as evidências em 04_Testes/evidencias/.
 
-Uso (dentro de 05_Codigo_Fonte):   python gerar_cobertura.py [--executor "Nome"]   (ou dois cliques em gerar_cobertura.bat)
+Uso (dentro de 05_Codigo_Fonte):   python gerar_cobertura.py [--executor "Nome"]
 
 Gera:
   04_Testes/evidencias/saida_unittest.md      saída completa do `unittest discover -v`

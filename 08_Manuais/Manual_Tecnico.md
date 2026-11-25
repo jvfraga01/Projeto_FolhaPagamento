@@ -30,8 +30,8 @@ Triggers (imutabilidade de mês fechado, mesmo por acesso direto ao banco): `fol
 ## 3. Estrutura do código
 ```
 05_Codigo_Fonte/
-├── run.py, iniciar.bat, iniciar.sh        inicialização
-├── gerar_cobertura.py / .bat / .sh        testes + cobertura + evidências
+├── run.py, iniciar.sh                     inicialização
+├── gerar_cobertura.py / .sh        testes + cobertura + evidências
 ├── .coveragerc, requirements*.md         configuração e dependências
 ├── app/
 │   ├── __init__.py       fábrica do app, sessão, CSRF, CSP, troca obrigatória de senha, filtros, erros
@@ -66,7 +66,7 @@ Rotas principais: `/login`, `/logout`, `/senha`, `/colaboradores` (+ `/novo`, `/
 | SQLite | Embutido no Python |
 
 ## 6. Build, execução e deploy
-Não há build. Execução local: `python run.py` (ou `iniciar.bat`), em http://127.0.0.1:5000. Deploy = copiar a pasta `05_Codigo_Fonte` para a máquina e iniciar. `SECRET_KEY` pode ser definida no ambiente; se ausente, é gerada em `instance/secret.key`. `REGIME_METAS=1` liga o modo opcional de metas.
+Não há build. Execução local: `python run.py` , em http://127.0.0.1:5000. Deploy = copiar a pasta `05_Codigo_Fonte` para a máquina e iniciar. `SECRET_KEY` pode ser definida no ambiente; se ausente, é gerada em `instance/secret.key`. `REGIME_METAS=1` liga o modo opcional de metas.
 
 ## 7. Testes e cobertura
 ```bash

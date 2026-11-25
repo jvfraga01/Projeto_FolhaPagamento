@@ -184,42 +184,6 @@ def resultado_requisitos(ev):
     return "\n".join(ls)
 
 
-def atualizar_slides(ev):
-    """Mantém os slides 'Testes e cobertura' e 'Defeitos e métricas' iguais às evidências."""
-    caminho = RAIZ / "11_Apresentacao" / "Apresentacao.pptx"
-    if not caminho.exists():
-        return
-    try:
-        from pptx import Presentation
-    except ImportError:
-        print("Aviso: python-pptx não instalado; atualize os slides 6 e 7 à mão (pip install python-pptx).")
-        return
-    d = linhas_tabela(ler(DEFEITOS), "| BUG")
-    corr = [r for r in d if r[4].split()[0] in ("Corrigido", "Homologado", "Fechado")]
-    np_ = [r for r in d if r[4].startswith("Não procede")]
-    abertos = len(d) - len(corr) - len(np_)
-    prs = Presentation(str(caminho))
-    for s in prs.slides:
-        for sh in s.shapes:
-            if not sh.has_text_frame:
-                continue
-            for p in sh.text_frame.paragraphs:
-                tx = p.text
-                novo = None
-                if "testes automatizados" in tx:
-                    novo = f"•  {ev['testes']} testes automatizados, resultado: {ev['resultado']} ({ev['data']})"
-                elif tx.lstrip("• ").startswith("Cobertura de"):
-                    novo = f"•  Cobertura de {ev['cobertura']} sobre app/ (meta: 80%)"
-                elif "defeitos registrados" in tx:
-                    novo = f"•  {len(d)} defeitos registrados: {len(corr)} corrigidos, {len(np_)} não procede, {abertos} abertos"
-                if novo and p.runs:
-                    p.runs[0].text = novo
-                    for r in p.runs[1:]:
-                        r.text = ""
-    prs.save(str(caminho))
-    print("[atualizado] 11_Apresentacao/Apresentacao.pptx")
-
-
 def aplicar(ev):
     blocos = {"tabela_cobertura": tabela_cobertura(ev), "metricas": metricas(ev),
               "resultado_requisitos": resultado_requisitos(ev)}
@@ -238,7 +202,6 @@ def aplicar(ev):
             p.write_bytes(n.encode("utf-8"))
             alterados += 1
             print(f"[atualizado] {p.relative_to(RAIZ)}")
-    atualizar_slides(ev)
     print(f"{alterados} arquivo(s) atualizado(s) com a execução de {ev['data']} ({ev['testes']} testes, {ev['cobertura']}).")
 
 

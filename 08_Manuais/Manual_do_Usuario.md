@@ -21,9 +21,8 @@ Não há descontos: salário final = salário base + adicionais.
 ## 2. Instalação
 Requisitos: Windows com Python 3.10 ou superior e um navegador atual (Chrome, Edge ou Firefox). Internet só é necessária para baixar o Python e o Flask.
 
-0. Por segurança do e-mail e do antivírus, nos ZIPs os atalhos .bat podem vir com o nome entre parênteses (`iniciar(.bat)`). Renomeie para `iniciar.bat` ou rode `python run.py`. Na primeira abertura o Windows pode avisar "fornecedor desconhecido": clique em **Executar**.
-1. Instale o Python em https://www.python.org/downloads/ marcando **Add Python to PATH** (ou deixe o `iniciar.bat` oferecer a instalação).
-2. Na pasta `05_Codigo_Fonte`, dê dois cliques em **`iniciar.bat`**.
+1. Instale o Python em https://www.python.org/downloads/ marcando **Add Python to PATH**.
+2. Na pasta `05_Codigo_Fonte`, dê dois cliques em **`run.py`** (ou rode `python run.py`).
 3. Se o Flask não estiver instalado, o sistema pergunta se pode instalar: responda `S`.
 4. O navegador abre sozinho em http://127.0.0.1:5000. Para encerrar o sistema, feche a janela preta.
 

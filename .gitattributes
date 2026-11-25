@@ -1,6 +1,5 @@
 # Finais de linha fixos: evita conflitos entre Windows (CRLF) e Linux (LF) em arquivos idênticos
 * text=auto
-*.bat text eol=crlf
 *.sh  text eol=lf
 *.py  text eol=lf
 *.md  text eol=lf

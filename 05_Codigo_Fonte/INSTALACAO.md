@@ -13,8 +13,7 @@
 O banco é o SQLite, que já vem com o Python: **não há nada a instalar para o banco**.
 
 ## Jeito fácil (Windows)
-Dê dois cliques em **`iniciar.bat`**.
-- Se o Python não estiver instalado, ele **pergunta se você quer instalar** (S/N) e usa o `winget` do Windows.
+Instale o Python antes (https://www.python.org/downloads/), marcando **Add Python to PATH**. Depois dê dois cliques em **`run.py`**.
 - Se faltar o Flask, o sistema **pergunta se pode instalar** (S/N).
 - Depois abre o navegador sozinho. Para encerrar, feche a janela preta.
 

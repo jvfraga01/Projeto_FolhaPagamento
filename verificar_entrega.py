@@ -13,18 +13,17 @@ OBRIGATORIOS = """README.md
 04_Testes/evidencias/saida_unittest.md 04_Testes/evidencias/cobertura.md 04_Testes/evidencias/resumo_execucao.md
 05_Codigo_Fonte/run.py 05_Codigo_Fonte/gerar_cobertura.py 05_Codigo_Fonte/atualizar_documentos.py
 05_Codigo_Fonte/tests/test_sistema.py 05_Codigo_Fonte/tests/test_correcoes_a3.py 05_Codigo_Fonte/INSTALACAO.md
-06_Banco_Dados/schema.sql 07_Executavel/README.md 07_Executavel/Projeto_FolhaPagamento_Executavel.zip
+06_Banco_Dados/schema.sql 07_Executavel/README.md
 08_Manuais/Manual_do_Usuario.md 08_Manuais/Manual_Tecnico.md
 09_Homologacao/Testes_de_Aceitacao.md 09_Homologacao/Termo_de_Homologacao.md
 10_Qualidade/Plano_de_Garantia_da_Qualidade.md 10_Qualidade/Registro_de_Defeitos.md 10_Qualidade/Metricas_e_Indicadores.md
 10_Qualidade/Relatorio_de_Revisao_Tecnica.md 10_Qualidade/Relatorio_Final_de_Qualidade.md
-10_Qualidade/Ata_de_Revisao_Tecnica_A1.md 10_Qualidade/Evidencia_Controle_de_Versao.md 10_Qualidade/Historico_Git.md
-11_Apresentacao/Apresentacao.pptx 11_Apresentacao/Roteiro_de_Demonstracao.md""".split()
+10_Qualidade/Ata_de_Revisao_Tecnica_A1.md 10_Qualidade/Evidencia_Controle_de_Versao.md 10_Qualidade/Historico_Git.md""".split()
 T = ".t" + "xt"  # montado assim para o conversor de .txt->.md não reescrever esta lista
 SOBRANDO = ["gitignore" + T, "gitattributes" + T, "10_Qualidade/Ata_de_Revisao_Tecnica_A1",
             "10_Qualidade/Historico_Git" + T, "04_Testes/evidencias/saida_unittest" + T,
             "04_Testes/evidencias/cobertura" + T, "04_Testes/evidencias/resumo_execucao" + T,
-            "07_Executavel/Readme.md", "Projeto_FolhaPagamento-1.0(Estrutura inicial do projeto.).zip"]
+            "Projeto_FolhaPagamento-1.0(Estrutura inicial do projeto.).zip"]
 erros, avisos = [], []
 
 for f in OBRIGATORIOS:
@@ -47,7 +46,7 @@ for f in ("README.md", ".gitignore", ".gitattributes"):
 # campos em branco
 vazios = {}
 for p in RAIZ.rglob("*.md"):
-    if {"evidencias", ".git"} & set(p.relative_to(RAIZ).parts) or p.name == "Historico_Git.md":
+    if ".git" in p.relative_to(RAIZ).parts or p.name == "Historico_Git.md":
         continue
     n = len(re.findall(r"<<PREENCHER", p.read_text(encoding="utf-8", errors="ignore")))
     if n:
@@ -88,6 +87,46 @@ for p in RAIZ.rglob("*"):
         txt = p.read_text(encoding="utf-8", errors="ignore")
         if re.search(r"requirements(-dev)?\.md", txt):
             erros.append(f"referência a requirements.md (o arquivo é .txt): {p.relative_to(RAIZ)}")
+
+# limpeza: .bat, executável e pasta 11 não podem mais ser citados (exceto nos arquivos que explicam a dispensa)
+EXCECOES = {"verificar_entrega.py", "Historico_Git.md", "Registro_de_Aceite_de_Desvios.md",
+            "Relatorio_de_Revisao_Tecnica.md", "Sequencia_das_Evidencias_MM01_MM02.md"}
+for p in RAIZ.rglob("*"):
+    rel = p.relative_to(RAIZ)
+    if (p.is_file() and p.suffix in (".md", ".py", ".sh", ".yml") and ".git" not in rel.parts
+            and p.name not in EXCECOES and str(rel) != "README.md"):
+        for n, linha in enumerate(p.read_text(encoding="utf-8", errors="ignore").splitlines(), 1):
+            if re.search(r"\.bat\b|Executavel\.zip|11_Apresentacao", linha):
+                erros.append(f"citação de .bat, executável ou pasta 11 em {rel}:{n}")
+
+# placeholders no formato errado (um < só, sem <<, ou >> sobrando)
+for p in RAIZ.rglob("*.md"):
+    if ".git" in p.parts or p.name == "Historico_Git.md":
+        continue
+    t = p.read_text(encoding="utf-8", errors="ignore")
+    if re.search(r"(?<!<<)PREENCHER", t) or re.search(r">>>", t):
+        erros.append(f"placeholder PREENCHER fora do formato <<PREENCHER: ...>> em {p.relative_to(RAIZ)}")
+
+# Termo: decisão marcada exige a resposta do professor guardada em 09_Homologacao/evidencias/
+termo = RAIZ / "09_Homologacao" / "Termo_de_Homologacao.md"
+if termo.exists():
+    tt = termo.read_text(encoding="utf-8", errors="ignore")
+    if re.search(r"- \[[xX]\]", tt):
+        arqs = re.findall(r"09_Homologacao/evidencias/[^\s`|<>]+", tt)
+        # o print de 23/11 é só a conversa que combinou o e-mail; não vale como resposta da homologação
+        if not any((RAIZ / a).exists() and "23-11-2026" not in a for a in arqs):
+            erros.append("Termo com decisão marcada, mas sem a resposta do professor em 09_Homologacao/evidencias/")
+
+# hashes citados em Termo, Ata e Evidência precisam existir no Historico_Git.md
+hist = RAIZ / "10_Qualidade" / "Historico_Git.md"
+if hist.exists():
+    ht = hist.read_text(encoding="utf-8", errors="ignore")
+    for f in ("09_Homologacao/Termo_de_Homologacao.md", "10_Qualidade/Ata_de_Revisao_Tecnica_A1.md",
+              "10_Qualidade/Evidencia_Controle_de_Versao.md"):
+        if (RAIZ / f).exists():
+            for h in set(re.findall(r"\b[0-9a-f]{7,40}\b", (RAIZ / f).read_text(encoding="utf-8", errors="ignore"))):
+                if re.search(r"\d", h) and re.search(r"[a-f]", h) and h not in ht:
+                    erros.append(f"hash {h} citado em {f} não existe no Historico_Git.md")
 
 # git
 if (RAIZ / ".git").exists():
