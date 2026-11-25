@@ -8,15 +8,9 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 | Ramo principal | `main` |
 | Tag da entrega A1 | `v1.2-A1` |
 | Tag da entrega A3 | `v1.3-A3` |
-<<<<<<< Updated upstream
-| Commit da tag A3 | ffb2753: saída de `git rev-list -n 1 v1.3-A3` (hash curto)>> |
-| Último commit de conteúdo (antes desta evidência) | 5234c9f |
-| Data da exportação do histórico | 17/11/2026 |
-=======
 | Commit da tag A3 | ffb2753: saída de `git rev-list -n 1 v1.3-A3` (hash curto) |
 | Último commit de conteúdo (antes desta evidência) | PREENCHER COMMIT |
 | Data da exportação do histórico | 24/11/2026 |
->>>>>>> Stashed changes
 | Arquivo com o log completo | `10_Qualidade/Historico_Git.md` |
 
 > "A tag v1.3-A3 aponta para o último commit de conteúdo; esta evidência é commitada logo depois
