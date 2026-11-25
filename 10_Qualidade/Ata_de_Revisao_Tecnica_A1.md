@@ -20,7 +20,7 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 | Checa permissão no backend? | Sim | CT024–CT026, CT025 e demais testes de `PermissaoTest`. |
 | Tem teste? | Sim | <!--A:testes-->74<!--/A--> testes, <!--A:resultado-->OK, nenhum teste falhou<!--/A-->, cobertura <!--A:cobertura-->92,4%<!--/A--> (<!--A:data-->17/11/2026 19:08<!--/A-->). |
 | Documentação atualizada? | Sim | Manuais, relatórios, métricas e registros criados; números atualizados automaticamente das evidências. |
-| Sem dados sensíveis no código? | Sim, com conferência pendente | Banco e `secret.key` fora do Git pelo `.gitignore` e do pacote (`empacotar_entrega.py`). No histórico, `instance/` foi commitado e apagado (commit a2d6225): conferir com `git show --stat a2d6225` se havia `secret.key` (BUG008). |
+| Sem dados sensíveis no código? | Não verificado no estado atual, com ressalva histórica | Banco e `secret.key` foram removidos do repositório no commit `a2d6225`. O histórico confirma que esses arquivos estiveram versionados anteriormente. A conferência dos arquivos atualmente rastreados pelo Git ainda precisa ser realizada. |
 
 ## Itens encontrados e ações
 | # | Item | Autor | Revisor | Ação | Responsável | Prazo | Situação |

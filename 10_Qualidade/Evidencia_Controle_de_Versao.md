@@ -1,24 +1,24 @@
 # Evidência de Controle de Versão
 
-Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
+Comprova o histórico exigido pelo PGQ (Git, ramo main, tags de entrega).
 
 | Item | Valor |
 |---|---|
 | URL do repositório | https://github.com/jvfraga01/Projeto_FolhaPagamento |
-| Ramo principal | `main` |
-| Tag da entrega A1 | `v1.2-A1` |
-| Tag da entrega A3 | `v1.3-A3` |
-| Commit da tag A3 | ffb2753: saída de `git rev-list -n 1 v1.3-A3` (hash curto)>> |
-| Último commit de conteúdo (antes desta evidência) | 5234c9f |
-| Data da exportação do histórico | 17/11/2026 |
+| Ramo principal | main |
+| Tag da entrega A1 | v1.2-A1 |
+| Tag da entrega A3 | v1.3-A3 |
+| Commit da tag A3 | ffb2753 |
+| Último commit de conteúdo (antes desta evidência) | <<PREENCHER: hash real>> |
+| Data da exportação do histórico | <<PREENCHER: data real da exportação>> |
 | Arquivo com o log completo | `10_Qualidade/Historico_Git.md` |
 
 > A tag aponta para o commit final, que inclui este arquivo e o `Historico_Git.md`. Por isso o hash acima é o do
 > último commit de conteúdo, feito antes da evidência.
 
 ## Como gerar a evidência
-Na raiz do repositório clonado, execute `10_Qualidade/exportar_historico_git.bat` (Windows) ou
-`10_Qualidade/exportar_historico_git.sh` (Linux/macOS). Será criado o arquivo `10_Qualidade/Historico_Git.md`
+Na raiz do repositório clonado, python 10_Qualidade/exportar_historico_git.py ou
+`10_Qualidade/exportar_historico_git.sh` (Linux/macOS). Será criado ou atualizado o arquivo `10_Qualidade/Historico_Git.md`
 com hash, autor, data e mensagem de cada commit, além da lista de tags e do endereço do repositório remoto.
 
 ## Convenção de commits
