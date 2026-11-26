@@ -6,10 +6,10 @@ Registro exigido pelo PGQ (seção "Revisões Técnicas"). Revisão realizada em
 |---|---|
 | Projeto | Sistema de Folha de Pagamento (Grupo 10) |
 | Entrega | A1 (revisada) e preparação da A3 |
-| Data da revisão | 23/11/2026 |
+| Data da revisão | 24/11/2026 |
 | Participantes | João Vitor Fraga da Rocha, Luiggi Bortolini, Yuri Soares Dutra, Pedro da Silva Kolling|
 | Itens revisados | ERS e matriz; casos de uso e sequências; plano e casos de teste; `regras.py`, `folha.py`, `auth.py`; testes automatizados; resultados da execução de 23/11/2026 |
-| Versão/commit revisado | <<PREENCHER: hash curto do commit revisado>> |
+| Versão/commit revisado | be6460aefc0f56d5ee31ed7b29248a49519a3364 |
 
 ## Checklist do PGQ
 | Pergunta | Resposta | Observação |
