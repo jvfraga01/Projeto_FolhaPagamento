@@ -34,7 +34,7 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 |---|---|---|---|---|---|---|---|---|
 | P1 | RH | 2 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_01 a 03 |
 | P1 | RH | 2 | T2. Cadastrar colaborador Comissionado | ≤ 3 min; ≤ 2 erros | Sim | 1 min | 0 | MM02B_04 e 05 |
-| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | Sim | 3 min | 0 | MM02B_06 a 10; o resumo (tela Relatório) não foi capturado: <<PREENCHER: nova captura>> |
+| P1 | RH | 2 | T3. Gerar a folha, lançar vendas e consultar o resumo | ≤ 5 min; ≤ 2 erros | Sim | 3 min | 0 | MM02B_06 a 10;|
 | P1 | RH | 2 | T4. Filtrar a folha por tipo e salário máximo | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_11 a 14 |
 | P1 | RH | 2 | T5. Abrir e imprimir o próprio recibo de mês fechado | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_15 a 17; o fechamento do mês não foi capturado |
 | P2 | Financeiro | 4 | T1. Entrar e trocar a própria senha | ≤ 2 min; ≤ 1 erro | Sim | 1 min | 0 | MM02B_20 a 23 |
@@ -47,8 +47,8 @@ Rodada B, aplicada em 24/11/2026 por integrantes da equipe. Medidas esperadas co
 
 | Perfil | Conta usada (matrícula) | Tarefa | Resultado | Capturas |
 |---|---|---|---|---|
-| Colaborador | 3 (Joao, nível 3) | T1. Entrar e trocar a própria senha | <<PREENCHER: resultado e tempo>> | <<PREENCHER: MM02B_32 em diante>> |
-| Colaborador | 3 (Joao, nível 3) | T5. Abrir e imprimir o próprio recibo de mês fechado | <<PREENCHER: resultado e tempo>> | <<PREENCHER: capturas>> |
+| Colaborador | 3 (Joao, nível 3) | T1. Entrar e trocar a própria senha | senha alterada com sucesso 2min | MM01B_04 a MM01B_06 |
+| Colaborador | 3 (Joao, nível 3) | T5. Abrir e imprimir o próprio recibo de mês fechado | imprimiu  e 17 seg. | MM02B_15 a MM02B_17 |
 
 **Resumo por participante**
 
