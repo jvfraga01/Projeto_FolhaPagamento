@@ -1,6 +1,6 @@
 # Histórico do Git
 
-Exportado em: 26/11/2026 18:30
+Exportado em: 26/11/2026 18:37
 
 ```text
 == Repositório remoto ==
@@ -8,9 +8,8 @@ origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (fetch)
 origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 
 == Ramos ==
-  correcao
-* develop
-  main
+  develop
+* main
   remotes/origin/HEAD -> origin/main
   remotes/origin/develop
   remotes/origin/main
@@ -20,6 +19,10 @@ v1.2-A1         Entrega A1 revisada
 v1.3-A3         Entrega A3
 
 == Commits (hash | autor | data | mensagem) ==
+fc98c37 | João Vitor Fraga da Rocha | 2026-11-26 18:31:28 -0300 | Update export date and commit author statistics
+44a3188 | João Vitor Fraga da Rocha | 2026-11-26 18:29:57 -0300 | Add files via upload
+868b356 | João Vitor Fraga da Rocha | 2026-11-26 18:27:08 -0300 | Update README.md
+8c6dd12 | João Vitor Fraga da Rocha | 2026-11-26 18:02:27 -0300 | Update browser version in evidence document
 a22a297 | jvfraga01 | 2026-11-26 17:25:46 -0300 | Data do envio
 a12f399 | João Vitor Fraga da Rocha | 2026-11-26 12:57:11 -0300 | Merge pull request #29 from jvfraga01/Branch_yuri
 716e87d | YuriSoaresD | 2026-11-26 12:47:08 -0300 | registro de homologação
@@ -282,7 +285,7 @@ bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
 fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
 
 == Commits por autor ==
-    76	João Vitor Fraga da Rocha
+    80	João Vitor Fraga da Rocha
     67	Pedro da Silva Kolling
     60	YuriSoaresD
     31	jvfraga01
