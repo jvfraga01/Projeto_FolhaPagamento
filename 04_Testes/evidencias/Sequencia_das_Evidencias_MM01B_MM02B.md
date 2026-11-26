@@ -10,7 +10,7 @@
 | P2 (Financeiro, matrícula 4, Yuri) | Yuri Soares Dutra |
 | Facilitador do MM02 | João Vitor Fraga |
 | Windows | Windows 11 |
-| Navegador | Opera GX e versão  |
+| Navegador | Opera GX e LVL8 |
 | Python e Flask | 3.12 e 3.1.3 |
 | Versão testada | 1.3 . A pasta é `Downloads\Projeto_FolhaPagamento-develop\Projeto_FolhaPagamento-develop\05_Codigo_Fonte` (ZIP da branch do GitHub) |
 | Resultado do MM02/CT039 | Aprovado |
