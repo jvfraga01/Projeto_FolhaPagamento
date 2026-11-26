@@ -56,6 +56,7 @@ gantt
 | Ajustes e evolução do sistema concluídos | 11/11/2026 | 11/11/2026 |
 | Cobertura ≥ 80% atingida (fim da atividade de testes unitários e cobertura) | 17/11/2026 | 10/11/2026 (primeira medição; ver `04_Testes/evidencias/`) |
 | Fim da execução dos testes de aceitação | 24/11/2026 | Rodada B (MM01 e MM02, com `python run.py`): 24/11/2026. A rodada preliminar de 11/11/2026 foi substituída |
+| Homologação do cliente | — | 25/11/2026 (aceite por e-mail do professor, 22:26) |
 | Entrega A3 | 01/12/2026 | <<PREENCHER: data do envio>> |
 
 O cronograma (Gantt) acima mostra o **planejado**; a coluna "Realizado" da tabela de marcos registra as datas efetivas.
