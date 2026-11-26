@@ -8,8 +8,8 @@ Comprova o histórico exigido pelo PGQ (Git, ramo `main`, tags de entrega).
 | Ramo principal | `main` |
 | Tag da entrega A1 | `v1.2-A1` |
 | Tag da entrega A3 | `v1.3-A3` |
-| Commit da tag A3 | ffb2753: saída de `git rev-list -n 1 v1.3-A3` (hash curto)>> |
-| Último commit de conteúdo (antes desta evidência) | f1959e1 |
+| Commit da tag A3 | ffb2753 (saída de `git rev-list -n 1 v1.3-A3` no clone de 26/11/2026) |
+| Último commit de conteúdo (antes desta evidência) | be6460a |
 | Data da exportação do histórico | 17/11/2026 |
 | Arquivo com o log completo | `10_Qualidade/Historico_Git.md` |
 

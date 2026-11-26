@@ -15,6 +15,7 @@ Decisão atribuída ao "responsável" sem evidência continua **Pendente**.
 | D4 | Folha só de quem tem contrato no mês (RF007/RN014) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/resposta_professor_2026-10-29.png) |
 | D5 | Matrícula gerada automaticamente (RF001/RN001) | Manter | Aceito | 29/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/resposta_professor_2026-10-29.png)  |
 | D6 | Funções extras: login, perfis, fechamento, recibo, histórico | Manter | Aceito | 30/10/2026 | Prof. Paulo Cesar Furlanetto Marques |![Aceite do cliente](evidencias/resposta_professor_2026-10-30.png) |
+| H1 | Homologação da versão 1.3 (A3), commit `be6460a` | Aceita sem ressalvas | Aceito | 25/11/2026 | Prof. Paulo Cesar Furlanetto Marques | `09_Homologacao/evidencias/resposta_professor_email_2026-11-25.pdf` |
 
 ## Decisões que NÃO exigem aceite
 Desvio = o que contraria ou amplia o **T1 (requisitos do cliente)**. O enunciado (`Trabalho_Integrador_A1_A3_GQS`) e o Anexo I definem os artefatos e não impõem plataforma, método de teste nem requisitos de portabilidade. Por isso as decisões abaixo são internas da equipe e não precisam de aceite escrito:
