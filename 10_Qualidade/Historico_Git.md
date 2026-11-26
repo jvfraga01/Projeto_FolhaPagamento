@@ -1,6 +1,6 @@
 # Histórico do Git
 
-Exportado em: 17/11/2026 18:38
+Exportado em: 26/11/2026 18:30
 
 ```text
 == Repositório remoto ==
@@ -10,9 +10,8 @@ origin	https://github.com/jvfraga01/Projeto_FolhaPagamento.git (push)
 == Ramos ==
   correcao
 * develop
+  main
   remotes/origin/HEAD -> origin/main
-  remotes/origin/correcao
-  remotes/origin/correcao_yuri
   remotes/origin/develop
   remotes/origin/main
 
@@ -21,6 +20,52 @@ v1.2-A1         Entrega A1 revisada
 v1.3-A3         Entrega A3
 
 == Commits (hash | autor | data | mensagem) ==
+a22a297 | jvfraga01 | 2026-11-26 17:25:46 -0300 | Data do envio
+a12f399 | João Vitor Fraga da Rocha | 2026-11-26 12:57:11 -0300 | Merge pull request #29 from jvfraga01/Branch_yuri
+716e87d | YuriSoaresD | 2026-11-26 12:47:08 -0300 | registro de homologação
+29e269c | jvfraga01 | 2026-11-25 21:52:03 -0300 | Atualizaçã do commit
+be6460a | jvfraga01 | 2026-11-25 21:47:11 -0300 | retirei os .sh
+74d9d37 | YuriSoaresD | 2026-11-25 21:46:03 -0300 | Update Sequencia_das_Evidencias_MM01_MM02.md
+45f9d3b | YuriSoaresD | 2026-11-25 21:15:28 -0300 | Update test results and capture details in documentation
+6116836 | João Vitor Fraga da Rocha | 2026-11-25 20:55:30 -0300 | Merge pull request #27 from jvfraga01/correcao_yuri
+5001357 | YuriSoaresD | 2026-11-25 20:53:35 -0300 | Update Sequencia_das_Evidencias_MM01B_MM02B.md
+0d0f4b0 | YuriSoaresD | 2026-11-25 20:48:13 -0300 | Merge pull request #26 from jvfraga01/correcao_yuri
+cdd38f1 | YuriSoaresD | 2026-11-25 20:44:21 -0300 | atualização documentação
+f5339a0 | YuriSoaresD | 2026-11-25 17:44:36 -0300 | Merge pull request #25 from jvfraga01/correcao_yuri
+7fe2451 | YuriSoaresD | 2026-11-25 17:40:54 -0300 | limpeza .bat
+aa2d7d2 | YuriSoaresD | 2026-11-25 11:00:29 -0300 | Merge pull request #23 from jvfraga01/correcao_yuri
+cf3150b | YuriSoaresD | 2026-11-25 10:59:46 -0300 | atualização termo de homologação
+d10add3 | YuriSoaresD | 2026-11-25 10:56:18 -0300 | Merge pull request #22 from jvfraga01/correcao_yuri
+866fa21 | YuriSoaresD | 2026-11-25 10:55:40 -0300 | atualização documentação
+17ab511 | Pedro da Silva Kolling | 2026-11-24 22:14:19 -0300 | Correct MM02 usability test results and approval status
+6ab357a | Pedro da Silva Kolling | 2026-11-24 22:13:09 -0300 | Update responsible person for test case MM01
+d559309 | Pedro da Silva Kolling | 2026-11-24 22:12:31 -0300 | Revise acceptance tests and approval criteria
+254cad5 | Pedro da Silva Kolling | 2026-11-24 22:08:17 -0300 | Update acceptance tests and participant details
+4232bbe | João Vitor Fraga da Rocha | 2026-11-24 22:06:12 -0300 | Update usability test participants and facilitator name
+7bb95d7 | Pedro da Silva Kolling | 2026-11-24 21:53:53 -0300 | Update acceptance tests with participant details
+f5e66ef | PedroKolling7 | 2026-11-24 21:48:10 -0300 | Update Testes_de_Aceitacao.md
+bda22d6 | PedroKolling7 | 2026-11-24 21:42:40 -0300 | Corrigindo local
+f320ba5 | PedroKolling7 | 2026-11-24 21:35:50 -0300 | Adicionando prints e alterando arquivos
+1ebc06b | YuriSoaresD | 2026-11-23 22:07:24 -0300 | Merge pull request #20 from jvfraga01/correcao_yuri
+8aba093 | YuriSoaresD | 2026-11-23 22:06:54 -0300 | Update README.md
+3372de7 | YuriSoaresD | 2026-11-23 22:00:08 -0300 | Merge pull request #18 from jvfraga01/correcao_yuri
+4c576c3 | YuriSoaresD | 2026-11-23 21:59:30 -0300 | Update Registro_de_Aceite_de_Desvios.md
+965a668 | jvfraga01 | 2026-11-23 21:20:25 -0300 | Merge branch 'develop' of https://github.com/jvfraga01/Projeto_FolhaPagamento into develop
+596205c | jvfraga01 | 2026-11-23 21:20:10 -0300 | Atualiza registros de revisão e homologação
+ca22acc | YuriSoaresD | 2026-11-23 21:14:48 -0300 | Merge pull request #17 from jvfraga01/correcao_yuri
+87999f1 | YuriSoaresD | 2026-11-23 21:13:45 -0300 | Create resposta_professor_23-11-2026.jpeg
+9c36fdf | YuriSoaresD | 2026-11-17 19:56:06 -0300 | Update Apresentacao.pptx
+706c3a8 | jvfraga01 | 2026-11-17 19:36:13 -0300 | Alinha develop e main (conteudo da develop)
+678ab31 | YuriSoaresD | 2026-11-17 19:32:56 -0300 | Merge pull request #12 from jvfraga01/correcaoYSD
+0455ca4 | YuriSoaresD | 2026-11-17 19:32:17 -0300 | Update Documento_de_Visao.md
+7bdad7f | jvfraga01 | 2026-11-17 19:25:02 -0300 | Atualização da data
+3266ab0 | jvfraga01 | 2026-11-17 19:18:16 -0300 | Merge branch 'develop' of https://github.com/jvfraga01/Projeto_FolhaPagamento into develop
+15ad1f6 | jvfraga01 | 2026-11-17 19:17:59 -0300 | Atualização dos testes
+b4718f1 | Pedro da Silva Kolling | 2026-11-17 19:16:55 -0300 | Update acceptance test completion date
+f6b247f | YuriSoaresD | 2026-11-17 19:13:20 -0300 | Merge pull request #11 from jvfraga01/correcaoYSD
+bacebb0 | João Vitor Fraga da Rocha | 2026-11-17 19:05:08 -0300 | Merge pull request #10 from jvfraga01/correcaoYSD
+f7da834 | YuriSoaresD | 2026-11-17 19:02:23 -0300 | Update Diagramas_UML.md
+1774262 | jvfraga01 | 2026-11-17 18:59:39 -0300 | Correções
 a3877ba | João Vitor Fraga da Rocha | 2026-11-17 18:26:25 -0300 | Merge pull request #8 from jvfraga01/correcao
 58181c1 | jvfraga01 | 2026-11-17 18:25:24 -0300 | Remove script de limpeza usado uma vez
 7a9ce57 | jvfraga01 | 2026-11-17 18:21:46 -0300 | Restaura documentos e codigo da A3 apos recuperacao do historico
@@ -237,11 +282,11 @@ bac26a8 | João Vitor Fraga da Rocha | 2026-10-17 19:45:21 -0300 | Create ERS
 fb6b2c0 | jvfraga01 | 2026-09-13 20:09:09 -0300 | Criação do projeto de folha de pagamento com Flask e SQLite. O projeto inclui funcionalidades para cadastro de funcionários, geração de relatórios e visualização de folhas de pagamento individuais.
 
 == Commits por autor ==
-    72	João Vitor Fraga da Rocha
-    61	Pedro da Silva Kolling
-    37	YuriSoaresD
-    21	jvfraga01
+    76	João Vitor Fraga da Rocha
+    67	Pedro da Silva Kolling
+    60	YuriSoaresD
+    31	jvfraga01
     13	Yuri Soares Dutra
+     7	PedroKolling7
      6	Luiggi Bortolini
-     4	PedroKolling7
 ```
