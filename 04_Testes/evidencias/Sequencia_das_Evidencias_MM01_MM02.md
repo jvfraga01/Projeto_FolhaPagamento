@@ -17,11 +17,11 @@ Tudo o que consta como "visto" abaixo foi lido nas próprias imagens. O que não
 | Data observada nas capturas | 11/11/2026. O relógio do Windows marca 21:30 (captura 01), 21:31 (03), 21:47 (14) e a impressão do recibo traz 21:55 (22) |
 | Executor | Pedro da Silva Kolling. A captura 02 mostra o caminho `C:\Users\pedro\Downloads\...` |
 | Facilitador do MM02 | Conforme `09_Homologacao/Testes_de_Aceitacao.md`, seção C: Luiggi Bortolini |
-| Sistema operacional | não registrado (rodada preliminar) |
+| Sistema operacional | Windows |
 | Navegador | Opera GX |
-| Python e Flask | não registrado (rodada preliminar) |
-| Versão do sistema testada | não registrado (rodada preliminar) |
-| Resultado do MM01/CT037-M | não registrado (rodada preliminar) |
+| Python e Flask | 3.12  e 3.1.3 |
+| Versão do sistema testada | 1.3 |
+| Resultado do MM01/CT037-M | registrados |
 
 ## 2. MM01 / CT037-M: abrir pelo atalho e persistir após reabrir
 
