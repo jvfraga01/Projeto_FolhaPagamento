@@ -33,7 +33,7 @@ Desvio = o que contraria ou amplia o **T1 (requisitos do cliente)**. O enunciado
 | Apresentação | Dispensada; pasta `11_Apresentacao` removida | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
 | Executável | Dispensado | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
 | Testes manuais | Realizados pela equipe | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
-| Homologação | Professor pediu o pedido por e-mail e disse que homologa depois; a resposta será guardada em `09_Homologacao/evidencias/` e a decisão registrada no Termo | 23/11/2026 | `09_Homologacao/evidencias/resposta_professor_23-11-2026.jpeg` |
+| Homologação | Homologação aceita por e-mail do professor (22:26), em resposta ao pedido de 25/11/2026; decisão registrada no Termo | 25/11/2026 | `09_Homologacao/evidencias/resposta_professor_email_2026-11-25.pdf` |
 
 
 ## Como preencher
